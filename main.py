@@ -1,20 +1,23 @@
 import pygame
 import colores
+import pantallas
+import herraminetas
+import funciones
 
 pygame.init() 
 
-window = pygame.display.set_mode((1024,720)) 
+window = pygame.display.set_mode((1200,800)) 
 
 #establezco titulo de la venta:
 pygame.display.set_caption("Adivina el logo")
 
 # pygame carga una imagen,el load representa una superficie
-icon = pygame.image.load("imagenes\icono.png")
+logo = pygame.image.load("imagenes\icono.png")
 #seteo el icono:
-pygame.display.set_icon(icon)
+pygame.display.set_icon(logo)
 
 #rellena la ventana de un color:
-window.fill(colores.VIOLETA)
+window.fill(colores.LIGHT_BROWN)
 
 flag = True
 while flag:
@@ -26,5 +29,3 @@ while flag:
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 
 pygame.quit()
-
-#probandooooooooooo
