@@ -3,7 +3,7 @@ import colores
 
 pygame.init() 
 
-window = pygame.display.set_mode((1200,800)) 
+window = pygame.display.set_mode((1024,720)) 
 
 #establezco titulo de la venta:
 pygame.display.set_caption("Adivina el logo")
@@ -14,7 +14,7 @@ icon = pygame.image.load("imagenes\icono.png")
 pygame.display.set_icon(icon)
 
 #rellena la ventana de un color:
-window.fill(colores.LIGHT_BROWN)
+window.fill(colores.VIOLETA)
 
 flag = True
 while flag:
