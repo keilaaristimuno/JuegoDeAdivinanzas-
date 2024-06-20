@@ -26,3 +26,5 @@ while flag:
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 
 pygame.quit()
+
+#probandooooooooooo
