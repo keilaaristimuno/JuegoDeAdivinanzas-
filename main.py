@@ -28,3 +28,4 @@ while flag:
 pygame.quit()
 
 #probandooooooooooo
+#probnado lauti
