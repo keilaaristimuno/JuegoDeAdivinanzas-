@@ -43,7 +43,15 @@ def normalizar_datos_jugador(diccionario: dict) -> None:
         diccionario["puntaje_exp"][i] = int(diccionario["puntaje_exp"][i])
 
 def crear_lista_jugadores(datos: list, cabecera: list) -> list:
-    
+    """Crea una lista
+
+    Args:
+        datos (list): lista 
+        cabecera (list): _description_
+
+    Returns:
+        list: _description_
+    """
     #Creo la lista de jugadores
     lista_jugadores = []
     

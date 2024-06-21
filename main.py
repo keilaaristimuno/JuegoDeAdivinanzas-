@@ -6,7 +6,7 @@ import funciones
 
 pygame.init() 
 
-window = pygame.display.set_mode((1200,800)) 
+ventana = pygame.display.set_mode((1000,500))
 
 #establezco titulo de la venta:
 pygame.display.set_caption("Adivina el logo")
@@ -17,14 +17,25 @@ logo = pygame.image.load("imagenes\icono.png")
 pygame.display.set_icon(logo)
 
 #rellena la ventana de un color:
-window.fill(colores.LIGHT_BROWN)
+ventana.fill(colores.VIOLETA)
 
-flag = True
-while flag:
-    list_event = pygame.event.get()
-    for event in list_event:
-        if event.type == pygame.QUIT: #PREGUNTO SI PRESIONO la x de la ventana para salir
-            flag = False
+with open("datos_jugador.csv", "r") as archivo:
+    datos = archivo.read().split("\n")
+    cabecera = datos[0].split(",")
+    datos.pop(0)
+    jugadores = funciones.crear_lista_jugadores(datos, cabecera)
+
+jugador = jugadores[0]
+
+ejecutar = True
+while ejecutar:
+    lista_eventos = pygame.event.get()
+    for evento in lista_eventos:
+        if evento.type == pygame.QUIT: #PREGUNTO SI PRESIONO la x de la ventana para salir
+            ejecutar = False
+        herraminetas.obtener_pos_mouse(evento)
+    pantallas.mostrar_principal(ventana, jugador["nivel_exp"], jugador["puntaje_exp"], jugador["monedas"], jugador["gemas"])
+    
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 
