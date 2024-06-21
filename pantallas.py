@@ -6,7 +6,7 @@ pygame.init()
 
 def mostrar_principal(ventana, nivel, experiencia, monedas, gemas) -> None:
     
-    personaje = pygame.draw.rect(ventana, (0,0,0), (300,180,150,200))
+    # personaje = pygame.draw.rect(ventana, (0,0,0), (300,180,150,200),1)
     btn_jugar = pygame.draw.rect(ventana, (0,0,0), (500,300,300,80))
     nivel_exp = pygame.draw.rect(ventana, (0,0,0), (10,15,50,50))
     barra_exp = pygame.draw.rect(ventana, (0,0,0), (70,15,150,50))
@@ -16,6 +16,11 @@ def mostrar_principal(ventana, nivel, experiencia, monedas, gemas) -> None:
     fuente_jugar = pygame.font.SysFont("Serif", 45, True)
     txt_jugar = fuente_jugar.render("Jugar", False, colores.BLANCO)
     ventana.blit(txt_jugar, (centrar_txt(btn_jugar.centerx,btn_jugar.centery, txt_jugar)))
+
+#personaje
+    imagen_personaje = pygame.image.load("imagenes\personaje.png")
+    imagen_personaje = pygame.transform.scale(imagen_personaje, (150,180))
+    ventana.blit(imagen_personaje, (320,200))
 
 
 #nivel
