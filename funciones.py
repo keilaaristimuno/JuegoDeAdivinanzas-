@@ -10,6 +10,7 @@ def centrar_rect(centerx, centery, rect):
     Args: 
         centerx: Valor de la coordenada x del centro.
         centry: Valor de la coordenada y del centro.
+        rect: Rectangula a centrar.
         
     Returns:
         pos_et: Coordenadas del texto centradas.
@@ -78,4 +79,13 @@ def pintar_btn(rect_btn, pos_mouse, color_n, color_h):
     else:
         #El mouse no esta sobre el boton entonces retorno el color normal
         return color_n
+ 
+def validar_click_en_boton(lista_eventos, pos_mouse, boton):
     
+    for evento in lista_eventos:
+        #Valido que el evento sea un click y este dentro del cuadro de texto
+        if evento.type == pygame.MOUSEBUTTONDOWN and boton.collidepoint(pos_mouse) and evento.button == 1:   
+            return True
+        elif evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
+            return False
+        

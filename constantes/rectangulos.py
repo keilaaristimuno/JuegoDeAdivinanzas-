@@ -4,6 +4,7 @@ pygame.init()
 #Rectangulos pantalla de inicio
 REC_IN_JUGAR = pygame.Rect(0,0,400,90)
 REC_IN_ENT_TXT = pygame.Rect(0,0, 300, 65)
+REC_IN_ESCRITURA = pygame.Rect(0,0, 260, 45)
 REC_IN_IMG = pygame.Rect(0,0,400,90)
 #Rectangulos pantalla principal
 REC_PP_DIFICULTAD = pygame.Rect(500,285,400,70)
