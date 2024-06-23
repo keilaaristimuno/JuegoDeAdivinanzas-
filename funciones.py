@@ -2,9 +2,10 @@ import pygame
 
 pygame.init()
 
-def centrar_txt(centerx, centery, txt):
+
+def centrar_rect(centerx, centery, rect):
     """ 
-    Centra una etiqueta.
+    Centra un rectangulo en base a otro.
     
     Args: 
         centerx: Valor de la coordenada x del centro.
@@ -14,9 +15,15 @@ def centrar_txt(centerx, centery, txt):
         pos_et: Coordenadas del texto centradas.
     
     """
+    rect.centerx = centerx
+    rect.centery = centery
+    
+    return(rect)
+
+def centrar_txt(centerx, centery, txt):
+    
     pos_txt = txt.get_rect()
-    pos_txt.centerx = centerx
-    pos_txt.centery = centery
+    pos_txt = centrar_rect(centerx, centery, pos_txt)
     
     return(pos_txt)
    
