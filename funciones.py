@@ -2,9 +2,10 @@ import pygame
 
 pygame.init()
 
-def centrar_txt(centerx, centery, txt):
+
+def centrar_rect(centerx, centery, rect):
     """ 
-    Centra una etiqueta.
+    Centra un rectangulo en base a otro.
     
     Args: 
         centerx: Valor de la coordenada x del centro.
@@ -14,9 +15,15 @@ def centrar_txt(centerx, centery, txt):
         pos_et: Coordenadas del texto centradas.
     
     """
+    rect.centerx = centerx
+    rect.centery = centery
+    
+    return(rect)
+
+def centrar_txt(centerx, centery, txt):
+    
     pos_txt = txt.get_rect()
-    pos_txt.centerx = centerx
-    pos_txt.centery = centery
+    pos_txt = centrar_rect(centerx, centery, pos_txt)
     
     return(pos_txt)
    
@@ -61,3 +68,14 @@ def crear_lista_jugadores(datos: list, cabecera: list) -> list:
         lista_jugadores.append(crear_dic_jugador(datos_jugador,cabecera))  
         
     return lista_jugadores
+
+def pintar_btn(rect_btn, pos_mouse, color_n, color_h):
+    
+    #Valido si el mouse esta sobre el boton
+    if rect_btn.collidepoint(pos_mouse):
+        #El mouse esta sobre el boton entonces retorno el color hover
+        return color_h
+    else:
+        #El mouse no esta sobre el boton entonces retorno el color normal
+        return color_n
+    

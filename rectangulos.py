@@ -1,0 +1,25 @@
+import pygame
+
+pygame.init()
+#Rectangulos pantalla de inicio
+REC_IN_JUGAR = pygame.Rect(0,0,400,90)
+REC_IN_ENT_TXT = pygame.Rect(0,0, 300, 65)
+REC_IN_IMG = pygame.Rect(0,0,400,90)
+#Rectangulos pantalla principal
+REC_PP_DIFICULTAD = pygame.Rect(500,285,400,70)
+REC_PP_CAT_BANDERAS = pygame.Rect(500,160,60,60)
+REC_PP_CAT_COMIDAS = pygame.Rect(585,160,60,60)
+REC_PP_CAT_CLUBES = pygame.Rect(670,160,60,60)
+REC_PP_CAT_AUTOS = pygame.Rect(755,160,60,60)
+REC_PP_CAT_TECNO = pygame.Rect(840,160,60,60)
+REC_PP_CATEGORIA = pygame.Rect(500,210,400,80)
+REC_PP_NIVEL_EXP = pygame.Rect(10,15,50,50)
+REC_PP_BARRA_EXP = pygame.Rect(70,15,150,50)
+REC_PP_BARRA_MONEDAS = pygame.Rect(287,15,150,50)
+REC_PP_BARRA_GEMAS = pygame.Rect(504,15,150,50)
+REC_PP_COMO_JUGAR = pygame.Rect(722,15,150,50)
+REC_PP_CONFIG = pygame.Rect(940,15,50,50)
+REC_PP_JUGAR = pygame.Rect(500,350,400,90)
+REC_PP_DIF_F = pygame.Rect(540,320,90,25)
+REC_PP_DIF_N = pygame.Rect(650,320,95,25)
+REC_PP_DIF_D = pygame.Rect(765,320,95,25)
