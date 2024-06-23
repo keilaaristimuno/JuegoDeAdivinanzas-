@@ -9,7 +9,7 @@ class Boton():
         self.color = color
         self.hover = hover
     
-    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_img_x = 0, pos_img_y = 0, pos_mouse = (0,0)):
+    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_mouse = (0,0)):
         
         if self.hover == False:
             pygame.draw.rect(superficie, self.color, self.rect, ancho, redondeado)
@@ -87,3 +87,31 @@ class BotonImg():
         else:
             #El mouse no esta sobre el boton entonces retorno el color normal
             return color_n   
+
+class BotonEntradaTxt():
+    def __init__(self, rect, color_inact, color_act, txt = "", fuente = None, color_txt = None) -> None:
+        self.rect = pygame.Rect(rect)
+        self.color_inact = color_inact
+        self.color_act = color_act
+        self.activo = False
+        self.txt = txt
+        if txt != "":
+            self.color_txt = color_txt
+            self.fuente = fuente
+            self.txt_renderizado = self.fuente.render(self.txt, True, self.color_txt)
+        else:
+            self.txt_renderizado = None
+    
+    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_txt_x = 0, pos_txt_y = 0):
+        
+        if self.activo == False:
+            pygame.draw.rect(superficie, self.color_inact, self.rect, ancho, redondeado)
+        else:
+            pygame.draw.rect(superficie, self.color_act, self.rect, ancho, redondeado)
+        if self.txt_renderizado != None: 
+            superficie.blit(self.txt_renderizado, (centrar_txt(self.rect.centerx + pos_txt_x, self.rect.centery + pos_txt_y, \
+                self.txt_renderizado)))
+            
+    def ingresar_txt():
+        pass 
+    
