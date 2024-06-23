@@ -22,7 +22,6 @@ def mostrar_principal(ventana, nivel, experiencia, monedas, gemas) -> None:
     imagen_personaje = pygame.transform.scale(imagen_personaje, (150,180))
     ventana.blit(imagen_personaje, (320,200))
 
-
 #nivel
     fuente_barras = pygame.font.SysFont("Serif", 15, True)
     fuente_num_nvl_exp = pygame.font.SysFont("Serif", 25, True)
