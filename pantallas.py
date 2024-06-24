@@ -94,6 +94,31 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
     #Boton de dificultad Difícil con hover
     btn_dif_d.dibujar_btn(ventana, 0,5,pos_mouse = pos_mouse)
     
+    if btn_dif_f.validar_click(lista_eventos) == True or juego.dificultad == "f":
+        juego.dificultad = "f"
+    if btn_dif_n.validar_click(lista_eventos) == True:
+        juego.dificultad = "n"
+    if btn_dif_d.validar_click(lista_eventos) == True:
+        juego.dificultad = "d" 
+    match juego.dificultad:
+        
+        case "f":
+            btn_dif_f.color = btn_dif_f.hover
+            btn_dif_n.color = btn_dif_n.aux_color
+            btn_dif_d.color = btn_dif_d.aux_color
+        case "n":
+            btn_dif_n.color = btn_dif_n.hover
+            btn_dif_f.color = btn_dif_f.aux_color
+            btn_dif_d.color = btn_dif_d.aux_color
+        case "d":
+            btn_dif_d.color = btn_dif_d.hover
+            btn_dif_n.color = btn_dif_n.aux_color
+            btn_dif_f.color = btn_dif_f.aux_color
+        case _:
+            btn_dif_f.color = btn_dif_f.hover
+            btn_dif_n.color = btn_dif_n.aux_color
+            btn_dif_d.color = btn_dif_d.aux_color
+    
     #Valido si hizo click en jugar
     if btn_jugar.validar_click(lista_eventos) == True:
         juego.jugando = True

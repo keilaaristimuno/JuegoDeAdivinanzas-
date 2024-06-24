@@ -7,13 +7,22 @@ class Juego():
     def __init__(self) -> None:
         self.logeado = False
         self.jugando = False
-        
-        
+        self.nombre_jugador = ""
+        self.puntaje = 0
+        self.gemas = 0
+        self.monedas = 0
+        self.tiempo_jugado = 0
+        self.record = 0
+        self.personaje = {}
+        self.pjs_desbloquedos = {}
+        self.dificultad = "f"
+
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)
         self.color = color
         self.hover = hover
+        self.aux_color = color
     
     def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_mouse = (0,0)):
         
@@ -40,6 +49,7 @@ class BotonTxt():
         self.color_txt = color_txt
         self.txt_renderizado = self.fuente.render(self.txt, True, self.color_txt)
         self.hover = hover
+        self.aux_color = color
 
     def hover_btn(self, pos_mouse, color_n, color_h):
         #Valido si el mouse esta sobre el boton
@@ -77,6 +87,7 @@ class BotonImg():
         self.imagen = pygame.image.load(self.ruta_imagen)
         self.imagen = pygame.transform.scale(self.imagen, medida_img)
         self.hover = hover
+        self.aux_color = color
     
     def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_img_x = 0, pos_img_y = 0, pos_mouse = (0,0)):
         
@@ -100,6 +111,7 @@ class BotonEntradaTxt():
         self.rect = pygame.Rect(rect)
         self.color_inact = color_inact
         self.color_act = color_act
+        self.aux_color = color_inact
         self.escribiendo = False
         self.txt = txt
         if txt != "":
