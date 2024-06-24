@@ -24,3 +24,6 @@ REC_PP_JUGAR = pygame.Rect(500,350,400,90)
 REC_PP_DIF_F = pygame.Rect(540,320,90,25)
 REC_PP_DIF_N = pygame.Rect(650,320,95,25)
 REC_PP_DIF_D = pygame.Rect(765,320,95,25)
+#Rectangulo menu de configuracion
+REC_CONFIG = pygame.Rect(0,0,500,350)
+REC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
