@@ -4,6 +4,7 @@ import herraminetas
 import funciones
 import clases
 
+
 pygame.init() 
 
 ventana = pygame.display.set_mode((1000,500))
@@ -20,6 +21,9 @@ pygame.display.set_icon(logo)
 fondo = pygame.image.load("imagenes\General\muro_menu.png")
 ventana.blit(fondo, (0,0))
 
+# #Ponemos un fondo distinto para la ventana de jugar:
+fondo_jugando = pygame.image.load("imagenes\P_Jugando\Fondo_jugando.png")
+fondo_jugando = pygame.transform.scale(fondo_jugando, (1000, 300))
 
 with open("datos_jugador.csv", "r") as archivo:
     datos = archivo.read().split("\n")
@@ -44,8 +48,10 @@ while ejecutar:
         ventana.blit(fondo, (0,0))
         pantallas.mostrar_principal(ventana, jugador, pos_mouse, lista_eventos, juego)
     else:
-        ventana.blit(fondo, (0,0))
-    
+        print(herraminetas.obtener_pos_click_izq_mouse(evento))
+        # ventana.blit(fondo, (0,0))
+        ventana.blit(fondo_jugando, (0,0))
+        pantallas.mostrar_jugando(ventana, jugador, pos_mouse)
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 

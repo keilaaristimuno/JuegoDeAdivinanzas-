@@ -45,6 +45,22 @@ btn_dif_n = clases.BotonTxt(rectangulos.REC_PP_DIF_N, colores.NARANJA_O, fuentes
 btn_dif_d = clases.BotonTxt(rectangulos.REC_PP_DIF_D, colores.ROJO_O, fuentes.FUENTE_25, "Difícil", 
                                   colores.NEGRO, colores.ROJO_C)
 
+# botones pantalla jugando
+btn_pausa = clases.BotonImg(rectangulos.REC_PJ_PAUSA, colores.NARANJA_C, "imagenes\P_Jugando\pausa.png", (25,25), colores.AMARILLO)
+btn_respuesta_1 = clases.BotonTxt(rectangulos.REC_RESP_1, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
+btn_respuesta_2 = clases.BotonTxt(rectangulos.REC_RESP_2, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
+btn_respuesta_3 = clases.BotonTxt(rectangulos.REC_RESP_3, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
+btn_respuesta_4 = clases.BotonTxt(rectangulos.REC_RESP_4, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
+# btn_bandera = clases.BotonImg(rectangulos.REC_BANDERAS,colores.BLANCO)
+
+btn_cant_monedas = clases.BotonImg(rectangulos.REC_PJ_MONEDAS, colores.NARANJA_C,"imagenes\P_Jugando\moneda.png",(25,25))
+btn_cant_tiempo = clases.BotonImg(rectangulos.REC_PJ_TIEMPO, colores.NARANJA_C,"imagenes\P_Jugando\Reloj.png",(25,25))
+
+btn_nivel_banderas = clases.BotonTxt(rectangulos.REC_NIVEL_BANDERAS, colores.BLANCO, fuentes.FUENTE_20, "Banderas: ", colores.NEGRO)
+
+
+
+
 #Botones del menu configuracion
 menu_config = clases.Boton(rectangulos.REC_CONFIG, colores.BLANCO, False)
 btn_cerrar_config = clases.BotonImg(rectangulos.REC_CERRAR_CONFIG, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 

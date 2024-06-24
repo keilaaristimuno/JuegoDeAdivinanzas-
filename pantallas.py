@@ -138,3 +138,59 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
         juego.pausado = False
         
     
+def mostrar_jugando(ventana, jugador: dict, pos_mouse) -> None:
+    # Boton de pausa con hover
+    btn_pausa.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
+
+    #Imagen vidas
+    imagen_vidas = pygame.image.load("imagenes\P_Jugando\Vida.png")
+    imagen_vidas = pygame.transform.scale(imagen_vidas, (30,30))
+
+    # Número de vidas
+    num_vidas = 5
+
+    # Posición inicial y separación entre vidas
+    posicion_inicial = (50, 5)
+    separacion = 20
+
+    # Dibujar las vidas
+    for i in range(num_vidas):
+        ventana.blit(imagen_vidas, (posicion_inicial[0] + i * separacion, posicion_inicial[1]))
+
+#Imagen del personaje
+    imagen_personaje = pygame.image.load("imagenes\P_Principal\personaje.png")
+    imagen_personaje = pygame.transform.scale(imagen_personaje, (100,180))
+    ventana.blit(imagen_personaje, (100, 85))
+
+#Fonde de pantalla para las respuestas
+    imagen_fondo = pygame.image.load("imagenes\P_Jugando\Fondo_respuestas.jpg")
+    imagen_fondo = pygame.transform.scale(imagen_fondo, (1000,320))
+    ventana.blit(imagen_fondo, (0, 265))
+
+#Rectangulo de respuestas:
+    btn_respuesta_1.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+    btn_respuesta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_respuesta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_respuesta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+
+# Fondo de la imagen que debe contestar
+    pygame.draw.rect(ventana, colores.BLANCO, (rectangulos.REC_BANDERAS),0,5)
+    # btn_bandera.dibujar_btn(ventana, 0, 5) Cuando tengamos el json
+
+# Cantidad de monedas y tiempo:
+
+    btn_cant_monedas.dibujar_btn(ventana, 0, 0, -30, 0)
+    txt_cant_monedas = fuentes.FUENTE_25.render(f"{jugador['monedas']}", True, colores.BLANCO)
+    ventana.blit(txt_cant_monedas, (centrar_txt(rectangulos.REC_PJ_MONEDAS.centerx + 23, rectangulos.REC_PJ_MONEDAS.centery, txt_cant_monedas )))
+    
+    btn_cant_tiempo.dibujar_btn(ventana, 0, 0, -30, -2)
+    txt_cant_tiempo = fuentes.FUENTE_25.render(f"{jugador['tiempo']}", True, colores.BLANCO)
+    ventana.blit(txt_cant_tiempo, (centrar_txt(rectangulos.REC_PJ_TIEMPO.centerx +23 , rectangulos.REC_PJ_TIEMPO.centery, txt_cant_tiempo )))
+
+
+# Nivel que se encuentra
+    txt_nivel_banderas = fuentes.FUENTE_25.render(f"Banderas: Nivel {jugador['nivel_exp']}",True, colores.BLANCO)
+    ventana.blit(txt_nivel_banderas, (centrar_txt(rectangulos.REC_NIVEL_BANDERAS.centerx, rectangulos.REC_NIVEL_BANDERAS.centery + 10, 
+                                             txt_nivel_banderas)))
+
+

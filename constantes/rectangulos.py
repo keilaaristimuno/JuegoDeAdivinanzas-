@@ -24,6 +24,22 @@ REC_PP_JUGAR = pygame.Rect(500,350,400,90)
 REC_PP_DIF_F = pygame.Rect(540,320,90,25)
 REC_PP_DIF_N = pygame.Rect(650,320,95,25)
 REC_PP_DIF_D = pygame.Rect(765,320,95,25)
+
+#Rectangulos pantalla jugando
+REC_PJ_PAUSA = pygame.Rect(10,5,30,30)
+REC_RESP_1 = pygame.Rect(56, 280, 390, 90)
+REC_RESP_2 = pygame.Rect(56, 390, 390, 90)
+REC_RESP_3 = pygame.Rect(555, 280, 390, 90)
+REC_RESP_4 = pygame.Rect(555, 390, 390, 90)
+
+REC_BANDERAS = pygame.Rect(306,61, 391,196)
+
+REC_PJ_MONEDAS = pygame.Rect(890, 0, 100, 30 )
+REC_PJ_TIEMPO = pygame.Rect(890, 30, 100, 30 )
+
+REC_NIVEL_BANDERAS = pygame.Rect(450,10,100,30)
+
+
 #Rectangulo menu de configuracion
 REC_CONFIG = pygame.Rect(0,0,500,350)
 REC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
