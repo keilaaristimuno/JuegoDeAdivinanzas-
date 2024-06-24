@@ -6,9 +6,11 @@ from funciones import *
 from constantes.botones import *
 
 pygame.init()
+pygame.mixer.init()
 
 def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
-    
+    fondo = pygame.image.load("imagenes\Fondos\Fondo_inicio.png")
+    ventana.blit(fondo, (0,0))
     #Creo el titulo
     titulo = "Adivina el logo"
     fuente_titulo = fuentes.FUENTE_75
@@ -35,10 +37,20 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
     #Valido si hizo click en jugar
     if btn_empezar.validar_click(lista_eventos) == True:
         juego.logeado = True
+    if btn_config.validar_click(lista_eventos) == True:
+        if juego.pausado == False:
+            juego.pausado = True
+        else:
+            juego.pausado = False
+            
+    if juego.pausado == True:
+                mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
 
 def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> None:
     
     if juego.pausado == False:
+        fondo = pygame.image.load("imagenes\Fondos\Fondo_principal.png")
+        ventana.blit(fondo, (0,0))
         #Creo los rectangulos necesarios en la pantalla
         #Boton de dificultad
         btn_dificultad.dibujar_btn(ventana,0, 5, pos_txt_y = -15)
@@ -126,22 +138,74 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
             juego.pausado = False
             
     if juego.pausado == True:
-                mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
+        mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
 
 def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     
-    menu_config.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery, menu_config.rect)
+    fondo_pausa = pygame.image.load("imagenes\Fondos\Fondo_pausa.png")
+    ventana.blit(fondo_pausa, (0,0))
+    if juego.musica == True:
+        pygame.mixer.music.unpause()
+    else:
+        pygame.mixer.music.pause()
     menu_config.dibujar_btn(ventana, 0, 3)
-    btn_cerrar_config.rect = centrar_rect(menu_config.rect.centerx + 220, menu_config.rect.centery - 145, btn_cerrar_config.rect)
+    marco_menu_config.dibujar_btn(ventana,10,3)
     btn_cerrar_config.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
+    
+    btn_mc_sonido.dibujar_btn(ventana, 0, 5)
+    btn_mc_sonido_icono.dibujar_btn(ventana, 0, 5)
+    btn_mc_musica.dibujar_btn(ventana, 0, 5)
+    btn_mc_musica_icono.dibujar_btn(ventana, 0, 5)
+
+    #Verifico si se hizo click en cerrrar el menu de configuracion
     if btn_cerrar_config.validar_click(lista_eventos) == True:
         juego.pausado = False
-        
-    
+    #Verifico si se hizo click en el boton de sonido
+    if btn_mc_sonido_icono.validar_click(lista_eventos) == True:
+        #Valido si el sonido esta encendido o apagado
+        if juego.sonidos == True:
+            #Cambio el estado de sonido a apagado
+            btn_mc_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_off.png", (25,25))
+            btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx - 60, btn_mc_sonido.rect.centery, 
+                                                    btn_mc_sonido_icono.rect)
+            btn_mc_sonido.color = colores.ROJO_C
+            btn_mc_sonido.actualizar_txt("OFF")
+            juego.sonidos = False
+        else:
+            #Cambio el estado de sonido a encendido
+            btn_mc_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_on.png", (25,25))
+            btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx + 60, btn_mc_sonido.rect.centery, 
+                                                    btn_mc_sonido_icono.rect)
+            btn_mc_sonido.color = colores.VERDE_C
+            btn_mc_sonido.actualizar_txt("ON")
+            juego.sonidos = True
+    #Verifico si se hizo click en el boton de musica       
+    if btn_mc_musica_icono.validar_click(lista_eventos) == True:
+        #Valido si la musica esta encendida o apagada
+        if juego.musica == True:
+            #Cambio el estado de musica a apagada
+            btn_mc_musica_icono.actualizar_img_btn("imagenes\General\musica_off.png", (25,25))
+            btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx - 60, btn_mc_musica.rect.centery, 
+                                                    btn_mc_musica_icono.rect)
+            btn_mc_musica.color = colores.ROJO_C
+            btn_mc_musica.actualizar_txt("OFF")
+            juego.musica = False
+        else:
+            #Cambio el estado de sonido a encendida
+            btn_mc_musica_icono.actualizar_img_btn("imagenes\General\musica_on.png", (25,25))
+            btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx + 60, btn_mc_musica.rect.centery, 
+                                                    btn_mc_musica_icono.rect)
+            btn_mc_musica.color = colores.VERDE_C
+            btn_mc_musica.actualizar_txt("ON")
+            juego.musica = True
+ 
 def mostrar_jugando(ventana, jugador: dict, pos_mouse) -> None:
+    
+    fondo_jugando = pygame.image.load("imagenes\Fondos\Fondo_jugando.png")
+    fondo_jugando = pygame.transform.scale(fondo_jugando, (1000, 300))
+    ventana.blit(fondo_jugando, (0,0))
     # Boton de pausa con hover
     btn_pausa.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
-
     #Imagen vidas
     imagen_vidas = pygame.image.load("imagenes\P_Jugando\Vida.png")
     imagen_vidas = pygame.transform.scale(imagen_vidas, (30,30))
@@ -163,7 +227,7 @@ def mostrar_jugando(ventana, jugador: dict, pos_mouse) -> None:
     ventana.blit(imagen_personaje, (100, 85))
 
 #Fonde de pantalla para las respuestas
-    imagen_fondo = pygame.image.load("imagenes\P_Jugando\Fondo_respuestas.jpg")
+    imagen_fondo = pygame.image.load("imagenes\Fondos\Fondo_respuestas.jpg")
     imagen_fondo = pygame.transform.scale(imagen_fondo, (1000,320))
     ventana.blit(imagen_fondo, (0, 265))
 

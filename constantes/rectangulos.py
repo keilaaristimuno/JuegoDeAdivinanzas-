@@ -41,5 +41,10 @@ REC_NIVEL_BANDERAS = pygame.Rect(450,10,100,30)
 
 
 #Rectangulo menu de configuracion
-REC_CONFIG = pygame.Rect(0,0,500,350)
-REC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
+REC_MC_CONFIG = pygame.Rect(250,75,500,350)
+REC_MC_MARCO_CONFIG = pygame.Rect(250,75,500,350)
+REC_MC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
+REC_MC_SONIDO_ICONO = pygame.Rect(0,0,50,50)
+REC_MC_SONIDO = pygame.Rect(0,0,100,50)
+REC_MC_MUSICA_ICONO = pygame.Rect(0,0,50,50)
+REC_MC_MUSICA = pygame.Rect(0,0,100,50)

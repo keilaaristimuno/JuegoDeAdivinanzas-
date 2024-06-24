@@ -19,7 +19,7 @@ btn_config = clases.BotonImg(rectangulos.REC_PP_CONFIG, colores.OCRE,"imagenes\G
                                  colores.AMARILLO)
 
 #Botones de la pantalla principal
-btn_dificultad = clases.BotonTxt(rectangulos.REC_PP_DIFICULTAD, colores.VERDE_O, fuentes.FUENTE_30, "Dificultad", colores.NEGRO)
+btn_dificultad = clases.BotonTxt(rectangulos.REC_PP_DIFICULTAD, colores.VERDE_O, fuentes.FUENTE_25, "Dificultad", colores.NEGRO)
 btn_cat_banderas = clases.BotonImg(rectangulos.REC_PP_CAT_BANDERAS, colores.VERDE,"imagenes\P_Principal\logo_bandera.png",(35,35))
 btn_cat_comidas = clases.BotonImg(rectangulos.REC_PP_CAT_COMIDAS, colores.GRIS,"imagenes\P_Principal\logo_comida.png",(35,35))
 btn_cat_clubes = clases.BotonImg(rectangulos.REC_PP_CAT_CLUBES, colores.GRIS,"imagenes\P_Principal\logo_clubes.png",(35,35))
@@ -34,7 +34,7 @@ btn_monedas = clases.BotonTxt(rectangulos.REC_PP_BARRA_MONEDAS, colores.BTN_MONE
                                   colores.BLANCO)
 btn_gemas = clases.BotonTxt(rectangulos.REC_PP_BARRA_GEMAS, colores.VIOLETA_O, fuentes.FUENTE_20, "Tienda", 
                                   colores.AMARILLO, colores.VIOLETA)
-btn_como_jugar = clases.BotonTxt(rectangulos.REC_PP_COMO_JUGAR, colores.OCRE, fuentes.FUENTE_35, "Como jugar", 
+btn_como_jugar = clases.BotonTxt(rectangulos.REC_PP_COMO_JUGAR, colores.OCRE, fuentes.FUENTE_30, "Como jugar", 
                                   colores.BLANCO, colores.AMARILLO) 
 btn_config = clases.BotonImg(rectangulos.REC_PP_CONFIG, colores.OCRE,"imagenes\General\configuracion.png",(40,40), 
                                  colores.AMARILLO)
@@ -62,6 +62,18 @@ btn_nivel_banderas = clases.BotonTxt(rectangulos.REC_NIVEL_BANDERAS, colores.BLA
 
 
 #Botones del menu configuracion
-menu_config = clases.Boton(rectangulos.REC_CONFIG, colores.BLANCO, False)
-btn_cerrar_config = clases.BotonImg(rectangulos.REC_CERRAR_CONFIG, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+menu_config = clases.Boton(rectangulos.REC_MC_CONFIG, colores.AMARILLO, False)
+marco_menu_config = clases.Boton(rectangulos.REC_MC_MARCO_CONFIG, colores.OCRE, False)
+btn_cerrar_config = clases.BotonImg(rectangulos.REC_MC_CERRAR_CONFIG, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
                                     colores.ROJO_C)
+btn_cerrar_config.rect = centrar_rect(menu_config.rect.centerx + 215, menu_config.rect.centery - 140, btn_cerrar_config.rect)
+
+btn_mc_sonido_icono = clases.BotonImg(rectangulos.REC_MC_SONIDO_ICONO, colores.OCRE, "imagenes\General\sonidos_on.png",(25,25))
+btn_mc_sonido = clases.BotonTxt(rectangulos.REC_MC_SONIDO, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_mc_sonido.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery - 100, btn_mc_sonido.rect)
+btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx+60, btn_mc_sonido.rect.centery, btn_mc_sonido_icono.rect)
+
+btn_mc_musica_icono = clases.BotonImg(rectangulos.REC_MC_MUSICA_ICONO, colores.OCRE, "imagenes\General\musica_on.png",(25,25))
+btn_mc_musica = clases.BotonTxt(rectangulos.REC_MC_MUSICA, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_mc_musica.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery, btn_mc_musica.rect)
+btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx+60, btn_mc_musica.rect.centery, btn_mc_musica_icono.rect)

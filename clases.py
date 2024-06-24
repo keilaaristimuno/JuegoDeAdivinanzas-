@@ -2,6 +2,7 @@ import pygame
 from funciones import *
 
 pygame.init()
+pygame.mixer.init()
 
 class Juego():
     def __init__(self) -> None:
@@ -14,6 +15,9 @@ class Juego():
         self.monedas = 0
         self.categoria = "b"
         self.dificultad = "f"
+        self.sonidos = True
+        self.musica = True
+        self.cancion = None
 
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
@@ -84,6 +88,10 @@ class BotonTxt():
                         return True
             return False
     
+    def actualizar_txt(self, txt):
+        self.txt = txt
+        self.txt_renderizado = self.fuente.render(self.txt, True, self.color_txt)
+    
 class BotonImg():
     def __init__(self, rect, color, ruta_imagen, medida_img, hover = False) -> None:
         self.rect = pygame.Rect(rect)
@@ -119,6 +127,10 @@ class BotonImg():
                     if self.rect.collidepoint(evento.pos):
                         return True
             return False 
+        
+    def actualizar_img_btn(self, ruta_imagen, medida_img):
+        self.imagen = pygame.image.load(ruta_imagen)
+        self.imagen = pygame.transform.scale(self.imagen, medida_img)
 
 class BotonEntradaTxt():
     def __init__(self, rect, color_inact, color_act, txt = "", fuente = None, color_txt = None) -> None:
