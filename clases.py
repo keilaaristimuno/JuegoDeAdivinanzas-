@@ -3,13 +3,28 @@ from funciones import *
 
 pygame.init()
 
+class Juego():
+    def __init__(self) -> None:
+        self.logeado = False
+        self.jugando = False
+        self.nombre_jugador = ""
+        self.puntaje = 0
+        self.gemas = 0
+        self.monedas = 0
+        self.tiempo_jugado = 0
+        self.record = 0
+        self.personaje = {}
+        self.pjs_desbloquedos = {}
+        self.dificultad = "f"
+
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)
         self.color = color
         self.hover = hover
+        self.aux_color = color
     
-    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_img_x = 0, pos_img_y = 0, pos_mouse = (0,0)):
+    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_mouse = (0,0)):
         
         if self.hover == False:
             pygame.draw.rect(superficie, self.color, self.rect, ancho, redondeado)
@@ -34,6 +49,7 @@ class BotonTxt():
         self.color_txt = color_txt
         self.txt_renderizado = self.fuente.render(self.txt, True, self.color_txt)
         self.hover = hover
+        self.aux_color = color
 
     def hover_btn(self, pos_mouse, color_n, color_h):
         #Valido si el mouse esta sobre el boton
@@ -53,14 +69,15 @@ class BotonTxt():
         superficie.blit(self.txt_renderizado, (centrar_txt(self.rect.centerx + pos_txt_x, self.rect.centery + pos_txt_y, \
             self.txt_renderizado)))
         
-    def validar_click(self, evento):
+    def validar_click(self, lista_eventos):
         #Valido si se hizo click en el boton
-        if evento.type == pygame.MOUSEBUTTONDOWN:
-            if evento.button == 1:  # Botón izquierdo del ratón
-                #Valido si el click fue dentro del boton
-                if self.rect.collidepoint(evento.pos):
-                    return True
-        return False
+        for evento in lista_eventos:
+            if evento.type == pygame.MOUSEBUTTONDOWN:
+                if evento.button == 1:  # Botón izquierdo del ratón
+                    #Valido si el click fue dentro del boton
+                    if self.rect.collidepoint(evento.pos):
+                        return True
+            return False
     
 class BotonImg():
     def __init__(self, rect, color, ruta_imagen, medida_img, hover = False) -> None:
@@ -70,6 +87,7 @@ class BotonImg():
         self.imagen = pygame.image.load(self.ruta_imagen)
         self.imagen = pygame.transform.scale(self.imagen, medida_img)
         self.hover = hover
+        self.aux_color = color
     
     def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_img_x = 0, pos_img_y = 0, pos_mouse = (0,0)):
         
@@ -87,3 +105,64 @@ class BotonImg():
         else:
             #El mouse no esta sobre el boton entonces retorno el color normal
             return color_n   
+
+class BotonEntradaTxt():
+    def __init__(self, rect, color_inact, color_act, txt = "", fuente = None, color_txt = None) -> None:
+        self.rect = pygame.Rect(rect)
+        self.color_inact = color_inact
+        self.color_act = color_act
+        self.aux_color = color_inact
+        self.escribiendo = False
+        self.txt = txt
+        if txt != "":
+            self.color_txt = color_txt
+            self.fuente = fuente
+            self.txt_renderizado = self.fuente.render(self.txt, True, self.color_txt)
+        else:
+            self.txt_renderizado = None
+        
+    def dibujar_btn(self, superficie, ancho = 0, redondeado = 0, pos_txt_x = 0, pos_txt_y = 0):
+        
+        if self.escribiendo == False:
+            pygame.draw.rect(superficie, self.color_inact, self.rect, ancho, redondeado)
+        else:
+            pygame.draw.rect(superficie, self.color_act, self.rect, ancho, redondeado)
+        if self.txt_renderizado != None: 
+            superficie.blit(self.txt_renderizado, (centrar_txt(self.rect.centerx + pos_txt_x, self.rect.centery + pos_txt_y, \
+                self.txt_renderizado)))
+            
+    def validar_escritura(self, pos_mouse, lista_eventos):
+        
+        if validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == True:
+            #Cambio el estado escribiendo del objeto segun corresponda
+            self.escribiendo = True
+        elif validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == False:
+            self.escribiendo = False
+# class Entrada():
+    
+#     def __init__(self, fuente, pos_x = 0, pos_y= 0) -> None:
+#         self.caracteres =  [""]
+#         self.fuente = fuente
+#         self.distancia = 20
+#         self.pos_x = pos_x
+#         self.pos_y = pos_y
+        
+#     def escribir_ingreso(self, evento):
+        
+#         if evento.type == pygame.KEYDOWN:
+#             if evento.key == pygame.K_RETURN:
+#                 self.caracteres.append('\R')
+#             elif evento.key == pygame.K_BACKSPACE:
+#                 if len(self.caracteres) > 1:
+#                     self.caracteres.pop()
+#             else:
+#                 self.caracteres.append()
+#     def leer_tecla(self, evento):
+        
+#         if evento.type == pygame.KEYDOWN:
+#             if evento.key == pygame.K_RETURN:
+#                 return "\R"
+#             elif evento.key == pygame.K_BACKSPACE:
+#                 return "\B"
+#             else
+    

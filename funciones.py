@@ -2,21 +2,28 @@ import pygame
 
 pygame.init()
 
-def centrar_txt(centerx, centery, txt):
+def centrar_rect(centerx, centery, rect):
     """ 
-    Centra una etiqueta.
+    Centra un rectangulo en base a otro.
     
     Args: 
         centerx: Valor de la coordenada x del centro.
         centry: Valor de la coordenada y del centro.
+        rect: Rectangula a centrar.
         
     Returns:
         pos_et: Coordenadas del texto centradas.
     
     """
+    rect.centerx = centerx
+    rect.centery = centery
+    
+    return(rect)
+
+def centrar_txt(centerx, centery, txt):
+    
     pos_txt = txt.get_rect()
-    pos_txt.centerx = centerx
-    pos_txt.centery = centery
+    pos_txt = centrar_rect(centerx, centery, pos_txt)
     
     return(pos_txt)
    
@@ -71,4 +78,13 @@ def pintar_btn(rect_btn, pos_mouse, color_n, color_h):
     else:
         #El mouse no esta sobre el boton entonces retorno el color normal
         return color_n
+ 
+def validar_click_en_boton(lista_eventos, pos_mouse, boton):
     
+    for evento in lista_eventos:
+        #Valido que el evento sea un click y este dentro del cuadro de texto
+        if evento.type == pygame.MOUSEBUTTONDOWN and boton.collidepoint(pos_mouse) and evento.button == 1:   
+            return True
+        elif evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
+            return False
+
