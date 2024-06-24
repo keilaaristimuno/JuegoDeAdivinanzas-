@@ -46,7 +46,6 @@ while ejecutar:
     else:
         ventana.blit(fondo, (0,0))
     
-    
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 
