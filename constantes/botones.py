@@ -19,7 +19,7 @@ btn_config = clases.BotonImg(rectangulos.REC_PP_CONFIG, colores.OCRE,"imagenes\G
                                  colores.AMARILLO)
 
 #Botones de la pantalla principal
-btn_dificultad = clases.BotonTxt(rectangulos.REC_PP_DIFICULTAD, colores.VERDE_O, fuentes.FUENTE_35, "Dificultad", colores.NEGRO)
+btn_dificultad = clases.BotonTxt(rectangulos.REC_PP_DIFICULTAD, colores.VERDE_O, fuentes.FUENTE_30, "Dificultad", colores.NEGRO)
 btn_cat_banderas = clases.BotonImg(rectangulos.REC_PP_CAT_BANDERAS, colores.VERDE,"imagenes\P_Principal\logo_bandera.png",(35,35))
 btn_cat_comidas = clases.BotonImg(rectangulos.REC_PP_CAT_COMIDAS, colores.GRIS,"imagenes\P_Principal\logo_comida.png",(35,35))
 btn_cat_clubes = clases.BotonImg(rectangulos.REC_PP_CAT_CLUBES, colores.GRIS,"imagenes\P_Principal\logo_clubes.png",(35,35))
@@ -59,3 +59,9 @@ btn_cant_tiempo = clases.BotonImg(rectangulos.REC_PJ_TIEMPO, colores.NARANJA_C,"
 btn_nivel_banderas = clases.BotonTxt(rectangulos.REC_NIVEL_BANDERAS, colores.BLANCO, fuentes.FUENTE_20, "Banderas: ", colores.NEGRO)
 
 
+
+
+#Botones del menu configuracion
+menu_config = clases.Boton(rectangulos.REC_CONFIG, colores.BLANCO, False)
+btn_cerrar_config = clases.BotonImg(rectangulos.REC_CERRAR_CONFIG, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+                                    colores.ROJO_C)

@@ -39,3 +39,7 @@ REC_PJ_TIEMPO = pygame.Rect(890, 30, 100, 30 )
 
 REC_NIVEL_BANDERAS = pygame.Rect(450,10,100,30)
 
+
+#Rectangulo menu de configuracion
+REC_CONFIG = pygame.Rect(0,0,500,350)
+REC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
