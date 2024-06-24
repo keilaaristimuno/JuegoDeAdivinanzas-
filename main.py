@@ -40,11 +40,9 @@ while ejecutar:
 
     if juego.logeado == False:
         pantallas.mostrar_inicio(ventana,pos_mouse, lista_eventos, juego)
-        print("inicio")
     elif juego.jugando == False:
         ventana.blit(fondo, (0,0))
         pantallas.mostrar_principal(ventana, jugador, pos_mouse, lista_eventos, juego)
-        print("papl")
     else:
         ventana.blit(fondo, (0,0))
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update

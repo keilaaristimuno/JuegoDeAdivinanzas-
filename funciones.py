@@ -2,7 +2,6 @@ import pygame
 
 pygame.init()
 
-
 def centrar_rect(centerx, centery, rect):
     """ 
     Centra un rectangulo en base a otro.
@@ -88,4 +87,4 @@ def validar_click_en_boton(lista_eventos, pos_mouse, boton):
             return True
         elif evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
             return False
-        
+
