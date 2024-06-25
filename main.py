@@ -39,7 +39,7 @@ while ejecutar:
     elif juego.jugando == False:
         pantallas.mostrar_principal(ventana, jugador, pos_mouse, lista_eventos, juego)
     else:
-        pantallas.mostrar_jugando(ventana, jugador, pos_mouse)
+        pantallas.mostrar_jugando(ventana, jugador, pos_mouse, lista_eventos, juego)
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 
