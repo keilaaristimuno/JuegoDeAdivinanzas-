@@ -41,20 +41,16 @@ REC_NIVEL_BANDERAS = pygame.Rect(450,10,100,30)
 
 
 #Rectangulo menu de configuracion
-REC_MC_CONFIG = pygame.Rect(250,75,500,350)
-REC_MC_MARCO_CONFIG = pygame.Rect(250,75,500,350)
-REC_MC_CERRAR_CONFIG = pygame.Rect(0,0,40,40)
-REC_MC_SONIDO_ICONO = pygame.Rect(0,0,50,50)
-REC_MC_SONIDO = pygame.Rect(0,0,175,50)
-REC_MC_MUSICA_ICONO = pygame.Rect(0,0,50,50)
-REC_MC_MUSICA = pygame.Rect(0,0,175,50)
+REC_MC_CONFIG = pygame.Rect(250,75,500,250)
+REC_MC_MARCO_CONFIG = pygame.Rect(250,75,500,250)
+REC_MC_CERRAR = pygame.Rect(0,0,40,40)
+REC_SONIDO_ICONO = pygame.Rect(0,0,50,50)
+REC_SONIDO = pygame.Rect(0,0,175,50)
+REC_MUSICA_ICONO = pygame.Rect(0,0,50,50)
+REC_MUSICA = pygame.Rect(0,0,175,50)
 
 #Rectangulo menu de pausa
 REC_MP_PAUSA = pygame.Rect(250,75,500,350)
 REC_MP_MARCO_PAUSA = pygame.Rect(250,75,500,350)
-REC_MP_CERRAR_PAUSA = pygame.Rect(0,0,40,40)
-REC_MP_SONIDO_ICONO = pygame.Rect(0,0,50,50)
-REC_MP_SONIDO = pygame.Rect(0,0,175,50)
-REC_MP_MUSICA_ICONO = pygame.Rect(0,0,50,50)
-REC_MP_MUSICA = pygame.Rect(0,0,175,50)
+REC_MP_CERRAR = pygame.Rect(0,0,40,40)
 REC_MP_MENU_PPAL = pygame.Rect(0,0,175,50)

@@ -64,37 +64,37 @@ btn_nivel_banderas = clases.BotonTxt(rectangulos.REC_NIVEL_BANDERAS, colores.BLA
 #Botones del menu configuracion
 menu_config = clases.Boton(rectangulos.REC_MC_CONFIG, colores.AMARILLO, False)
 marco_menu_config = clases.Boton(rectangulos.REC_MC_MARCO_CONFIG, colores.OCRE, False)
-btn_cerrar_config = clases.BotonImg(rectangulos.REC_MC_CERRAR_CONFIG, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+btn_cerrar_config = clases.BotonImg(rectangulos.REC_MC_CERRAR, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
                                     colores.ROJO_C)
-btn_cerrar_config.rect = centrar_rect(menu_config.rect.centerx + 215, menu_config.rect.centery - 140, btn_cerrar_config.rect)
+btn_cerrar_config.rect = centrar_rect(menu_config.rect.centerx + 215, menu_config.rect.centery - 90, btn_cerrar_config.rect)
 
-btn_mc_sonido_icono = clases.BotonImg(rectangulos.REC_MC_SONIDO_ICONO, colores.OCRE, "imagenes\General\sonidos_on.png",(25,25))
-btn_mc_sonido = clases.BotonTxt(rectangulos.REC_MC_SONIDO, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
-btn_mc_sonido.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery - 50, btn_mc_sonido.rect)
-btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx+70, btn_mc_sonido.rect.centery, btn_mc_sonido_icono.rect)
+btn_sonido_icono = clases.BotonImg(rectangulos.REC_SONIDO_ICONO, colores.OCRE, "imagenes\General\sonidos_on.png",(25,25))
+btn_sonido = clases.BotonTxt(rectangulos.REC_SONIDO, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_sonido.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery - 50, btn_sonido.rect)
+btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx+70, btn_sonido.rect.centery, btn_sonido_icono.rect)
 
-btn_mc_musica_icono = clases.BotonImg(rectangulos.REC_MC_MUSICA_ICONO, colores.OCRE, "imagenes\General\musica_on.png",(25,25))
-btn_mc_musica = clases.BotonTxt(rectangulos.REC_MC_MUSICA, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
-btn_mc_musica.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery + 50, btn_mc_musica.rect)
-btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx + 70, btn_mc_musica.rect.centery, btn_mc_musica_icono.rect)
+btn_musica_icono = clases.BotonImg(rectangulos.REC_MUSICA_ICONO, colores.OCRE, "imagenes\General\musica_on.png",(25,25))
+btn_musica = clases.BotonTxt(rectangulos.REC_MUSICA, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_musica.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery + 50, btn_musica.rect)
+btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.rect.centery, btn_musica_icono.rect)
 
 #Botones del menu de pausa
 #Botones del menu configuracion
 menu_pausa = clases.Boton(rectangulos.REC_MP_PAUSA, colores.AMARILLO, False)
 marco_menu_pausa = clases.Boton(rectangulos.REC_MP_MARCO_PAUSA, colores.OCRE, False)
-btn_cerrar_pausa = clases.BotonImg(rectangulos.REC_MP_CERRAR_PAUSA, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+btn_cerrar_pausa = clases.BotonImg(rectangulos.REC_MP_CERRAR, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
                                     colores.ROJO_C)
 btn_cerrar_pausa.rect = centrar_rect(menu_pausa.rect.centerx + 215, menu_pausa.rect.centery - 140, btn_cerrar_pausa.rect)
 
-btn_mp_sonido_icono = clases.BotonImg(rectangulos.REC_MP_SONIDO_ICONO, colores.OCRE, "imagenes\General\sonidos_on.png",(25,25))
-btn_mp_sonido = clases.BotonTxt(rectangulos.REC_MP_SONIDO, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
-btn_mp_sonido.rect = centrar_rect(menu_pausa.rect.centerx, menu_pausa.rect.centery - 100, btn_mp_sonido.rect)
-btn_mp_sonido_icono.rect = centrar_rect(btn_mp_sonido.rect.centerx+70, btn_mp_sonido.rect.centery, btn_mp_sonido_icono.rect)
+btn_sonido_icono = clases.BotonImg(rectangulos.REC_SONIDO_ICONO, colores.OCRE, "imagenes\General\sonidos_on.png",(25,25))
+btn_sonido = clases.BotonTxt(rectangulos.REC_SONIDO, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_sonido.rect = centrar_rect(menu_pausa.rect.centerx, menu_pausa.rect.centery - 100, btn_sonido.rect)
+btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx+70, btn_sonido.rect.centery, btn_sonido_icono.rect)
 
-btn_mp_musica_icono = clases.BotonImg(rectangulos.REC_MP_MUSICA_ICONO, colores.OCRE, "imagenes\General\musica_on.png",(25,25))
-btn_mp_musica = clases.BotonTxt(rectangulos.REC_MP_MUSICA, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
-btn_mp_musica.rect = centrar_rect(menu_pausa.rect.centerx, menu_pausa.rect.centery, btn_mp_musica.rect)
-btn_mp_musica_icono.rect = centrar_rect(btn_mp_musica.rect.centerx + 70, btn_mp_musica.rect.centery, btn_mp_musica_icono.rect)
+btn_musica_icono = clases.BotonImg(rectangulos.REC_MUSICA_ICONO, colores.OCRE, "imagenes\General\musica_on.png",(25,25))
+btn_musica = clases.BotonTxt(rectangulos.REC_MUSICA, colores.VERDE_C,fuentes.FUENTE_25, "ON", colores.NEGRO)
+btn_musica.rect = centrar_rect(menu_pausa.rect.centerx, menu_pausa.rect.centery, btn_musica.rect)
+btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.rect.centery, btn_musica_icono.rect)
 
 btn_mp_menu_ppal = clases.BotonTxt(rectangulos.REC_MP_MENU_PPAL, colores.AZUL_C,fuentes.FUENTE_25, "Menu principal",
                                    colores.NEGRO, colores.CELESTE)

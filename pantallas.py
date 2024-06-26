@@ -152,51 +152,51 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     marco_menu_config.dibujar_btn(ventana,10,3)
     btn_cerrar_config.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
     
-    btn_mc_sonido.dibujar_btn(ventana, 0, 5)
-    btn_mc_sonido_icono.dibujar_btn(ventana, 0, 5)
-    btn_mc_musica.dibujar_btn(ventana, 0, 5)
-    btn_mc_musica_icono.dibujar_btn(ventana, 0, 5)
+    btn_sonido.dibujar_btn(ventana, 0, 5)
+    btn_sonido_icono.dibujar_btn(ventana, 0, 5)
+    btn_musica.dibujar_btn(ventana, 0, 5)
+    btn_musica_icono.dibujar_btn(ventana, 0, 5)
 
     #Verifico si se hizo click en cerrrar el menu de configuracion
     if btn_cerrar_config.validar_click(lista_eventos) == True:
         juego.pausado = False
     #Verifico si se hizo click en el boton de sonido
-    if btn_mc_sonido_icono.validar_click(lista_eventos) == True:
+    if btn_sonido_icono.validar_click(lista_eventos) == True:
         #Valido si el sonido esta encendido o apagado
         if juego.sonidos == True:
             #Cambio el estado de sonido a apagado
-            btn_mc_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_off.png", (25,25))
-            btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx - 70, btn_mc_sonido.rect.centery, 
-                                                    btn_mc_sonido_icono.rect)
-            btn_mc_sonido.color = colores.ROJO_C
-            btn_mc_sonido.actualizar_txt("OFF")
+            btn_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_off.png", (25,25))
+            btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx - 70, btn_sonido.rect.centery, 
+                                                    btn_sonido_icono.rect)
+            btn_sonido.color = colores.ROJO_C
+            btn_sonido.actualizar_txt("OFF")
             juego.sonidos = False
         else:
             #Cambio el estado de sonido a encendido
-            btn_mc_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_on.png", (25,25))
-            btn_mc_sonido_icono.rect = centrar_rect(btn_mc_sonido.rect.centerx + 70, btn_mc_sonido.rect.centery, 
-                                                    btn_mc_sonido_icono.rect)
-            btn_mc_sonido.color = colores.VERDE_C
-            btn_mc_sonido.actualizar_txt("ON")
+            btn_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_on.png", (25,25))
+            btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx + 70, btn_sonido.rect.centery, 
+                                                    btn_sonido_icono.rect)
+            btn_sonido.color = colores.VERDE_C
+            btn_sonido.actualizar_txt("ON")
             juego.sonidos = True
     #Verifico si se hizo click en el boton de musica       
-    if btn_mc_musica_icono.validar_click(lista_eventos) == True:
+    if btn_musica_icono.validar_click(lista_eventos) == True:
         #Valido si la musica esta encendida o apagada
         if juego.musica == True:
             #Cambio el estado de musica a apagada
-            btn_mc_musica_icono.actualizar_img_btn("imagenes\General\musica_off.png", (25,25))
-            btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx - 70, btn_mc_musica.rect.centery, 
-                                                    btn_mc_musica_icono.rect)
-            btn_mc_musica.color = colores.ROJO_C
-            btn_mc_musica.actualizar_txt("OFF")
+            btn_musica_icono.actualizar_img_btn("imagenes\General\musica_off.png", (25,25))
+            btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx - 70, btn_musica.rect.centery, 
+                                                    btn_musica_icono.rect)
+            btn_musica.color = colores.ROJO_C
+            btn_musica.actualizar_txt("OFF")
             juego.musica = False
         else:
             #Cambio el estado de musica a encendida
-            btn_mc_musica_icono.actualizar_img_btn("imagenes\General\musica_on.png", (25,25))
-            btn_mc_musica_icono.rect = centrar_rect(btn_mc_musica.rect.centerx + 70, btn_mc_musica.rect.centery, 
-                                                    btn_mc_musica_icono.rect)
-            btn_mc_musica.color = colores.VERDE_C
-            btn_mc_musica.actualizar_txt("ON")
+            btn_musica_icono.actualizar_img_btn("imagenes\General\musica_on.png", (25,25))
+            btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.rect.centery, 
+                                                    btn_musica_icono.rect)
+            btn_musica.color = colores.VERDE_C
+            btn_musica.actualizar_txt("ON")
             juego.musica = True
 
 def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
@@ -211,10 +211,10 @@ def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
     marco_menu_pausa.dibujar_btn(ventana,10,3)
     btn_cerrar_pausa.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
     
-    btn_mp_sonido.dibujar_btn(ventana, 0, 5)
-    btn_mp_sonido_icono.dibujar_btn(ventana, 0, 5)
-    btn_mp_musica.dibujar_btn(ventana, 0, 5)
-    btn_mp_musica_icono.dibujar_btn(ventana, 0, 5)
+    btn_sonido.dibujar_btn(ventana, 0, 5)
+    btn_sonido_icono.dibujar_btn(ventana, 0, 5)
+    btn_musica.dibujar_btn(ventana, 0, 5)
+    btn_musica_icono.dibujar_btn(ventana, 0, 5)
     btn_mp_menu_ppal.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
 
     #Verifico si se hizo click en cerrrar el menu de pausa
@@ -224,42 +224,42 @@ def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
         juego.pausado = False
         juego.jugando = False
     #Verifico si se hizo click en el boton de sonido
-    if btn_mp_sonido_icono.validar_click(lista_eventos) == True:
+    if btn_sonido_icono.validar_click(lista_eventos) == True:
         #Valido si el sonido esta encendido o apagado
         if juego.sonidos == True:
             #Cambio el estado de sonido a apagado
-            btn_mp_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_off.png", (25,25))
-            btn_mp_sonido_icono.rect = centrar_rect(btn_mp_sonido.rect.centerx - 70, btn_mp_sonido.rect.centery, 
-                                                    btn_mp_sonido_icono.rect)
-            btn_mp_sonido.color = colores.ROJO_C
-            btn_mp_sonido.actualizar_txt("OFF")
+            btn_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_off.png", (25,25))
+            btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx - 70, btn_sonido.rect.centery, 
+                                                    btn_sonido_icono.rect)
+            btn_sonido.color = colores.ROJO_C
+            btn_sonido.actualizar_txt("OFF")
             juego.sonidos = False
         else:
             #Cambio el estado de sonido a encendido
-            btn_mp_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_on.png", (25,25))
-            btn_mp_sonido_icono.rect = centrar_rect(btn_mp_sonido.rect.centerx + 70, btn_mp_sonido.rect.centery, 
-                                                    btn_mp_sonido_icono.rect)
-            btn_mp_sonido.color = colores.VERDE_C
-            btn_mp_sonido.actualizar_txt("ON")
+            btn_sonido_icono.actualizar_img_btn("imagenes\General\sonidos_on.png", (25,25))
+            btn_sonido_icono.rect = centrar_rect(btn_sonido.rect.centerx + 70, btn_sonido.rect.centery, 
+                                                    btn_sonido_icono.rect)
+            btn_sonido.color = colores.VERDE_C
+            btn_sonido.actualizar_txt("ON")
             juego.sonidos = True
     #Verifico si se hizo click en el boton de musica       
-    if btn_mp_musica_icono.validar_click(lista_eventos) == True:
+    if btn_musica_icono.validar_click(lista_eventos) == True:
         #Valido si la musica esta encendida o apagada
         if juego.musica == True:
             #Cambio el estado de musica a apagada
-            btn_mp_musica_icono.actualizar_img_btn("imagenes\General\musica_off.png", (25,25))
-            btn_mp_musica_icono.rect = centrar_rect(btn_mp_musica.rect.centerx - 70, btn_mp_musica.rect.centery, 
-                                                    btn_mp_musica_icono.rect)
-            btn_mp_musica.color = colores.ROJO_C
-            btn_mp_musica.actualizar_txt("OFF")
+            btn_musica_icono.actualizar_img_btn("imagenes\General\musica_off.png", (25,25))
+            btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx - 70, btn_musica.rect.centery, 
+                                                    btn_musica_icono.rect)
+            btn_musica.color = colores.ROJO_C
+            btn_musica.actualizar_txt("OFF")
             juego.musica = False
         else:
             #Cambio el estado de musica a encendida
-            btn_mp_musica_icono.actualizar_img_btn("imagenes\General\musica_on.png", (25,25))
-            btn_mp_musica_icono.rect = centrar_rect(btn_mp_musica.rect.centerx + 70, btn_mp_musica.rect.centery, 
-                                                    btn_mp_musica_icono.rect)
-            btn_mp_musica.color = colores.VERDE_C
-            btn_mp_musica.actualizar_txt("ON")
+            btn_musica_icono.actualizar_img_btn("imagenes\General\musica_on.png", (25,25))
+            btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.rect.centery, 
+                                                    btn_musica_icono.rect)
+            btn_musica.color = colores.VERDE_C
+            btn_musica.actualizar_txt("ON")
             juego.musica = True
             
 def mostrar_jugando(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> None:
