@@ -128,9 +128,12 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
                 btn_dif_n.color = colores.OCRE
                 btn_dif_d.color = colores.ROJO_C
         
-    #Valido si hizo click en jugar
-    if btn_jugar.validar_click(lista_eventos) == True:
-        juego.jugando = True
+        btn_jugar.color = colores.GRIS
+        btn_jugar.hover = colores.GRIS_C
+        if btn_jugar.color != colores.GRIS:
+            #Valido si hizo click en jugar
+            if btn_jugar.validar_click(lista_eventos) == True:
+                juego.jugando = True
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True
