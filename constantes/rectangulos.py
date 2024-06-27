@@ -54,3 +54,10 @@ REC_MP_PAUSA = pygame.Rect(250,75,500,350)
 REC_MP_MARCO_PAUSA = pygame.Rect(250,75,500,350)
 REC_MP_CERRAR = pygame.Rect(0,0,40,40)
 REC_MP_MENU_PPAL = pygame.Rect(0,0,175,50)
+
+#Rectangulos opcion como jugar
+REC_C_JUGAR = pygame.Rect(250,75,500,400)
+REC_C_JUGAR_MARCO = pygame.Rect(250,75,500,400)
+REC_C_JUGAR_CERRAR = pygame.Rect(0,0,40,40)
+REC_C_JUGAR_TITULO = pygame.Rect(480,110,0,0)
+REC_C_JUGAR_TEXTO = pygame.Rect(480,140,0,0)

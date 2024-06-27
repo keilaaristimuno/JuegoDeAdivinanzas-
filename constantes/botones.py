@@ -99,3 +99,15 @@ btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.re
 btn_mp_menu_ppal = clases.BotonTxt(rectangulos.REC_MP_MENU_PPAL, colores.AZUL_C,fuentes.FUENTE_25, "Menu principal",
                                    colores.NEGRO, colores.CELESTE)
 btn_mp_menu_ppal.rect = centrar_rect(menu_pausa.rect.centerx, menu_pausa.rect.centery + 100, btn_mp_menu_ppal.rect)
+
+#Botones del menu como jugar
+
+menu_c_jugar = clases.Boton(rectangulos.REC_C_JUGAR, colores.AMARILLO, False)
+marco_menu_c_jugar = clases.Boton(rectangulos.REC_C_JUGAR_MARCO, colores.OCRE, False)
+btn_cerrar_c_jugar = clases.BotonImg(rectangulos.REC_C_JUGAR_CERRAR, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+                                    colores.ROJO_C)
+btn_cerrar_c_jugar.rect = centrar_rect(menu_c_jugar.rect.centerx + 215, menu_c_jugar.rect.centery - 160, btn_cerrar_c_jugar.rect)
+btn_titulo_c_jugar = clases.BotonTxt(rectangulos.REC_C_JUGAR_TITULO, colores.NARANJA_C, fuentes.FUENTE_35, "Como se juega: ", colores.NARANJA_C)
+btn_explicacion_c_jugar = clases.BotonTxt(rectangulos.REC_C_JUGAR_TEXTO, colores.NARANJA_C, fuentes.FUENTE_25, f"PROXIMAMENTE !!!", colores.NARANJA_O)
+
+
