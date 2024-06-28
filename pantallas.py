@@ -107,6 +107,9 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         txt_num_gemas = fuentes.FUENTE_35.render(f"{juego.gemas}",True, colores.BLANCO)
         ventana.blit(txt_num_gemas, (centrar_txt(rectangulos.REC_PP_BARRA_GEMAS.centerx, rectangulos.REC_PP_BARRA_GEMAS.centery + 10, 
                                                 txt_num_gemas)))
+        if btn_gemas.validar_click(lista_eventos) == True:
+            juego.pausado = True
+            juego.mostrando_tienda = True #__________________probando
         #Boton de Como jugar con hover
         btn_como_jugar.dibujar_btn(ventana, 0,5, pos_mouse = pos_mouse)
         #Boton de configuraciones con hover
@@ -168,6 +171,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
         elif juego.mostrando_como_jugar:
             mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego)
+        elif juego.mostrando_tienda:
+            mostrar_tienda(ventana,lista_eventos, pos_mouse,juego)
 
 def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     
@@ -374,3 +379,17 @@ def mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego):
     if btn_cerrar_c_jugar.validar_click(lista_eventos) == True:
         juego.pausado = False
         juego.mostrando_como_jugar = False  #prueba
+
+def mostrar_tienda(ventana, lista_eventos, pos_mouse, juego):
+    fondo_tienda = pygame.image.load("imagenes\Fondos\Fondo_tienda.jpg")
+    fondo_tienda = pygame.transform.scale(fondo_tienda, (1000, 500))
+    ventana.blit(fondo_tienda, (0,0))
+
+    # menu_tienda.dibujar_btn(ventana, 0, 3)
+    btn_cerrar_tienda.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
+    btn_titulo_tienda.dibujar_btn(ventana, 0, 0)
+    btn_candado_tienda.dibujar_btn(ventana, 0, 5)
+    #Verifico si hizo click al cerrar el menu de TIENDA
+    if btn_cerrar_tienda.validar_click(lista_eventos) == True:
+        juego.pausado = False
+        juego.mostrando_tienda = False
