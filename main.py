@@ -20,7 +20,6 @@ with open("datos_jugador.csv", "r") as archivo:
     datos.pop(0)
     jugadores = funciones.crear_lista_jugadores(datos, cabecera)
 
-jugador = jugadores[0]
 juego = clases.Juego()
 juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
@@ -36,11 +35,11 @@ while ejecutar:
         herraminetas.obtener_pos_click_izq_mouse(evento)
 
     if juego.logeado == False:
-        pantallas.mostrar_inicio(ventana,pos_mouse, lista_eventos, juego)
+        pantallas.mostrar_inicio(ventana,pos_mouse, lista_eventos, juego, jugadores)
     elif juego.jugando == False:
-        pantallas.mostrar_principal(ventana, jugador, pos_mouse, lista_eventos, juego)
+        pantallas.mostrar_principal(ventana, pos_mouse, lista_eventos, juego)
     else:
-        pantallas.mostrar_jugando(ventana, jugador, pos_mouse, lista_eventos, juego)
+        pantallas.mostrar_jugando(ventana, pos_mouse, lista_eventos, juego)
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
 

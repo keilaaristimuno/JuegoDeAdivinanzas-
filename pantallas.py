@@ -8,7 +8,7 @@ from constantes.botones import *
 pygame.init()
 pygame.mixer.init()
 
-def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
+def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     fondo = pygame.image.load("imagenes\Fondos\Fondo_inicio.png")
     ventana.blit(fondo, (0,0))
     #Creo el titulo
@@ -28,6 +28,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
     txt_ingreso = fuentes.FUENTE_30.render(juego.nombre_jugador, True,colores.NEGRO)  
     ventana.blit(txt_ingreso, centrar_txt(btn_ent_txt.rect.centerx, btn_ent_txt.rect.centery, txt_ingreso))
     
+    #Creo el ingreso del texto del nombre del jugador
     for evento in lista_eventos:
         if evento.type == pygame.TEXTINPUT and btn_ent_txt.escribiendo == True:
             if  largo_txt < 10:
@@ -42,8 +43,18 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
     #Boton de configuraciones con hover
     btn_config.dibujar_btn(ventana, 0,5, pos_mouse = pos_mouse)
     #Valido si hizo click en jugar
-    if btn_empezar.validar_click(lista_eventos) == True:
-        juego.logeado = True
+    if btn_empezar.validar_click(lista_eventos) == True or (btn_ent_txt.escribiendo == True and validar_enter(lista_eventos)):
+        for jugador in jugadores:
+            if juego.nombre_jugador.lower() == jugador["nombre"].lower():
+                juego.logeado = True
+                juego.nombre_jugador = jugador["nombre"]
+                juego.monedas = jugador["monedas"]
+                juego.gemas = jugador["gemas"]
+                juego.nivel_jugador = jugador["nivel_exp"]
+                juego.exp_jugador = jugador["puntaje_exp"]
+            else:
+                agregar_jugador = mostrar_jugador_no_encontrado()
+            
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True
@@ -53,7 +64,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
     if juego.pausado == True:
         mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
 
-def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> None:
+def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
     
     if juego.pausado == False:
         fondo = pygame.image.load("imagenes\Fondos\Fondo_principal.png")
@@ -77,23 +88,23 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
         btn_jugar.dibujar_btn(ventana, 0, 5, 0, 0, pos_mouse)
         #Boton nivel del jugador
         btn_nvl_jugador.dibujar_btn(ventana,0,5, pos_txt_y = -15)
-        txt_num = fuentes.FUENTE_35.render(f"{jugador['nivel_exp']}",True, colores.NEGRO)
+        txt_num = fuentes.FUENTE_35.render(f"{juego.nivel_jugador}",True, colores.NEGRO)
         ventana.blit(txt_num, (centrar_txt(rectangulos.REC_PP_NIVEL_EXP.centerx, rectangulos.REC_PP_NIVEL_EXP.centery + 10, txt_num)))
         #Boton barra de experiencia
         btn_exp_jugador.dibujar_btn(ventana,0,5, pos_txt_y = -15)
         experiencia = lambda exp_actual, exp_necesaria: str(exp_actual) +  "/" + str(exp_necesaria)
-        txt_numero_exp = fuentes.FUENTE_35.render(f"{experiencia(jugador['puntaje_exp'][0], jugador['puntaje_exp'][1])}",
+        txt_numero_exp = fuentes.FUENTE_35.render(f"{experiencia(juego.exp_jugador[0], juego.exp_jugador[1])}",
                                                 True, colores.NEGRO)
         ventana.blit(txt_numero_exp, (centrar_txt(rectangulos.REC_PP_BARRA_EXP.centerx, rectangulos.REC_PP_BARRA_EXP.centery + 10,
                                                 txt_numero_exp)))
         #Boton barra de monedas   
         btn_monedas.dibujar_btn(ventana, 0,5, pos_txt_y = - 15)
-        txt_num_monedas = fuentes.FUENTE_35.render(f"{jugador['monedas']}",True, colores.BLANCO)
+        txt_num_monedas = fuentes.FUENTE_35.render(f"{juego.monedas}",True, colores.BLANCO)
         ventana.blit(txt_num_monedas, (centrar_txt(rectangulos.REC_PP_BARRA_MONEDAS.centerx, 
                                                 rectangulos.REC_PP_BARRA_MONEDAS.centery + 10, txt_num_monedas)))
         #Boton barra de tienda de tienda con hover
         btn_gemas.dibujar_btn(ventana,0,5, pos_txt_y = -15,pos_mouse = pos_mouse)
-        txt_num_gemas = fuentes.FUENTE_35.render(f"{jugador['gemas']}",True, colores.BLANCO)
+        txt_num_gemas = fuentes.FUENTE_35.render(f"{juego.gemas}",True, colores.BLANCO)
         ventana.blit(txt_num_gemas, (centrar_txt(rectangulos.REC_PP_BARRA_GEMAS.centerx, rectangulos.REC_PP_BARRA_GEMAS.centery + 10, 
                                                 txt_num_gemas)))
         #Boton de Como jugar con hover
@@ -135,8 +146,6 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
                 btn_dif_n.color = colores.OCRE
                 btn_dif_d.color = colores.ROJO_C
         
-        btn_jugar.color = colores.GRIS
-        btn_jugar.hover = colores.GRIS_C
         if btn_jugar.color != colores.GRIS:
             #Valido si hizo click en jugar
             if btn_jugar.validar_click(lista_eventos) == True:
@@ -282,7 +291,7 @@ def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
             btn_musica.actualizar_txt("ON")
             juego.musica = True
             
-def mostrar_jugando(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> None:
+def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     
     fondo_superior_jugando = pygame.image.load("imagenes\Fondos\Fondo_jugando.png")
     fondo_superior_jugando = pygame.transform.scale(fondo_superior_jugando, (1000, 300))
@@ -326,18 +335,20 @@ def mostrar_jugando(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> 
 # Cantidad de monedas y tiempo:
 
     btn_cant_monedas.dibujar_btn(ventana, 0, 0, -30, 0)
-    txt_cant_monedas = fuentes.FUENTE_25.render(f"{jugador['monedas']}", True, colores.BLANCO)
+    txt_cant_monedas = fuentes.FUENTE_25.render(f"{juego.monedas}", True, colores.BLANCO)
     ventana.blit(txt_cant_monedas, (centrar_txt(rectangulos.REC_PJ_MONEDAS.centerx + 23, rectangulos.REC_PJ_MONEDAS.centery, txt_cant_monedas )))
     
     btn_cant_tiempo.dibujar_btn(ventana, 0, 0, -30, -2)
-    txt_cant_tiempo = fuentes.FUENTE_25.render(f"{jugador['tiempo']}", True, colores.BLANCO)
+    txt_cant_tiempo = fuentes.FUENTE_25.render("600", True, colores.BLANCO)
     ventana.blit(txt_cant_tiempo, (centrar_txt(rectangulos.REC_PJ_TIEMPO.centerx +23 , rectangulos.REC_PJ_TIEMPO.centery, txt_cant_tiempo )))
 
 
 # Nivel que se encuentra
-    txt_nivel_banderas = fuentes.FUENTE_25.render(f"Banderas: Nivel {jugador['nivel_exp']}",True, colores.BLANCO)
-    ventana.blit(txt_nivel_banderas, (centrar_txt(rectangulos.REC_NIVEL_BANDERAS.centerx, rectangulos.REC_NIVEL_BANDERAS.centery + 10, 
-                                             txt_nivel_banderas)))
+    categoria = obtener_categoria(juego)
+    dificultad = obtener_dificultad(juego)
+    txt_dif_cat = fuentes.FUENTE_25.render(f"{categoria}: {dificultad}",True, colores.BLANCO)
+    ventana.blit(txt_dif_cat, (centrar_txt(rectangulos.REC_NIVEL_BANDERAS.centerx, rectangulos.REC_NIVEL_BANDERAS.centery + 10, 
+                                             txt_dif_cat)))
 
 # Agrego menu de pausa
     if btn_pausa.validar_click(lista_eventos) == True:
@@ -348,7 +359,6 @@ def mostrar_jugando(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> 
     if juego.pausado == True:
         mostrar_pausa(ventana, lista_eventos, pos_mouse, juego)
     
-
 def mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego):
     fondo_c_jugar = pygame.image.load("imagenes\Fondos\Fondo_como_jugar.jpg")
     fondo_c_jugar = pygame.transform.scale(fondo_c_jugar, (1000, 500))
