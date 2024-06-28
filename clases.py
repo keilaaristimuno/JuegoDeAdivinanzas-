@@ -20,6 +20,7 @@ class Juego():
         self.cancion = None
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
+        self.mostrando_tienda = False
 
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:

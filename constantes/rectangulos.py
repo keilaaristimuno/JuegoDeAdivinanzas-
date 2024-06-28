@@ -61,3 +61,9 @@ REC_C_JUGAR_MARCO = pygame.Rect(250,75,500,400)
 REC_C_JUGAR_CERRAR = pygame.Rect(0,0,40,40)
 REC_C_JUGAR_TITULO = pygame.Rect(480,110,0,0)
 REC_C_JUGAR_TEXTO = pygame.Rect(480,140,0,0)
+
+# Rectangulos Menu de tiendas:
+REC_MENU_TIENDA = pygame.Rect(250,100,0,0)
+REC_TIENDA_CERRAR = pygame.Rect(950,20,40,40)
+REC_TITULO_TIENDA = pygame.Rect(510,350,0,0)
+REC_CANDADO_TIENDA = pygame.Rect(500,270,0,0)

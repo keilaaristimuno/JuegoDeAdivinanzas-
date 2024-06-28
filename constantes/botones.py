@@ -110,4 +110,11 @@ btn_cerrar_c_jugar.rect = centrar_rect(menu_c_jugar.rect.centerx + 215, menu_c_j
 btn_titulo_c_jugar = clases.BotonTxt(rectangulos.REC_C_JUGAR_TITULO, colores.NARANJA_C, fuentes.FUENTE_35, "Como se juega: ", colores.NARANJA_C)
 btn_explicacion_c_jugar = clases.BotonTxt(rectangulos.REC_C_JUGAR_TEXTO, colores.NARANJA_C, fuentes.FUENTE_25, f"PROXIMAMENTE !!!", colores.NARANJA_O)
 
+#Botones del menu de tienda:
+#menu_tienda = clases.Boton(rectangulos.REC_MENU_TIENDA, colores.OCRE, False)
+btn_cerrar_tienda = clases.BotonImg(rectangulos.REC_TIENDA_CERRAR, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+                                    colores.ROJO_C)
+btn_titulo_tienda = clases.BotonTxt(rectangulos.REC_TITULO_TIENDA, colores.NARANJA_C, fuentes.FUENTE_40, "PROXIMAMENTE ", colores.ROSA_C)
+btn_candado_tienda = clases.BotonImg(rectangulos.REC_CANDADO_TIENDA, colores.NARANJA_C, "imagenes\General\candado_tienda.png", (90,90), 
+                                    colores.OCRE)
 
