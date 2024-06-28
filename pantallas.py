@@ -73,15 +73,15 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         #Boton de dificultad
         btn_dificultad.dibujar_btn(ventana,0, 5, pos_txt_y = -15)
         #Boton categoria banderas
-        btn_cat_banderas.dibujar_btn(ventana, 0, 5, pos_img_y = -5)
+        btn_cat_banderas.dibujar_btn(ventana, 0, 5, pos_img_y = -5, pos_mouse=pos_mouse)
         #Boton categoria comidas
-        btn_cat_comidas.dibujar_btn(ventana, 0, 5,pos_img_y = -5)
+        btn_cat_comidas.dibujar_btn(ventana, 0, 5,pos_img_y = -5, pos_mouse=pos_mouse)
         #Boton categoria clubes
-        btn_cat_clubes.dibujar_btn(ventana, 0, 5,pos_img_y = -5)
+        btn_cat_equipos.dibujar_btn(ventana, 0, 5,pos_img_y = -5, pos_mouse=pos_mouse)
         #Boton categoria autos
-        btn_cat_autos.dibujar_btn(ventana, 0, 5,pos_img_y = -5)
+        btn_cat_autos.dibujar_btn(ventana, 0, 5,pos_img_y = -5, pos_mouse=pos_mouse)
         #Boton categoria tecnologia
-        btn_cat_tecno.dibujar_btn(ventana, 0, 5,pos_img_y = -5)
+        btn_cat_tecno.dibujar_btn(ventana, 0, 5,pos_img_y = -5, pos_mouse=pos_mouse)
         #Boton categoria
         btn_categoria.dibujar_btn(ventana,0,5)
         #Boton Jugar con hover
@@ -109,7 +109,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
                                                 txt_num_gemas)))
         if btn_gemas.validar_click(lista_eventos) == True:
             juego.pausado = True
-            juego.mostrando_tienda = True #__________________probando
+            juego.mostrando_tienda = True 
         #Boton de Como jugar con hover
         btn_como_jugar.dibujar_btn(ventana, 0,5, pos_mouse = pos_mouse)
         #Boton de configuraciones con hover
@@ -135,19 +135,35 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         if btn_dif_d.validar_click(lista_eventos) == True:
             juego.dificultad = "d" 
             
-        match juego.dificultad:
-            case "f":
-                btn_dif_f.color = colores.VERDE_C
-                btn_dif_n.color = colores.OCRE
-                btn_dif_d.color = colores.ROJO_O
-            case "n":
-                btn_dif_f.color = colores.VERDE
-                btn_dif_n.color = colores.AMARILLO
-                btn_dif_d.color = colores.ROJO_O
-            case "d":
-                btn_dif_f.color = colores.VERDE
-                btn_dif_n.color = colores.OCRE
-                btn_dif_d.color = colores.ROJO_C
+        validar_dificultad_seleccionada(juego,  btn_dif_f, btn_dif_n, btn_dif_d)
+        validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos)
+        
+        if btn_cat_banderas.validar_click(lista_eventos) == True:
+            juego.categoria = "b"
+            btn_jugar.color = colores.OCRE
+            btn_jugar.hover = colores.AMARILLO
+            btn_categoria.color = colores.VERDE
+        if btn_cat_comidas.validar_click(lista_eventos) == True:
+            if juego.nivel_jugador >= 5 and juego.monedas >= 50:
+                btn_jugar.color = colores.OCRE
+                btn_jugar.hover = colores.AMARILLO
+                btn_categoria.color = colores.VERDE
+            else:
+                btn_jugar.color = colores.GRIS
+                btn_jugar.hover = colores.GRIS_C
+                btn_categoria.color = colores.GRIS_C
+            juego.categoria = "c"
+            
+        if btn_cat_equipos.validar_click(lista_eventos) == True:
+            if juego.nivel_jugador >= 10 and juego.monedas >= 100:
+                btn_jugar.color = colores.OCRE
+                btn_jugar.hover = colores.AMARILLO
+                btn_categoria.color = colores.VERDE
+            else:
+                btn_jugar.color = colores.GRIS
+                btn_jugar.hover = colores.GRIS_C
+                btn_categoria.color = colores.GRIS_C
+            juego.categoria = "e"
         
         if btn_jugar.color != colores.GRIS:
             #Valido si hizo click en jugar

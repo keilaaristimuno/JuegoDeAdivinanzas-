@@ -1,4 +1,5 @@
 import pygame
+import constantes.colores as colores
 
 pygame.init()
 
@@ -98,8 +99,8 @@ def obtener_categoria(juego):
             categoria = "Banderas"
         case "c":
             categoria = "Comidas"
-        case "f":
-            categoria = "Futbol"
+        case "e":
+            categoria = "Equipos"
         case "a":
             categoria = "Autos"
         case "t":
@@ -118,6 +119,45 @@ def obtener_dificultad(juego):
             dificultad = "Dificil"
     
     return dificultad
+
+def validar_dificultad_seleccionada(juego, btn_dif_f, btn_dif_n, btn_dif_d):
+    match juego.dificultad:
+        case "f":
+            btn_dif_f.color = colores.VERDE_C
+            btn_dif_n.color = colores.OCRE
+            btn_dif_d.color = colores.ROJO_O
+        case "n":
+            btn_dif_f.color = colores.VERDE
+            btn_dif_n.color = colores.AMARILLO
+            btn_dif_d.color = colores.ROJO_O
+        case "d":
+            btn_dif_f.color = colores.VERDE
+            btn_dif_n.color = colores.OCRE
+            btn_dif_d.color = colores.ROJO_C
+            
+def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos):
+    match juego.categoria:
+        case "b":
+            btn_cat_banderas.color = colores.VERDE
+            btn_cat_banderas.hover = colores.VERDE
+            btn_cat_comidas.color = colores.GRIS
+            btn_cat_comidas.hover = colores.GRIS_C
+            btn_cat_equipos.color = colores.GRIS
+            btn_cat_equipos.hover = colores.GRIS_C
+        case "c":
+            btn_cat_banderas.color = colores.GRIS
+            btn_cat_banderas.hover = colores.GRIS_C
+            btn_cat_comidas.color = colores.VERDE
+            btn_cat_comidas.hover = colores.VERDE
+            btn_cat_equipos.color = colores.GRIS
+            btn_cat_equipos.hover = colores.GRIS_C
+        case "e":
+            btn_cat_banderas.color = colores.GRIS
+            btn_cat_banderas.hover = colores.GRIS_C
+            btn_cat_comidas.color = colores.GRIS
+            btn_cat_comidas.hover = colores.GRIS_C
+            btn_cat_equipos.color = colores.VERDE
+            btn_cat_equipos.hover = colores.VERDE
 
 def validar_enter(lista_eventos):
     for evento in lista_eventos:
