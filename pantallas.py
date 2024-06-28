@@ -17,17 +17,24 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
     titulo = fuente_titulo.render(titulo, True, colores.AMARILLO)
     ventana.blit(titulo, centrar_txt(ventana.get_rect().centerx, 75, titulo))
     #Creo el boton de ingreso de texto
+    largo_txt = len(juego.nombre_jugador)
     btn_ent_txt.rect = centrar_rect(ventana.get_rect().centerx, 250, btn_ent_txt.rect)
     btn_ent_txt.dibujar_btn(ventana, 0, 3, pos_txt_y = - 50)
-    btn_ent_txt.validar_escritura(pos_mouse,lista_eventos)
+    btn_ent_txt.validar_escritura(pos_mouse,lista_eventos, juego.nombre_jugador)
     #Creo el contorno del ingreso de texto
     btn_contorno_ent_txt.rect = btn_ent_txt.rect
     btn_contorno_ent_txt.dibujar_btn(ventana, 3, 3)
-    # #Creo el boton de escritura
-    # btn_escritura = clases.Boton(rectangulos.REC_IN_ESCRITURA, colores.BLANCO)
-    # btn_escritura.rect = centrar_rect(btn_ent_txt.rect.centerx, btn_ent_txt.rect.centery, btn_escritura.rect)
-    # if btn_ent_txt.escribiendo == True:
-    #     btn_escritura.dibujar_btn(ventana, 0, 0)
+    
+    txt_ingreso = fuentes.FUENTE_30.render(juego.nombre_jugador, True,colores.NEGRO)  
+    ventana.blit(txt_ingreso, centrar_txt(btn_ent_txt.rect.centerx, btn_ent_txt.rect.centery, txt_ingreso))
+    
+    for evento in lista_eventos:
+        if evento.type == pygame.TEXTINPUT and btn_ent_txt.escribiendo == True:
+            if  largo_txt < 10:
+                juego.nombre_jugador += evento.text 
+        elif evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_BACKSPACE:
+                juego.nombre_jugador = juego.nombre_jugador[0:-1]
     
     #Creo el boton de jugar
     btn_empezar.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery + 100, btn_empezar.rect)
@@ -44,7 +51,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego):
             juego.pausado = False
             
     if juego.pausado == True:
-                mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
+        mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
 
 def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> None:
     

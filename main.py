@@ -25,6 +25,7 @@ juego = clases.Juego()
 juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
 pygame.mixer.music.play(-1)
+pygame.mixer.music.pause()
 ejecutar = True
 while ejecutar:
     lista_eventos = pygame.event.get()

@@ -158,9 +158,9 @@ class BotonEntradaTxt():
             superficie.blit(self.txt_renderizado, (centrar_txt(self.rect.centerx + pos_txt_x, self.rect.centery + pos_txt_y, \
                 self.txt_renderizado)))
             
-    def validar_escritura(self, pos_mouse, lista_eventos):
+    def validar_escritura(self, pos_mouse, lista_eventos, txt_ingreso):
         
-        if validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == True:
+        if validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == True or txt_ingreso != "":
             #Cambio el estado escribiendo del objeto segun corresponda
             self.escribiendo = True
         elif validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == False:
