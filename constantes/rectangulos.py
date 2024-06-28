@@ -31,8 +31,8 @@ REC_RESP_1 = pygame.Rect(56, 280, 390, 90)
 REC_RESP_2 = pygame.Rect(56, 390, 390, 90)
 REC_RESP_3 = pygame.Rect(555, 280, 390, 90)
 REC_RESP_4 = pygame.Rect(555, 390, 390, 90)
-
-REC_BANDERAS = pygame.Rect(306,61, 391,196)
+REC_FONDO_BANDERAS = pygame.Rect(305,60, 390,195)
+REC_BANDERAS = pygame.Rect(305,60, 210,140)
 
 REC_PJ_MONEDAS = pygame.Rect(890, 0, 100, 30 )
 REC_PJ_TIEMPO = pygame.Rect(890, 30, 100, 30 )

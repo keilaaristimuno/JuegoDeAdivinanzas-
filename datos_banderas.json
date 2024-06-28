@@ -19,8 +19,8 @@
     },
     {
         "url_imagen": "imagenes/Banderas/Facil/Canada.png",
-        "rta_correcta": "Canadá",
-        "rtas_incorrectas": ["Perú", "Dinamarca", "Suiza"],
+        "rta_correcta": "Canada",
+        "rtas_incorrectas": ["Peru", "Dinamarca", "Suiza"],
         "dificultad": "f"
     },
     {
@@ -32,18 +32,18 @@
     {
         "url_imagen": "imagenes/Banderas/Facil/Francia.png",
         "rta_correcta": "Francia",
-        "rtas_incorrectas": ["Italia", "Países Bajos", "Rumania"],
+        "rtas_incorrectas": ["Italia", "Paises Bajos", "Rumania"],
         "dificultad": "f"
     },
     {
         "url_imagen": "imagenes/Banderas/Facil/Italia.png",
         "rta_correcta": "Italia",
-        "rtas_incorrectas": ["México", "Hungría", "Bulgaria"],
+        "rtas_incorrectas": ["Mexico", "Hungria", "Bulgaria"],
         "dificultad": "f"
     },
     {
         "url_imagen": "imagenes/Banderas/Facil/Japon.png",
-        "rta_correcta": "Japón",
+        "rta_correcta": "Japon",
         "rtas_incorrectas": ["Bangladesh", "Palaos", "Corea del Sur"],
         "dificultad": "f"
     },
@@ -68,7 +68,7 @@
     {
         "url_imagen": "imagenes/Banderas/Normal/Corea_sur.png",
         "rta_correcta": "Corea del Sur",
-        "rtas_incorrectas": ["Taiwán", "Japón", "Mongolia"],
+        "rtas_incorrectas": ["Taiwan", "Japon", "Mongolia"],
         "dificultad": "n"
     },
     {
@@ -97,8 +97,8 @@
     },
     {
         "url_imagen": "imagenes/Banderas/Normal/Mexico.png",
-        "rta_correcta": "México",
-        "rtas_incorrectas": ["Italia", "Bulgaria", "Hungría"],
+        "rta_correcta": "Mexico",
+        "rtas_incorrectas": ["Italia", "Bulgaria", "Hungria"],
         "dificultad": "n"
     },
     {
@@ -109,7 +109,7 @@
     },
     {
         "url_imagen": "imagenes/Banderas/Normal/Sudafrica.png",
-        "rta_correcta": "Sudáfrica",
+        "rta_correcta": "Sudafrica",
         "rtas_incorrectas": ["Namibia", "Kenia", "Jamaica"],
         "dificultad": "n"
     },
@@ -120,61 +120,61 @@
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Chile.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Chile.png",
         "rta_correcta": "Chile",
         "rtas_incorrectas": ["Estados Unidos", "Paraguay", "Cuba"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Colombia.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Colombia.png",
         "rta_correcta": "Colombia",
         "rtas_incorrectas": ["Ecuador", "Venezuela", "Rumania"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Finlandia.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Finlandia.png",
         "rta_correcta": "Finlandia",
         "rtas_incorrectas": ["Suecia", "Islandia", "Noruega"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Malasia.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Malasia.png",
         "rta_correcta": "Malasia",
         "rtas_incorrectas": ["Estados Unidos", "Liberia", "Tailandia"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Marruecos.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Marruecos.png",
         "rta_correcta": "Marruecos",
-        "rtas_incorrectas": ["Túnez", "Jordania", "Irán"],
+        "rtas_incorrectas": ["Tunez", "Jordania", "Iran"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Noruega.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Noruega.png",
         "rta_correcta": "Noruega",
         "rtas_incorrectas": ["Islandia", "Dinamarca", "Finlandia"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Nueva_zelanda.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Nueva_zelanda.png",
         "rta_correcta": "Nueva Zelanda",
         "rtas_incorrectas": ["Australia", "Fiji", "Reino Unido"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Portugal.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Portugal.png",
         "rta_correcta": "Portugal",
-        "rtas_incorrectas": ["Italia", "Guinea-Bisáu", "Bulgaria"],
+        "rtas_incorrectas": ["Italia", "Guinea-Bisau", "Bulgaria"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Turquia.png",
-        "rta_correcta": "Turquía",
-        "rtas_incorrectas": ["Túnez", "Pakistán", "Argelia"],
+        "url_imagen": "imagenes/Banderas/Dificil/Turquia.png",
+        "rta_correcta": "Turquia",
+        "rtas_incorrectas": ["Tunez", "Pakistan", "Argelia"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Banderas/Dificl/Vietnam.png",
+        "url_imagen": "imagenes/Banderas/Dificil/Vietnam.png",
         "rta_correcta": "Vietnam",
         "rtas_incorrectas": ["China", "Bangladesh", "Corea del Norte"],
         "dificultad": "d"

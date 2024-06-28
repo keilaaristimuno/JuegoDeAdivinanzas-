@@ -67,6 +67,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
 
 def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
     
+    juego.resetear_datos()
     if juego.pausado == False:
         fondo = pygame.image.load("imagenes\Fondos\Fondo_principal.png")
         ventana.blit(fondo, (0,0))
@@ -328,6 +329,7 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     
     if juego.pregunta_actual == None:
         juego.obtener_pregunta()   
+        juego.obtener_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4])
         
     #Fondo de pantalla para las respuestas
     fondo_inferior_jugando = pygame.image.load("imagenes\Fondos\Fondo_respuestas.jpg")
@@ -357,12 +359,15 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     ventana.blit(imagen_personaje, (100, 85))
 
 #Rectangulo de respuestas:
-    btn_respuesta_1.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
-    btn_respuesta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
-    btn_respuesta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
-    btn_respuesta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+    btn_rta_1.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+    btn_rta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_rta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_rta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
 
 # Fondo de la imagen que debe contestar
+    btn_fondo_bandera.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery - 80, btn_fondo_bandera.rect)
+    btn_fondo_bandera.dibujar_btn(ventana, 0, 5)
+    btn_bandera.rect = centrar_rect(btn_fondo_bandera.rect.centerx, btn_fondo_bandera.rect.centery, btn_bandera.rect)
     btn_bandera.actualizar_img_btn(juego.pregunta_actual["url_imagen"], (200,200))
     btn_bandera.dibujar_btn(ventana, 0, 5)
 
