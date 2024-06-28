@@ -125,7 +125,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         #Boton de dificultad Difícil con hover
         btn_dif_d.dibujar_btn(ventana, 0,5,pos_mouse = pos_mouse)
         
-        if btn_dif_f.validar_click(lista_eventos) == True or juego.dificultad == "f":
+        if btn_dif_f.validar_click(lista_eventos) == True:
             juego.dificultad = "f"
         if btn_dif_n.validar_click(lista_eventos) == True:
             juego.dificultad = "n"
@@ -150,6 +150,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             #Valido si hizo click en jugar
             if btn_jugar.validar_click(lista_eventos) == True:
                 juego.jugando = True
+    
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True
