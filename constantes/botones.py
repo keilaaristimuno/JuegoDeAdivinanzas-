@@ -55,7 +55,7 @@ btn_respuesta_1 = clases.BotonTxt(rectangulos.REC_RESP_1, colores.AZUL_O, fuente
 btn_respuesta_2 = clases.BotonTxt(rectangulos.REC_RESP_2, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
 btn_respuesta_3 = clases.BotonTxt(rectangulos.REC_RESP_3, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
 btn_respuesta_4 = clases.BotonTxt(rectangulos.REC_RESP_4, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
-# btn_bandera = clases.BotonImg(rectangulos.REC_BANDERAS,colores.BLANCO)
+btn_bandera = clases.BotonImg(rectangulos.REC_BANDERAS,colores.BLANCO, "imagenes\General\icono.png", (100,100))
 
 btn_cant_monedas = clases.BotonImg(rectangulos.REC_PJ_MONEDAS, colores.NARANJA_C,"imagenes\P_Jugando\moneda.png",(25,25))
 btn_cant_tiempo = clases.BotonImg(rectangulos.REC_PJ_TIEMPO, colores.NARANJA_C,"imagenes\P_Jugando\Reloj.png",(25,25))

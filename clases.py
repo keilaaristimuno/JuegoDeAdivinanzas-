@@ -1,4 +1,5 @@
 import pygame
+import random
 from funciones import *
 
 pygame.init()
@@ -17,13 +18,20 @@ class Juego():
         self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
+        self.preguntas_posibles = []
+        self.pregunta_actual = None
         self.sonidos = True
         self.musica = True
         self.cancion = None
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
-
+    
+    def obtener_pregunta(self):
+        numero_random = random.randint(0,len(self.preguntas_posibles)-1)
+        self.pregunta_actual = self.preguntas_posibles[numero_random]
+        self.preguntas_posibles.pop(numero_random)
+        
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)
