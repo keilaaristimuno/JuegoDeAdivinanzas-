@@ -1,0 +1,182 @@
+[
+    {
+        "marca": "McDonald's",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Coca-Cola",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Starbucks",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "KFC",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Burger King",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Pepsi",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Nestlé",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Subway",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Pizza Hut",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "La Serenísima",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "f"
+    },
+    {
+        "marca": "Havanna",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Freddo",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Baskin-Robbins",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Domino's Pizza",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Red Bull",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "KitKat",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Ben & Jerry's",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Cadbury",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Tostado Café Club",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Bonafide",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "n"
+    },
+    {
+        "marca": "Café Martínez",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Alfajores Jorgito",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Grido",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Taco Bell",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Wendy's",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Mostaza",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Bagley",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "McCain",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Tostadas Bimbo",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    },
+    {
+        "marca": "Arcor",
+        "rta_correcta": "no_completar",
+        "rtas_incorrectas": "no_completar",
+        "dificultad": "d"
+    }
+]
