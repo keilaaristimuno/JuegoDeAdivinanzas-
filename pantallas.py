@@ -393,3 +393,4 @@ def mostrar_tienda(ventana, lista_eventos, pos_mouse, juego):
     if btn_cerrar_tienda.validar_click(lista_eventos) == True:
         juego.pausado = False
         juego.mostrando_tienda = False
+
