@@ -21,10 +21,14 @@ btn_config = clases.BotonImg(rectangulos.REC_PP_CONFIG, colores.OCRE,"imagenes\G
 #Botones de la pantalla principal
 btn_dificultad = clases.BotonTxt(rectangulos.REC_PP_DIFICULTAD, colores.VERDE_O, fuentes.FUENTE_25, "Dificultad", colores.NEGRO)
 btn_cat_banderas = clases.BotonImg(rectangulos.REC_PP_CAT_BANDERAS, colores.VERDE,"imagenes\P_Principal\logo_bandera.png",(35,35))
-btn_cat_comidas = clases.BotonImg(rectangulos.REC_PP_CAT_COMIDAS, colores.GRIS,"imagenes\P_Principal\logo_comida.png",(35,35))
-btn_cat_clubes = clases.BotonImg(rectangulos.REC_PP_CAT_CLUBES, colores.GRIS,"imagenes\P_Principal\logo_clubes.png",(35,35))
-btn_cat_autos = clases.BotonImg(rectangulos.REC_PP_CAT_AUTOS, colores.GRIS,"imagenes\P_Principal\logo_autos.png",(35,35))
-btn_cat_tecno = clases.BotonImg(rectangulos.REC_PP_CAT_TECNO, colores.GRIS,"imagenes\P_Principal\logo_tecno.png",(35,35))
+btn_cat_comidas = clases.BotonImg(rectangulos.REC_PP_CAT_COMIDAS, colores.GRIS,"imagenes\P_Principal\logo_comida.png",(35,35), 
+                                  colores.GRIS_C)
+btn_cat_equipos = clases.BotonImg(rectangulos.REC_PP_CAT_EQUIPOS, colores.GRIS,"imagenes\P_Principal\logo_clubes.png",(35,35),
+                                  colores.GRIS_C)
+btn_cat_autos = clases.BotonImg(rectangulos.REC_PP_CAT_AUTOS, colores.GRIS,"imagenes\P_Principal\logo_autos.png",(35,35),
+                                colores.GRIS_C)
+btn_cat_tecno = clases.BotonImg(rectangulos.REC_PP_CAT_TECNO, colores.GRIS,"imagenes\P_Principal\logo_tecno.png",(35,35),
+                                colores.GRIS_C)
 btn_categoria = clases.Boton(rectangulos.REC_PP_CATEGORIA, colores.VERDE)
 btn_jugar = clases.BotonTxt(rectangulos.REC_PP_JUGAR, colores.OCRE, fuentes.FUENTE_55, "Jugar", colores.NEGRO,
                                 colores.AMARILLO)
