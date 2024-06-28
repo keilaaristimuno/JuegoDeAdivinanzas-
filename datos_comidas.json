@@ -1,182 +1,184 @@
 [
     {
-        "marca": "McDonald's",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/McDonalds.png",
+        "rta_correcta": "McDonalds",
+        "rtas_incorrectas": ["Burger King", "KFC", "Starbucks"],
         "dificultad": "f"
     },
     {
-        "marca": "Coca-Cola",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/CocaCola.png",
+        "rta_correcta": "Coca-Cola",
+        "rtas_incorrectas": ["Pepsi", "Sprite", "Fanta"],
         "dificultad": "f"
     },
     {
-        "marca": "Starbucks",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/Starbucks.png",
+        "rta_correcta": "Starbucks",
+        "rtas_incorrectas": ["Dunkin' Donuts", "Tim Hortons", "Subway"],
         "dificultad": "f"
     },
     {
-        "marca": "KFC",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/KFC.png",
+        "rta_correcta": "KFC",
+        "rtas_incorrectas": ["McDonalds", "Burger King", "Pizza Hut"],
         "dificultad": "f"
     },
     {
-        "marca": "Burger King",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/BurgerKing.png",
+        "rta_correcta": "Burger King",
+        "rtas_incorrectas": ["McDonalds", "KFC", "Subway"],
         "dificultad": "f"
     },
     {
-        "marca": "Pepsi",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/Pepsi.png",
+        "rta_correcta": "Pepsi",
+        "rtas_incorrectas": ["Coca-Cola", "Sprite", "Fanta"],
         "dificultad": "f"
     },
     {
-        "marca": "Nestlé",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/Nestle.png",
+        "rta_correcta": "Nestle",
+        "rtas_incorrectas": ["Cadbury", "Hersheys", "Ferrero"],
         "dificultad": "f"
     },
     {
-        "marca": "Subway",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/Subway.png",
+        "rta_correcta": "Subway",
+        "rtas_incorrectas": ["McDonalds", "Burger King", "Starbucks"],
         "dificultad": "f"
     },
     {
-        "marca": "Pizza Hut",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/PizzaHut.png",
+        "rta_correcta": "Pizza Hut",
+        "rtas_incorrectas": ["Dominos Pizza", "Papa Johns", "Little Caesars"],
         "dificultad": "f"
     },
     {
-        "marca": "La Serenísima",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Facil/LaSerenisima.png",
+        "rta_correcta": "La Serenisima",
+        "rtas_incorrectas": ["Sancor", "Mastellone", "Veronica"],
         "dificultad": "f"
     },
+    
     {
-        "marca": "Havanna",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/Havanna.png",
+        "rta_correcta": "Havanna",
+        "rtas_incorrectas": ["Cachafaz", "Guaymallen", "Jorgito"],
         "dificultad": "n"
     },
     {
-        "marca": "Freddo",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/Freddo.png",
+        "rta_correcta": "Freddo",
+        "rtas_incorrectas": ["Persicco", "Grido", "Tio Felipe"],
         "dificultad": "n"
     },
     {
-        "marca": "Baskin-Robbins",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/BaskinRobbins.png",
+        "rta_correcta": "Baskin-Robbins",
+        "rtas_incorrectas": ["Grido", "Freddo", "Persicco"],
         "dificultad": "n"
     },
     {
-        "marca": "Domino's Pizza",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/DominosPizza.png",
+        "rta_correcta": "Dominos Pizza",
+        "rtas_incorrectas": ["Papa Johns", "Pizza Hut", "Little Caesars"],
         "dificultad": "n"
     },
     {
-        "marca": "Red Bull",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/RedBull.png",
+        "rta_correcta": "Red Bull",
+        "rtas_incorrectas": ["Monster", "Rockstar", "Burn"],
         "dificultad": "n"
     },
     {
-        "marca": "KitKat",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/KitKat.png",
+        "rta_correcta": "KitKat",
+        "rtas_incorrectas": ["Snickers", "Twix", "Milka"],
         "dificultad": "n"
     },
     {
-        "marca": "Ben & Jerry's",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/BenJerrys.png",
+        "rta_correcta": "Ben & Jerrys",
+        "rtas_incorrectas": ["Haagen-Dazs", "Cold Stone", "Magnum"],
         "dificultad": "n"
     },
     {
-        "marca": "Cadbury",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/Cadbury.png",
+        "rta_correcta": "Cadbury",
+        "rtas_incorrectas": ["Milka", "Nestle", "Ferrero Rocher"],
         "dificultad": "n"
     },
     {
-        "marca": "Tostado Café Club",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/TostadoCafeClub.png",
+        "rta_correcta": "Tostado Cafe Club",
+        "rtas_incorrectas": ["Starbucks", "Cafe Martinez", "McDonalds"],
         "dificultad": "n"
     },
     {
-        "marca": "Bonafide",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Normal/Bonafide.png",
+        "rta_correcta": "Bonafide",
+        "rtas_incorrectas": ["Cafe Martinez", "Starbucks", "Havanna"],
         "dificultad": "n"
     },
+    
     {
-        "marca": "Café Martínez",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/CafeMartinez.png",
+        "rta_correcta": "Cafe Martinez",
+        "rtas_incorrectas": ["Starbucks", "Havanna", "McDonalds"],
         "dificultad": "d"
     },
     {
-        "marca": "Alfajores Jorgito",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/AlfajoresJorgito.png",
+        "rta_correcta": "Alfajores Jorgito",
+        "rtas_incorrectas": ["Cachafaz", "Havanna", "Arcor"],
         "dificultad": "d"
     },
     {
-        "marca": "Grido",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/Grido.png",
+        "rta_correcta": "Grido",
+        "rtas_incorrectas": ["Freddo", "Persicco", "Helados Daniel"],
         "dificultad": "d"
     },
     {
-        "marca": "Taco Bell",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/TacoBell.png",
+        "rta_correcta": "Taco Bell",
+        "rtas_incorrectas": ["McDonalds", "Burger King", "KFC"],
         "dificultad": "d"
     },
     {
-        "marca": "Wendy's",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/Wendys.png",
+        "rta_correcta": "Wendys",
+        "rtas_incorrectas": ["Burger King", "McDonalds", "KFC"],
         "dificultad": "d"
     },
     {
-        "marca": "Mostaza",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/Mostaza.png",
+        "rta_correcta": "Mostaza",
+        "rtas_incorrectas": ["McDonalds", "Burger King", "KFC"],
         "dificultad": "d"
     },
     {
-        "marca": "Bagley",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/Bagley.png",
+        "rta_correcta": "Bagley",
+        "rtas_incorrectas": ["Arcor", "Havanna", "Grido"],
         "dificultad": "d"
     },
     {
-        "marca": "McCain",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/McCain.png",
+        "rta_correcta": "McCain",
+        "rtas_incorrectas": ["Kraft", "Pringles", "Lays"],
         "dificultad": "d"
     },
     {
-        "marca": "Tostadas Bimbo",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/TostadasBimbo.png",
+        "rta_correcta": "Tostadas Bimbo",
+        "rtas_incorrectas": ["Lactal", "Calsa", "Molinos"],
         "dificultad": "d"
     },
     {
-        "marca": "Arcor",
-        "rta_correcta": "no_completar",
-        "rtas_incorrectas": "no_completar",
+        "url_imagen": "imagenes/Logos/Dificil/Clight.png",
+        "rta_correcta": "Clight",
+        "rtas_incorrectas": ["Rinde 2", "Vitamina C", "Tang"],
         "dificultad": "d"
     }
 ]

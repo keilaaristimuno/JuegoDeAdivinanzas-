@@ -108,6 +108,18 @@ def obtener_categoria(juego):
     
     return categoria
 
+def obtener_archivo_categoria(juego):
+    
+    match juego.categoria:
+        case "b":
+            categoria = "datos_banderas.json"
+        case "c":
+            categoria = "datos_comidas.json"
+        case "e":
+            categoria = "datos_equipos.json"
+            
+    return categoria
+
 def obtener_dificultad(juego):
 
     match juego.dificultad:

@@ -1,4 +1,5 @@
 import pygame
+import random
 from funciones import *
 
 pygame.init()
@@ -17,13 +18,42 @@ class Juego():
         self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
+        self.preguntas_posibles = []
+        self.pregunta_actual = None
         self.sonidos = True
         self.musica = True
         self.cancion = None
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
-
+    
+    def obtener_pregunta(self):
+        numero_random = random.randint(0,len(self.preguntas_posibles)-1)
+        self.pregunta_actual = self.preguntas_posibles[numero_random]
+        self.preguntas_posibles.pop(numero_random)
+        
+    def obtener_rtas(self, btns: list):
+        indices_usados = []
+        indice_btns = 0
+        rtas = self.pregunta_actual["rtas_incorrectas"]
+        rtas.append(self.pregunta_actual["rta_correcta"])
+        
+        while len(indices_usados) < 4:
+            indice_random = random.randint(0,3)
+            agregar = True
+            for indice_usado in indices_usados:
+                if indice_random == indice_usado:
+                    agregar = False   
+            if agregar == True:
+                btns[indice_btns].actualizar_txt(rtas[indice_random])
+                indice_btns += 1
+                indices_usados.append(indice_random)
+                
+    def resetear_datos(self):
+        self.pregunta_actual = None
+        self.preguntas_posibles = []
+ 
+        
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)
