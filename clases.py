@@ -18,6 +18,8 @@ class Juego():
         self.sonidos = True
         self.musica = True
         self.cancion = None
+        self.mostrando_configuracion = False
+        self.mostrando_como_jugar = False
 
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:

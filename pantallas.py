@@ -137,11 +137,20 @@ def mostrar_principal(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True
+            juego.mostrando_configuracion = True #probando
         else:
             juego.pausado = False
             
+    #Valido si hizo click en el boton de como jugar
+    if btn_como_jugar.validar_click(lista_eventos) == True:
+        juego.pausado = True
+        juego.mostrando_como_jugar = True #probando
+
     if juego.pausado == True:
-        mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
+        if juego.mostrando_configuracion:
+            mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
+        elif juego.mostrando_como_jugar:
+            mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego)
 
 def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     
@@ -163,6 +172,7 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     #Verifico si se hizo click en cerrrar el menu de configuracion
     if btn_cerrar_config.validar_click(lista_eventos) == True:
         juego.pausado = False
+        juego.mostrando_configuracion = False #probando
     #Verifico si se hizo click en el boton de sonido
     if btn_sonido_icono.validar_click(lista_eventos) == True:
         #Valido si el sonido esta encendido o apagado
@@ -332,4 +342,17 @@ def mostrar_jugando(ventana, jugador: dict, pos_mouse, lista_eventos, juego) -> 
         mostrar_pausa(ventana, lista_eventos, pos_mouse, juego)
     
 
-
+def mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego):
+    fondo_c_jugar = pygame.image.load("imagenes\Fondos\Fondo_como_jugar.jpg")
+    fondo_c_jugar = pygame.transform.scale(fondo_c_jugar, (1000, 500))
+    ventana.blit(fondo_c_jugar, (0,0))
+    
+    menu_c_jugar.dibujar_btn(ventana, 0, 3)
+    marco_menu_c_jugar.dibujar_btn(ventana,10,3)
+    btn_cerrar_c_jugar.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
+    btn_titulo_c_jugar.dibujar_btn(ventana, 0, 0)
+    btn_explicacion_c_jugar.dibujar_btn(ventana,0,0,0,110)
+    #Verifico si hizo click al cerrar el menu de como jugar
+    if btn_cerrar_c_jugar.validar_click(lista_eventos) == True:
+        juego.pausado = False
+        juego.mostrando_como_jugar = False  #prueba
