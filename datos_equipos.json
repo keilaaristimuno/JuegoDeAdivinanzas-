@@ -1,0 +1,182 @@
+[
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Boca_Juniors.png",
+        "rta_correcta": "Boca Juniors",
+        "rtas_incorrectas": ["River Plate", "Independiente", "Racing Club"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Manchester_United.png",
+        "rta_correcta": "Manchester United",
+        "rtas_incorrectas": ["Manchester City", "Liverpool", "Chelsea"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Real_Madrid.png",
+        "rta_correcta": "Real Madrid",
+        "rtas_incorrectas": ["Barcelona", "Atletico de Madrid", "Valencia"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Juventus.png",
+        "rta_correcta": "Juventus",
+        "rtas_incorrectas": ["Inter de Milan", "AC Milan", "Roma"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Racing_Club.png",
+        "rta_correcta": "Racing Club",
+        "rtas_incorrectas": ["Independiente", "Boca Juniors", "River Plate"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Liverpool.png",
+        "rta_correcta": "Liverpool",
+        "rtas_incorrectas": ["Everton", "Manchester United", "Arsenal"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Barcelona.png",
+        "rta_correcta": "Barcelona",
+        "rtas_incorrectas": ["Real Madrid", "Atletico de Madrid", "Valencia"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/AC_Milan.png",
+        "rta_correcta": "AC Milan",
+        "rtas_incorrectas": ["Inter de Milan", "Juventus", "Roma"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/San_Lorenzo.png",
+        "rta_correcta": "San Lorenzo",
+        "rtas_incorrectas": ["Huracan", "Independiente", "River Plate"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Facil/Chelsea.png",
+        "rta_correcta": "Chelsea",
+        "rtas_incorrectas": ["Arsenal", "Manchester United", "Liverpool"],
+        "dificultad": "f"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Arsenal.png",
+        "rta_correcta": "Arsenal",
+        "rtas_incorrectas": ["Tottenham Hotspur", "Chelsea", "Manchester City"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Atletico_de_Madrid.png",
+        "rta_correcta": "Atletico de Madrid",
+        "rtas_incorrectas": ["Real Madrid", "Barcelona", "Valencia"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Napoli.png",
+        "rta_correcta": "Napoli",
+        "rtas_incorrectas": ["Juventus", "Inter de Milan", "AC Milan"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/River_Plate.png",
+        "rta_correcta": "River Plate",
+        "rtas_incorrectas": ["Boca Juniors", "Racing Club", "Independiente"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Manchester_City.png",
+        "rta_correcta": "Manchester City",
+        "rtas_incorrectas": ["Manchester United", "Liverpool", "Chelsea"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Valencia.png",
+        "rta_correcta": "Valencia",
+        "rtas_incorrectas": ["Real Madrid", "Barcelona", "Atletico de Madrid"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Inter_de_Milan.png",
+        "rta_correcta": "Inter de Milan",
+        "rtas_incorrectas": ["Juventus", "AC Milan", "Roma"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Sevilla.png",
+        "rta_correcta": "Sevilla",
+        "rtas_incorrectas": ["Real Madrid", "Barcelona", "Valencia"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Tottenham_Hotspur.png",
+        "rta_correcta": "Tottenham Hotspur",
+        "rtas_incorrectas": ["Arsenal", "Chelsea", "Manchester United"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Normal/Roma.png",
+        "rta_correcta": "Roma",
+        "rtas_incorrectas": ["Juventus", "Inter de Milan", "AC Milan"],
+        "dificultad": "n"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Independiente.png",
+        "rta_correcta": "Independiente",
+        "rtas_incorrectas": ["Racing Club", "Boca Juniors", "San Lorenzo"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Everton.png",
+        "rta_correcta": "Everton",
+        "rtas_incorrectas": ["Liverpool", "Manchester United", "Arsenal"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Fiorentina.png",
+        "rta_correcta": "Fiorentina",
+        "rtas_incorrectas": ["Juventus", "Inter de Milan", "AC Milan"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Leicester_City.png",
+        "rta_correcta": "Leicester City",
+        "rtas_incorrectas": ["Manchester City", "Chelsea", "Arsenal"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Sampdoria.png",
+        "rta_correcta": "Sampdoria",
+        "rtas_incorrectas": ["Juventus", "Inter de Milan", "AC Milan"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/West_Ham_United.png",
+        "rta_correcta": "West Ham United",
+        "rtas_incorrectas": ["Chelsea", "Tottenham Hotspur", "Arsenal"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Villarreal.png",
+        "rta_correcta": "Villarreal",
+        "rtas_incorrectas": ["Real Madrid", "Barcelona", "Atletico de Madrid"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Genoa.png",
+        "rta_correcta": "Genoa",
+        "rtas_incorrectas": ["Juventus", "Inter de Milan", "AC Milan"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Crystal_Palace.png",
+        "rta_correcta": "Crystal Palace",
+        "rtas_incorrectas": ["Arsenal", "Chelsea", "Tottenham Hotspur"],
+        "dificultad": "d"
+    },
+    {
+        "url_imagen": "imagenes/Equipos/Dificil/Celta_de_Vigo.png",
+        "rta_correcta": "Celta de Vigo",
+        "rtas_incorrectas": ["Real Madrid", "Barcelona", "Atletico de Madrid"],
+        "dificultad": "d"
+    }
+]
