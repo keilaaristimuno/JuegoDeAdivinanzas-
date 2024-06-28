@@ -43,7 +43,6 @@ def normalizar_datos_jugador(diccionario: dict) -> None:
     
     diccionario["monedas"] = int(diccionario["monedas"])
     diccionario["gemas"] = int(diccionario["gemas"])
-    diccionario["tiempo"] = int(diccionario["tiempo"])
     diccionario["nivel_exp"] = int(diccionario["nivel_exp"])
     diccionario["puntaje_exp"] = diccionario["puntaje_exp"].split("/")
     for i in range(len(diccionario["puntaje_exp"])):
@@ -88,3 +87,40 @@ def validar_click_en_boton(lista_eventos, pos_mouse, boton):
         elif evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
             return False
 
+def mostrar_jugador_no_encontrado():
+    print("jugador no encontrado")
+
+def obtener_categoria(juego):
+    
+    match juego.categoria:
+        
+        case "b":
+            categoria = "Banderas"
+        case "c":
+            categoria = "Comidas"
+        case "f":
+            categoria = "Futbol"
+        case "a":
+            categoria = "Autos"
+        case "t":
+            categoria = "Tecnologia"
+    
+    return categoria
+
+def obtener_dificultad(juego):
+
+    match juego.dificultad:
+        case "f":
+            dificultad = "Facil"
+        case "n":
+            dificultad = "Normal"
+        case "d":
+            dificultad = "Dificil"
+    
+    return dificultad
+
+def validar_enter(lista_eventos):
+    for evento in lista_eventos:
+        if evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_RETURN:
+                return True

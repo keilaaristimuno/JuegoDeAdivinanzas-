@@ -13,6 +13,8 @@ class Juego():
         self.puntaje = 0
         self.gemas = 0
         self.monedas = 0
+        self.nivel_jugador = 0
+        self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
         self.sonidos = True
