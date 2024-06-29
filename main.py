@@ -25,7 +25,9 @@ juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
 pygame.mixer.music.play(-1)
 pygame.mixer.music.pause()
+reloj = pygame.time.Clock()
 ejecutar = True
+
 while ejecutar:
     lista_eventos = pygame.event.get()
     pos_mouse = pygame.mouse.get_pos()
@@ -42,5 +44,7 @@ while ejecutar:
         pantallas.mostrar_jugando(ventana, pos_mouse, lista_eventos, juego)
     #Todo los obejtos superficies que meta en la ventana lo tengo que actualizar con el update
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
-
+    
+    reloj.tick(60)
+   
 pygame.quit()

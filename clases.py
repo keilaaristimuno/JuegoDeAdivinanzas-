@@ -21,9 +21,13 @@ class Juego():
         self.vidas = 5
         self.preguntas_posibles = []
         self.pregunta_actual = None
+        self.pregunta_acertada = False
         self.sonidos = True
         self.musica = True
         self.cancion = None
+        self.tiempo_in_preg = None
+        self.tiempo_act_preg = None
+        self.tiempo_rest_preg = 30
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
@@ -56,47 +60,90 @@ class Juego():
                 if btn.validar_click(lista_eventos) == True and btn.color != colores.VERDE_C:
                     if btn.txt == self.pregunta_actual["rta_correcta"]:
                         btn.color = colores.VERDE_C
-                        if len(self.preguntas_posibles) == 9:
-                            self.recompensar_partida()
-                            self.resetear_datos()
+                        self.recompensar_rta()
+                        self.pregunta_acertada = True
+                        if self.pregunta_acertada == True:
+                            self.esperar(2000)
                     elif btn.color !=  colores.ROJO_C:
                         btn.color = colores.ROJO_C
                         btn.hover = False
+                        self.penalizar_rta()
                         self.vidas -= 1
-                        
-    def recompensar_partida(self):
+                        if self.vidas == 0:
+                            self.esperar(2000)
+                            self.jugando = False
+                            
+    def recompensar_rta(self):
         if self.dificultad == "f":
             multiplicador = 1
         elif self.dificultad == "n":
-            multiplicador = 1.5
+            multiplicador = 2
         else:
-            multiplicador == 2
+            multiplicador = 3
         
         match self.categoria:
         
             case "b":
-                monedas = 50 * multiplicador
+                monedas = 20 * multiplicador
                 self.monedas += monedas 
             case "c":
-                monedas = 75 * multiplicador
+                monedas = 35 * multiplicador
                 gemas = 1 * multiplicador
                 self.monedas += monedas
                 self.gemas += gemas
             case "e":
-                monedas = 100 * multiplicador
+                monedas = 50 * multiplicador
                 gemas = 2 * multiplicador
                 self.monedas += monedas
                 self.gemas += gemas
-            case _:
-                pass
-            
+                
+    def penalizar_rta(self):
         
+        if self.dificultad == "f":
+            penalizacion = 10
+        elif self.dificultad == "n":
+            penalizacion = 15
+        else:
+            penalizacion = 20
+        
+        match self.categoria:
+        
+            case "b":
+                pass
+            case "c":
+                if self.monedas - penalizacion >= 0:
+                    self.monedas -= penalizacion
+                else:
+                    self.monedas = 0
+            case "e":
+                if self.monedas - penalizacion >= 0:
+                    self.monedas -= penalizacion
+                else:
+                    self.monedas = 0
+                    
+    def esperar(self, espera):
+        pygame.time.delay(espera)
+        self.tiempo_rest_preg = 0
+            
+    def calcular_tiempo_restante(self):
+        self.tiempo_act_preg = pygame.time.get_ticks()
+        tiempo_transcurrido = int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001)
+        if self.tiempo_rest_preg != 0 and self.pregunta_acertada == False:
+            self.tiempo_rest_preg = 30 - tiempo_transcurrido
+        
+        
+            
     def resetear_datos(self):
         self.pregunta_actual = None
         self.preguntas_posibles = []
         self.vidas = 5
+        self.pregunta_acertada = False
         self.jugando = False
- 
+    
+    def resetear_tiempo(self):
+        self.tiempo_in_preg = None
+        self.tiempo_act_preg = None
+        self.tiempo_rest_preg = 30
         
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:

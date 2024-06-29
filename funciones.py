@@ -176,3 +176,9 @@ def validar_enter(lista_eventos):
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_RETURN:
                 return True
+            
+def resetear_btns_rtas(btns:  list):
+    
+    for btn in btns:
+        btn.color = colores.AZUL_O
+        btn.hover = colores.CELESTE

@@ -321,17 +321,41 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     fondo_superior_jugando = pygame.image.load("imagenes\Fondos\Fondo_jugando.png")
     fondo_superior_jugando = pygame.transform.scale(fondo_superior_jugando, (1000, 300))
     data_archivo = obtener_archivo_categoria(juego)
+    
+    if juego.tiempo_in_preg == None:
+        juego.tiempo_in_preg = pygame.time.get_ticks()
+        
+    juego.calcular_tiempo_restante()
+    
+    if juego.vidas == 0:
+        juego.esperar(2000)
+        juego.jugando = False
+        
     if len(juego.preguntas_posibles) == 0:
         with open(data_archivo, "r") as archivo:
             data = json.load(archivo)
             for i in range(len(data)):
                 if data[i]["dificultad"] == juego.dificultad:
                     juego.preguntas_posibles.append(data[i])
-    
-    if juego.pregunta_actual == None:
+    elif len(juego.preguntas_posibles) == 4:
+        juego.pausado = False
+        juego.jugando = False
+        
+    if juego.pregunta_actual == None or juego.tiempo_rest_preg == 0:
         juego.obtener_pregunta()   
         juego.obtener_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4])
-        
+        if juego.tiempo_rest_preg == 0 and juego.pregunta_acertada == False:
+            juego.vidas -= 1
+        juego.resetear_tiempo()
+        juego.pregunta_acertada = False
+        resetear_btns_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4])
+    elif juego.pregunta_acertada == True:
+        btn_rta_1.hover = False
+        btn_rta_2.hover = False
+        btn_rta_3.hover = False
+        btn_rta_4.hover = False
+    
+     
     #Fondo de pantalla para las respuestas
     fondo_inferior_jugando = pygame.image.load("imagenes\Fondos\Fondo_respuestas.jpg")
     fondo_inferior_jugando = pygame.transform.scale(fondo_inferior_jugando, (1000,320))
@@ -363,7 +387,7 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
                                                 txt_cant_monedas )))
     
     btn_cant_tiempo.dibujar_btn(ventana, 0, 0, -30, -2)
-    txt_cant_tiempo = fuentes.FUENTE_25.render("600", True, colores.BLANCO)
+    txt_cant_tiempo = fuentes.FUENTE_25.render(str(juego.tiempo_rest_preg), True, colores.BLANCO)
     ventana.blit(txt_cant_tiempo, (centrar_txt(rectangulos.REC_PJ_TIEMPO.centerx +23 , rectangulos.REC_PJ_TIEMPO.centery, 
                                                txt_cant_tiempo )))
 # Nivel que se encuentra
