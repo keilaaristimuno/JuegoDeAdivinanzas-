@@ -51,10 +51,10 @@ btn_dif_d = clases.BotonTxt(rectangulos.REC_PP_DIF_D, colores.ROJO_O, fuentes.FU
 
 # botones pantalla jugando
 btn_pausa = clases.BotonImg(rectangulos.REC_PJ_PAUSA, colores.NARANJA_C, "imagenes\P_Jugando\pausa.png", (25,25), colores.AMARILLO)
-btn_rta_1 = clases.BotonTxt(rectangulos.REC_RESP_1, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
-btn_rta_2 = clases.BotonTxt(rectangulos.REC_RESP_2, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
-btn_rta_3 = clases.BotonTxt(rectangulos.REC_RESP_3, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
-btn_rta_4 = clases.BotonTxt(rectangulos.REC_RESP_4, colores.AZUL_O, fuentes.FUENTE_35, "Argentina", colores.BLANCO, colores.CELESTE)
+btn_rta_1 = clases.BotonTxt(rectangulos.REC_RESP_1, colores.AZUL_O, fuentes.FUENTE_35, "None", colores.BLANCO, colores.CELESTE)
+btn_rta_2 = clases.BotonTxt(rectangulos.REC_RESP_2, colores.AZUL_O, fuentes.FUENTE_35, "None", colores.BLANCO, colores.CELESTE)
+btn_rta_3 = clases.BotonTxt(rectangulos.REC_RESP_3, colores.AZUL_O, fuentes.FUENTE_35, "None", colores.BLANCO, colores.CELESTE)
+btn_rta_4 = clases.BotonTxt(rectangulos.REC_RESP_4, colores.AZUL_O, fuentes.FUENTE_35, "None", colores.BLANCO, colores.CELESTE)
 btn_bandera = clases.BotonImg(rectangulos.REC_BANDERAS,colores.NEGRO, "imagenes\General\icono.png", (100,100))
 btn_fondo_bandera = clases.Boton(rectangulos.REC_FONDO_BANDERAS, colores.BLANCO)
 

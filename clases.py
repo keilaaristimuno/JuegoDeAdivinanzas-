@@ -18,6 +18,7 @@ class Juego():
         self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
+        self.vidas = 5
         self.preguntas_posibles = []
         self.pregunta_actual = None
         self.sonidos = True
@@ -49,9 +50,52 @@ class Juego():
                 indice_btns += 1
                 indices_usados.append(indice_random)
                 
+    def validar_click_rtas(self, btns: list,  lista_eventos):
+        for evento in lista_eventos:
+            for btn in btns:
+                if btn.validar_click(lista_eventos) == True and btn.color != colores.VERDE_C:
+                    if btn.txt == self.pregunta_actual["rta_correcta"]:
+                        btn.color = colores.VERDE_C
+                        if len(self.preguntas_posibles) == 9:
+                            self.recompensar_partida()
+                            self.resetear_datos()
+                    elif btn.color !=  colores.ROJO_C:
+                        btn.color = colores.ROJO_C
+                        btn.hover = False
+                        self.vidas -= 1
+                        
+    def recompensar_partida(self):
+        if self.dificultad == "f":
+            multiplicador = 1
+        elif self.dificultad == "n":
+            multiplicador = 1.5
+        else:
+            multiplicador == 2
+        
+        match self.categoria:
+        
+            case "b":
+                monedas = 50 * multiplicador
+                self.monedas += monedas 
+            case "c":
+                monedas = 75 * multiplicador
+                gemas = 1 * multiplicador
+                self.monedas += monedas
+                self.gemas += gemas
+            case "e":
+                monedas = 100 * multiplicador
+                gemas = 2 * multiplicador
+                self.monedas += monedas
+                self.gemas += gemas
+            case _:
+                pass
+            
+        
     def resetear_datos(self):
         self.pregunta_actual = None
         self.preguntas_posibles = []
+        self.vidas = 5
+        self.jugando = False
  
         
 class Boton():
@@ -198,31 +242,5 @@ class BotonEntradaTxt():
             self.escribiendo = True
         elif validar_click_en_boton(lista_eventos, pos_mouse, self.rect) == False:
             self.escribiendo = False
-# class Entrada():
-    
-#     def __init__(self, fuente, pos_x = 0, pos_y= 0) -> None:
-#         self.caracteres =  [""]
-#         self.fuente = fuente
-#         self.distancia = 20
-#         self.pos_x = pos_x
-#         self.pos_y = pos_y
-        
-#     def escribir_ingreso(self, evento):
-        
-#         if evento.type == pygame.KEYDOWN:
-#             if evento.key == pygame.K_RETURN:
-#                 self.caracteres.append('\R')
-#             elif evento.key == pygame.K_BACKSPACE:
-#                 if len(self.caracteres) > 1:
-#                     self.caracteres.pop()
-#             else:
-#                 self.caracteres.append()
-#     def leer_tecla(self, evento):
-        
-#         if evento.type == pygame.KEYDOWN:
-#             if evento.key == pygame.K_RETURN:
-#                 return "\R"
-#             elif evento.key == pygame.K_BACKSPACE:
-#                 return "\B"
-#             else
+
     
