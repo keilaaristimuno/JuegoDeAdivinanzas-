@@ -35,6 +35,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
             if  largo_txt < 10:
                 juego.nombre_jugador += evento.text 
         elif evento.type == pygame.KEYDOWN:
+            teclas = pygame.key.get_pressed()
             if evento.key == pygame.K_BACKSPACE:
                 juego.nombre_jugador = juego.nombre_jugador[0:-1]
     
@@ -342,15 +343,12 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     imagen_vidas = pygame.image.load("imagenes\P_Jugando\Vida.png")
     imagen_vidas = pygame.transform.scale(imagen_vidas, (30,30))
 
-    # Número de vidas
-    num_vidas = 5
-
     # Posición inicial y separación entre vidas
     posicion_inicial = (50, 5)
     separacion = 20
 
     # Dibujar las vidas
-    for i in range(num_vidas):
+    for i in range(juego.vidas):
         ventana.blit(imagen_vidas, (posicion_inicial[0] + i * separacion, posicion_inicial[1]))
 
 #Imagen del personaje
@@ -358,36 +356,34 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     imagen_personaje = pygame.transform.scale(imagen_personaje, (100,180))
     ventana.blit(imagen_personaje, (100, 85))
 
-#Rectangulo de respuestas:
-    btn_rta_1.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
-    btn_rta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
-    btn_rta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
-    btn_rta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
-
-# Fondo de la imagen que debe contestar
-    btn_fondo_bandera.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery - 80, btn_fondo_bandera.rect)
-    btn_fondo_bandera.dibujar_btn(ventana, 0, 5)
-    btn_bandera.rect = centrar_rect(btn_fondo_bandera.rect.centerx, btn_fondo_bandera.rect.centery, btn_bandera.rect)
-    btn_bandera.actualizar_img_btn(juego.pregunta_actual["url_imagen"], (200,200))
-    btn_bandera.dibujar_btn(ventana, 0, 5)
-
 # Cantidad de monedas y tiempo:
     btn_cant_monedas.dibujar_btn(ventana, 0, 0, -30, 0)
     txt_cant_monedas = fuentes.FUENTE_25.render(f"{juego.monedas}", True, colores.BLANCO)
-    ventana.blit(txt_cant_monedas, (centrar_txt(rectangulos.REC_PJ_MONEDAS.centerx + 23, rectangulos.REC_PJ_MONEDAS.centery, txt_cant_monedas )))
+    ventana.blit(txt_cant_monedas, (centrar_txt(rectangulos.REC_PJ_MONEDAS.centerx + 23, rectangulos.REC_PJ_MONEDAS.centery, 
+                                                txt_cant_monedas )))
     
     btn_cant_tiempo.dibujar_btn(ventana, 0, 0, -30, -2)
     txt_cant_tiempo = fuentes.FUENTE_25.render("600", True, colores.BLANCO)
-    ventana.blit(txt_cant_tiempo, (centrar_txt(rectangulos.REC_PJ_TIEMPO.centerx +23 , rectangulos.REC_PJ_TIEMPO.centery, txt_cant_tiempo )))
-
-
+    ventana.blit(txt_cant_tiempo, (centrar_txt(rectangulos.REC_PJ_TIEMPO.centerx +23 , rectangulos.REC_PJ_TIEMPO.centery, 
+                                               txt_cant_tiempo )))
 # Nivel que se encuentra
     categoria = obtener_categoria(juego)
     dificultad = obtener_dificultad(juego)
     txt_dif_cat = fuentes.FUENTE_25.render(f"{categoria}: {dificultad}",True, colores.BLANCO)
     ventana.blit(txt_dif_cat, (centrar_txt(rectangulos.REC_NIVEL_BANDERAS.centerx, rectangulos.REC_NIVEL_BANDERAS.centery + 10, 
                                              txt_dif_cat)))
-
+# Fondo de la imagen que debe contestar
+    btn_fondo_bandera.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery - 80, btn_fondo_bandera.rect)
+    btn_fondo_bandera.dibujar_btn(ventana, 0, 5)
+    btn_bandera.rect = centrar_rect(btn_fondo_bandera.rect.centerx, btn_fondo_bandera.rect.centery, btn_bandera.rect)
+    btn_bandera.actualizar_img_btn(juego.pregunta_actual["url_imagen"], (200,200))
+    btn_bandera.dibujar_btn(ventana, 0, 5)
+#Rectangulo de respuestas:
+    btn_rta_1.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+    btn_rta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_rta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
+    btn_rta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
+    juego.validar_click_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4],  lista_eventos)
 # Agrego menu de pausa
     if btn_pausa.validar_click(lista_eventos) == True:
         if juego.pausado == False:
