@@ -1,182 +1,182 @@
 [
     {
-        "url_imagen": "imagenes/Logos/Facil/McDonalds.png",
+        "url_imagen": "imagenes/Comidas/Facil/McDonalds.png",
         "rta_correcta": "McDonalds",
         "rtas_incorrectas": ["Burger King", "KFC", "Starbucks"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/CocaCola.png",
+        "url_imagen": "imagenes/Comidas/Facil/CocaCola.png",
         "rta_correcta": "Coca-Cola",
         "rtas_incorrectas": ["Pepsi", "Sprite", "Fanta"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/Starbucks.png",
+        "url_imagen": "imagenes/Comidas/Facil/Starbucks.png",
         "rta_correcta": "Starbucks",
         "rtas_incorrectas": ["Dunkin' Donuts", "Tim Hortons", "Subway"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/KFC.png",
+        "url_imagen": "imagenes/Comidas/Facil/KFC.png",
         "rta_correcta": "KFC",
         "rtas_incorrectas": ["McDonalds", "Burger King", "Pizza Hut"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/BurgerKing.png",
+        "url_imagen": "imagenes/Comidas/Facil/BurgerKing.png",
         "rta_correcta": "Burger King",
         "rtas_incorrectas": ["McDonalds", "KFC", "Subway"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/Pepsi.png",
+        "url_imagen": "imagenes/Comidas/Facil/Pepsi.png",
         "rta_correcta": "Pepsi",
         "rtas_incorrectas": ["Coca-Cola", "Sprite", "Fanta"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/Nestle.png",
+        "url_imagen": "imagenes/Comidas/Facil/Nestle.png",
         "rta_correcta": "Nestle",
         "rtas_incorrectas": ["Cadbury", "Hersheys", "Ferrero"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/Subway.png",
+        "url_imagen": "imagenes/Comidas/Facil/Subway.png",
         "rta_correcta": "Subway",
         "rtas_incorrectas": ["McDonalds", "Burger King", "Starbucks"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/PizzaHut.png",
+        "url_imagen": "imagenes/Comidas/Facil/PizzaHut.png",
         "rta_correcta": "Pizza Hut",
         "rtas_incorrectas": ["Dominos Pizza", "Papa Johns", "Little Caesars"],
         "dificultad": "f"
     },
     {
-        "url_imagen": "imagenes/Logos/Facil/LaSerenisima.png",
+        "url_imagen": "imagenes/Comidas/Facil/LaSerenisima.png",
         "rta_correcta": "La Serenisima",
         "rtas_incorrectas": ["Sancor", "Mastellone", "Veronica"],
         "dificultad": "f"
     },
     
     {
-        "url_imagen": "imagenes/Logos/Normal/Havanna.png",
+        "url_imagen": "imagenes/Comidas/Normal/Havanna.png",
         "rta_correcta": "Havanna",
         "rtas_incorrectas": ["Cachafaz", "Guaymallen", "Jorgito"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/Freddo.png",
+        "url_imagen": "imagenes/Comidas/Normal/Freddo.png",
         "rta_correcta": "Freddo",
         "rtas_incorrectas": ["Persicco", "Grido", "Tio Felipe"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/BaskinRobbins.png",
+        "url_imagen": "imagenes/Comidas/Normal/BaskinRobbins.png",
         "rta_correcta": "Baskin-Robbins",
         "rtas_incorrectas": ["Grido", "Freddo", "Persicco"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/DominosPizza.png",
+        "url_imagen": "imagenes/Comidas/Normal/DominosPizza.png",
         "rta_correcta": "Dominos Pizza",
         "rtas_incorrectas": ["Papa Johns", "Pizza Hut", "Little Caesars"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/RedBull.png",
+        "url_imagen": "imagenes/Comidas/Normal/RedBull.png",
         "rta_correcta": "Red Bull",
         "rtas_incorrectas": ["Monster", "Rockstar", "Burn"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/KitKat.png",
+        "url_imagen": "imagenes/Comidas/Normal/KitKat.png",
         "rta_correcta": "KitKat",
         "rtas_incorrectas": ["Snickers", "Twix", "Milka"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/BenJerrys.png",
-        "rta_correcta": "Ben & Jerrys",
+        "url_imagen": "imagenes/Comidas/Normal/Bonobon.png",
+        "rta_correcta": "Bon o Bon",
         "rtas_incorrectas": ["Haagen-Dazs", "Cold Stone", "Magnum"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/Cadbury.png",
+        "url_imagen": "imagenes/Comidas/Normal/Cadbury.png",
         "rta_correcta": "Cadbury",
         "rtas_incorrectas": ["Milka", "Nestle", "Ferrero Rocher"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/TostadoCafeClub.png",
+        "url_imagen": "imagenes/Comidas/Normal/TostadoCafeClub.png",
         "rta_correcta": "Tostado Cafe Club",
         "rtas_incorrectas": ["Starbucks", "Cafe Martinez", "McDonalds"],
         "dificultad": "n"
     },
     {
-        "url_imagen": "imagenes/Logos/Normal/Bonafide.png",
+        "url_imagen": "imagenes/Comidas/Normal/Bonafide.png",
         "rta_correcta": "Bonafide",
         "rtas_incorrectas": ["Cafe Martinez", "Starbucks", "Havanna"],
         "dificultad": "n"
     },
     
     {
-        "url_imagen": "imagenes/Logos/Dificil/CafeMartinez.png",
+        "url_imagen": "imagenes/Comidas/Dificil/CafeMartinez.png",
         "rta_correcta": "Cafe Martinez",
         "rtas_incorrectas": ["Starbucks", "Havanna", "McDonalds"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/AlfajoresJorgito.png",
+        "url_imagen": "imagenes/Comidas/Dificil/AlfajoresJorgito.png",
         "rta_correcta": "Alfajores Jorgito",
         "rtas_incorrectas": ["Cachafaz", "Havanna", "Arcor"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/Grido.png",
+        "url_imagen": "imagenes/Comidas/Dificil/Grido.png",
         "rta_correcta": "Grido",
         "rtas_incorrectas": ["Freddo", "Persicco", "Helados Daniel"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/TacoBell.png",
+        "url_imagen": "imagenes/Comidas/Dificil/TacoBell.png",
         "rta_correcta": "Taco Bell",
         "rtas_incorrectas": ["McDonalds", "Burger King", "KFC"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/Wendys.png",
+        "url_imagen": "imagenes/Comidas/Dificil/Wendys.png",
         "rta_correcta": "Wendys",
         "rtas_incorrectas": ["Burger King", "McDonalds", "KFC"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/Mostaza.png",
+        "url_imagen": "imagenes/Comidas/Dificil/Mostaza.png",
         "rta_correcta": "Mostaza",
         "rtas_incorrectas": ["McDonalds", "Burger King", "KFC"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/Bagley.png",
+        "url_imagen": "imagenes/Comidas/Dificil/Bagley.png",
         "rta_correcta": "Bagley",
         "rtas_incorrectas": ["Arcor", "Havanna", "Grido"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/McCain.png",
+        "url_imagen": "imagenes/Comidas/Dificil/McCain.png",
         "rta_correcta": "McCain",
         "rtas_incorrectas": ["Kraft", "Pringles", "Lays"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/TostadasBimbo.png",
+        "url_imagen": "imagenes/Comidas/Dificil/TostadasBimbo.png",
         "rta_correcta": "Tostadas Bimbo",
         "rtas_incorrectas": ["Lactal", "Calsa", "Molinos"],
         "dificultad": "d"
     },
     {
-        "url_imagen": "imagenes/Logos/Dificil/Clight.png",
+        "url_imagen": "imagenes/Comidas/Dificil/Clight.png",
         "rta_correcta": "Clight",
         "rtas_incorrectas": ["Rinde 2", "Vitamina C", "Tang"],
         "dificultad": "d"
