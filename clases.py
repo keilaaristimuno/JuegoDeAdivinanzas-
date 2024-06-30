@@ -65,7 +65,7 @@ class Juego():
                         self.recompensar_rta()
                         self.pregunta_acertada = True
                         if self.pregunta_acertada == True:
-                            self.esperar(2000)
+                            self.esperar(1000)
                     elif btn.color !=  colores.ROJO_C:
                         btn.color = colores.ROJO_C
                         btn.hover = False
