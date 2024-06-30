@@ -31,12 +31,14 @@ class Juego():
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
-    
+
+#Generar las preguntas de manera aleatoria
     def obtener_pregunta(self):
         numero_random = random.randint(0,len(self.preguntas_posibles)-1)
         self.pregunta_actual = self.preguntas_posibles[numero_random]
         self.preguntas_posibles.pop(numero_random)
         
+    #Genera las respuestas de manera aleatoria random
     def obtener_rtas(self, btns: list):
         indices_usados = []
         indice_btns = 0
@@ -72,6 +74,7 @@ class Juego():
                         if self.vidas == 0:
                             self.esperar(2000)
                             self.jugando = False
+                            
                             
     def recompensar_rta(self):
         if self.dificultad == "f":
@@ -130,8 +133,6 @@ class Juego():
         tiempo_transcurrido = int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001)
         if self.tiempo_rest_preg != 0 and self.pregunta_acertada == False:
             self.tiempo_rest_preg = 30 - tiempo_transcurrido
-        
-        
             
     def resetear_datos(self):
         self.pregunta_actual = None

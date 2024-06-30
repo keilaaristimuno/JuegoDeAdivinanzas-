@@ -422,11 +422,8 @@ def mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego):
     fondo_c_jugar = pygame.transform.scale(fondo_c_jugar, (1000, 500))
     ventana.blit(fondo_c_jugar, (0,0))
     
-    menu_c_jugar.dibujar_btn(ventana, 0, 3)
-    marco_menu_c_jugar.dibujar_btn(ventana,10,3)
+    btn_explicacion_c_jugar.dibujar_btn(ventana,0,5)
     btn_cerrar_c_jugar.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
-    btn_titulo_c_jugar.dibujar_btn(ventana, 0, 0)
-    btn_explicacion_c_jugar.dibujar_btn(ventana,0,0,0,110)
     #Verifico si hizo click al cerrar el menu de como jugar
     if btn_cerrar_c_jugar.validar_click(lista_eventos) == True:
         juego.pausado = False
