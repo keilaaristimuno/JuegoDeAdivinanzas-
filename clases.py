@@ -17,6 +17,7 @@ class Juego():
         self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
+        self.record_monedas = 0
         self.vidas = 5
         self.preguntas_posibles = []
         self.pregunta_actual = None
@@ -31,6 +32,16 @@ class Juego():
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
 
+    def logear(self, jugador):
+        
+        self.logeado = True
+        self.nombre_jugador = jugador["nombre"]
+        self.monedas = jugador["monedas"]
+        self.gemas = jugador["gemas"]
+        self.nivel_jugador = jugador["nivel_exp"]
+        self.exp_jugador = jugador["puntaje_exp"]
+        self.record_monedas = jugador["record_monedas"]
+        
 #Generar las preguntas de manera aleatoria
     def obtener_pregunta(self):
         numero_random = random.randint(0,len(self.preguntas_posibles)-1)
@@ -63,9 +74,12 @@ class Juego():
                         btn.color = colores.VERDE_C
                         self.recompensar_rta()
                         self.actualizar_exp_jugador()
+                        self.actualizar_record()
                         self.pregunta_acertada = True
+                        self.tiempo_acumulado += int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001) 
                         if self.pregunta_acertada == True:
                             self.esperar(1000)
+                            
                     elif btn.color !=  colores.ROJO_C:
                         btn.color = colores.ROJO_C
                         btn.hover = False
@@ -74,6 +88,10 @@ class Juego():
                         if self.vidas == 0:
                             self.esperar(2000)
                             self.jugando = False
+    def actualizar_record(self):
+        
+        if self.record_monedas < self.monedas:
+            self.record_monedas = self.monedas
                             
     def obtener_multiplicador(self):
         if self.dificultad == "f":
@@ -82,7 +100,8 @@ class Juego():
             multiplicador = 2
         else:
             multiplicador = 3
-        return multiplicador                 
+        return multiplicador 
+                    
     def recompensar_rta(self):
         
         multiplicador = self.obtener_multiplicador()
@@ -134,7 +153,7 @@ class Juego():
         self.tiempo_act_preg = pygame.time.get_ticks()
         tiempo_transcurrido = int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001)
         if self.tiempo_rest_preg != 0 and self.pregunta_acertada == False:
-            self.tiempo_rest_preg = 30 - tiempo_transcurrido
+            self.tiempo_rest_preg = 5 - tiempo_transcurrido
             
     def resetear_datos(self):
         self.pregunta_actual = None
@@ -142,6 +161,7 @@ class Juego():
         self.vidas = 5
         self.pregunta_acertada = False
         self.jugando = False
+        self.tiempo_acumulado = 0
     
     def resetear_tiempo(self):
         self.tiempo_in_preg = None

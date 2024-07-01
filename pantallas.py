@@ -48,12 +48,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     if btn_empezar.validar_click(lista_eventos) == True or (btn_ent_txt.escribiendo == True and validar_enter(lista_eventos)):
         for jugador in jugadores:
             if juego.nombre_jugador.lower() == jugador["nombre"].lower():
-                juego.logeado = True
-                juego.nombre_jugador = jugador["nombre"]
-                juego.monedas = jugador["monedas"]
-                juego.gemas = jugador["gemas"]
-                juego.nivel_jugador = jugador["nivel_exp"]
-                juego.exp_jugador = jugador["puntaje_exp"]
+                juego.logear(jugador)
             else:
                 agregar_jugador = mostrar_jugador_no_encontrado()
             
