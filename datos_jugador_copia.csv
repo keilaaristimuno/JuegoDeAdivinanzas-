@@ -1,6 +1,6 @@
-nombre,monedas,gemas,nivel_exp,puntaje_exp
-pepe,20,5,3,5/30
-carlos,650,25,8,15/80
-florencia,500,50,10,50/100
-carolina,0,0,1,0/10
-marcos,1200,400,25,45/250
+nombre,monedas,gemas,nivel_exp,puntaje_exp,record_monedas
+pepe,20,5,3,5/30,20
+carlos,390,25,7,20/70,390
+florencia,500,50,10,50/100,500
+carolina,0,0,1,0/10,0
+marcos,1200,400,25,45/250,1200

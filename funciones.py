@@ -46,9 +46,19 @@ def normalizar_datos_jugador(diccionario: dict) -> None:
     diccionario["gemas"] = int(diccionario["gemas"])
     diccionario["nivel_exp"] = int(diccionario["nivel_exp"])
     diccionario["puntaje_exp"] = diccionario["puntaje_exp"].split("/")
-    for i in range(len(diccionario["puntaje_exp"])):
-        diccionario["puntaje_exp"][i] = int(diccionario["puntaje_exp"][i])
-
+    diccionario["record_monedas"] = int(diccionario["record_monedas"])
+    parsear_lista(diccionario["puntaje_exp"], "int")
+    
+def parsear_lista(lista:list, tipo_dato: str):
+    
+    match tipo_dato:
+        case "int":
+            for i in range(len(lista)):
+                lista[i] = int(lista[i])
+        case "str":
+            for i in range(len(lista)):
+                lista[i] = str(lista[i])
+        
 def crear_lista_jugadores(datos: list, cabecera: list) -> list:
     """Crea una lista
 
@@ -197,8 +207,7 @@ def set_data_csv(data: list, csv_txt: str, juego) -> str:
     set_datos_jugador_csv(data, juego)
     
     for i in range(len(data)):
-        data[i]["puntaje_exp"][0] = str(data[i]["puntaje_exp"][0])
-        data[i]["puntaje_exp"][1] = str(data[i]["puntaje_exp"][1])
+        parsear_lista(data[i]["puntaje_exp"], "str")
         data[i]["puntaje_exp"] = "/".join(data[i]["puntaje_exp"])
         data_linea = list(data[i].values())
         for j in range(len(data_linea)):
@@ -217,4 +226,6 @@ def set_datos_jugador_csv(data, juego):
             jugador["monedas"] = juego.monedas
             jugador["gemas"] = juego.gemas
             jugador["nivel_exp"] = juego.nivel_jugador
+            jugador["record_monedas"] = juego.record_monedas
             break
+        
