@@ -182,3 +182,30 @@ def resetear_btns_rtas(btns:  list):
     for btn in btns:
         btn.color = colores.AZUL_O
         btn.hover = colores.CELESTE
+        
+def set_cabecera_csv(cabecera: list, csv_txt):
+    
+    for i in range(len(cabecera)):
+        if i < len(cabecera) -1:
+            csv_txt += cabecera[i] + ","
+        else:
+            csv_txt += cabecera[i] 
+    return csv_txt
+
+def set_data_csv(data: list, csv_txt: str) -> str:
+
+    for i in range(len(data)):
+        
+        data[i]["puntaje_exp"][0] = str(data[i]["puntaje_exp"][0])
+        data[i]["puntaje_exp"][1] = str(data[i]["puntaje_exp"][1])
+        data[i]["puntaje_exp"] = "/".join(data[i]["puntaje_exp"])
+        data_linea = list(data[i].values())
+        for j in range(len(data_linea)):
+            if j < len(data_linea)-1:
+                if j == 0:
+                    csv_txt += "\n"
+                csv_txt += str(data_linea[j]) + ","
+            else:
+                csv_txt += str(data_linea[j])
+    return csv_txt
+

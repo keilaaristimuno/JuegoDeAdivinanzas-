@@ -24,7 +24,6 @@ juego = clases.Juego()
 juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
 pygame.mixer.music.play(-1)
-pygame.mixer.music.pause()
 reloj = pygame.time.Clock()
 ejecutar = True
 
@@ -46,5 +45,12 @@ while ejecutar:
     pygame.display.update() #hasta que no actualizo la ventana no la cambio de estado entonces el color no se pone
     
     reloj.tick(60)
-   
+
+jugadores_csv = ""
+jugadores_csv = funciones.set_cabecera_csv(cabecera, jugadores_csv)
+jugadores_csv = funciones.set_data_csv(jugadores, jugadores_csv)
+
+with open("datos_jugador_copia.csv", "w+") as file:     
+    file.write(jugadores_csv)
+    
 pygame.quit()

@@ -63,6 +63,7 @@ class Juego():
                     if btn.txt == self.pregunta_actual["rta_correcta"]:
                         btn.color = colores.VERDE_C
                         self.recompensar_rta()
+                        self.actualizar_exp_jugador()
                         self.pregunta_acertada = True
                         if self.pregunta_acertada == True:
                             self.esperar(1000)
@@ -75,15 +76,17 @@ class Juego():
                             self.esperar(2000)
                             self.jugando = False
                             
-                            
-    def recompensar_rta(self):
+    def obtener_multiplicador(self):
         if self.dificultad == "f":
             multiplicador = 1
         elif self.dificultad == "n":
             multiplicador = 2
         else:
             multiplicador = 3
+        return multiplicador                 
+    def recompensar_rta(self):
         
+        multiplicador = self.obtener_multiplicador()
         match self.categoria:
         
             case "b":
@@ -146,6 +149,19 @@ class Juego():
         self.tiempo_act_preg = None
         self.tiempo_rest_preg = 30
         
+    def actualizar_exp_jugador(self):
+        multiplicador = self.obtener_multiplicador()
+        self.exp_jugador[0] += 5 * multiplicador
+        if self.exp_jugador[0] >= self.exp_jugador[1]:
+            self.nivel_jugador += 1
+            if self.exp_jugador[0] == self.exp_jugador[1]:
+                self.exp_jugador[0] = 0
+            else:
+                self.exp_jugador[0] = self.exp_jugador[0] - self.exp_jugador[1]
+            self.exp_jugador[1] = self.nivel_jugador * 10
+            
+            
+            
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)
