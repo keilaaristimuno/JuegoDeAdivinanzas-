@@ -11,7 +11,6 @@ class Juego():
         self.jugando = False
         self.pausado = False
         self.nombre_jugador = ""
-        self.puntaje = 0
         self.gemas = 0
         self.monedas = 0
         self.nivel_jugador = 0
@@ -159,8 +158,6 @@ class Juego():
             else:
                 self.exp_jugador[0] = self.exp_jugador[0] - self.exp_jugador[1]
             self.exp_jugador[1] = self.nivel_jugador * 10
-            
-            
             
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:

@@ -192,10 +192,11 @@ def set_cabecera_csv(cabecera: list, csv_txt):
             csv_txt += cabecera[i] 
     return csv_txt
 
-def set_data_csv(data: list, csv_txt: str) -> str:
+def set_data_csv(data: list, csv_txt: str, juego) -> str:
 
+    set_datos_jugador_csv(data, juego)
+    
     for i in range(len(data)):
-        
         data[i]["puntaje_exp"][0] = str(data[i]["puntaje_exp"][0])
         data[i]["puntaje_exp"][1] = str(data[i]["puntaje_exp"][1])
         data[i]["puntaje_exp"] = "/".join(data[i]["puntaje_exp"])
@@ -209,3 +210,11 @@ def set_data_csv(data: list, csv_txt: str) -> str:
                 csv_txt += str(data_linea[j])
     return csv_txt
 
+def set_datos_jugador_csv(data, juego):
+    
+    for jugador in data:
+        if jugador["nombre"] == juego.nombre_jugador:
+            jugador["monedas"] = juego.monedas
+            jugador["gemas"] = juego.gemas
+            jugador["nivel_exp"] = juego.nivel_jugador
+            break
