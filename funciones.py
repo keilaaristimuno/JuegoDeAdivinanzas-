@@ -185,7 +185,8 @@ def validar_dificultad_seleccionada(juego, btn_dif_f, btn_dif_n, btn_dif_d):
             btn_dif_n.color = colores.OCRE
             btn_dif_d.color = colores.ROJO_C
             
-def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos):
+def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos, btn_cat_autos, 
+                                   btn_cat_tecno):
     match juego.categoria:
         case "b":
             btn_cat_banderas.color = colores.VERDE
@@ -194,6 +195,10 @@ def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn
             btn_cat_comidas.hover = colores.GRIS_C
             btn_cat_equipos.color = colores.GRIS
             btn_cat_equipos.hover = colores.GRIS_C
+            btn_cat_autos.color  = colores.GRIS
+            btn_cat_autos.hover = colores.GRIS_C
+            btn_cat_tecno.color = colores.GRIS
+            btn_cat_tecno.hover = colores.GRIS_C
         case "c":
             btn_cat_banderas.color = colores.GRIS
             btn_cat_banderas.hover = colores.GRIS_C
@@ -201,6 +206,10 @@ def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn
             btn_cat_comidas.hover = colores.VERDE
             btn_cat_equipos.color = colores.GRIS
             btn_cat_equipos.hover = colores.GRIS_C
+            btn_cat_autos.color  = colores.GRIS
+            btn_cat_autos.hover = colores.GRIS_C
+            btn_cat_tecno.color = colores.GRIS
+            btn_cat_tecno.hover = colores.GRIS_C
         case "e":
             btn_cat_banderas.color = colores.GRIS
             btn_cat_banderas.hover = colores.GRIS_C
@@ -208,6 +217,32 @@ def validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn
             btn_cat_comidas.hover = colores.GRIS_C
             btn_cat_equipos.color = colores.VERDE
             btn_cat_equipos.hover = colores.VERDE
+            btn_cat_autos.color  = colores.GRIS
+            btn_cat_autos.hover = colores.GRIS_C
+            btn_cat_tecno.color = colores.GRIS
+            btn_cat_tecno.hover = colores.GRIS_C
+        case "a":
+            btn_cat_banderas.color = colores.GRIS
+            btn_cat_banderas.hover = colores.GRIS_C
+            btn_cat_comidas.color = colores.GRIS
+            btn_cat_comidas.hover = colores.GRIS_C
+            btn_cat_equipos.color = colores.GRIS
+            btn_cat_equipos.hover = colores.GRIS_C
+            btn_cat_autos.color  = colores.GRIS_C
+            btn_cat_autos.hover = colores.GRIS_C
+            btn_cat_tecno.color = colores.GRIS
+            btn_cat_tecno.hover = colores.GRIS_C
+        case "t":
+            btn_cat_banderas.color = colores.GRIS
+            btn_cat_banderas.hover = colores.GRIS_C
+            btn_cat_comidas.color = colores.GRIS
+            btn_cat_comidas.hover = colores.GRIS_C
+            btn_cat_equipos.color = colores.GRIS
+            btn_cat_equipos.hover = colores.GRIS_C
+            btn_cat_autos.color  = colores.GRIS
+            btn_cat_autos.hover = colores.GRIS_C
+            btn_cat_tecno.color = colores.GRIS_C
+            btn_cat_tecno.hover = colores.GRIS_C
 
 def validar_enter(lista_eventos):
     for evento in lista_eventos:
