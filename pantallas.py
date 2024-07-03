@@ -46,7 +46,6 @@ def mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse):
     if btn_cerrar_ver_jugadores.validar_click(lista_eventos) == True:
         juego.mostrando_jugadores = False
 
-
 def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     fondo = pygame.image.load("imagenes\Fondos\Fondo_inicio.png")
     ventana.blit(fondo, (0,0))
@@ -106,6 +105,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
 
 monedas_insuficiente = False
 nivel_insuficiente = False  # bandera para nivel insuficiente
+
 def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
     global nivel_insuficiente, monedas_insuficiente
     juego.resetear_datos()
@@ -179,7 +179,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             juego.dificultad = "d" 
             
         validar_dificultad_seleccionada(juego,  btn_dif_f, btn_dif_n, btn_dif_d)
-        validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos)
+        validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos, btn_cat_autos,
+                                       btn_cat_tecno)
         
         # Añadí la renderización del texto directamente sobre los botones de categoría cuando el nivel es insuficiente
         if nivel_insuficiente:
@@ -260,6 +261,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         if juego.categoria == "a":
             txt_proximamente_autos = fuentes.FUENTE_25.render(f"PROXIMAMENTE", True, colores.ROJO_C)
             ventana.blit(txt_proximamente_autos, (btn_cat_autos.rect.x- 150 , btn_cat_autos.rect.y + 70))
+            btn_cat_autos.color = colores.GRIS_C
         
         if juego.categoria == "t":
             txt_proximamente_tecno = fuentes.FUENTE_25.render(f"PROXIMAMENTE", True, colores.ROJO_C)

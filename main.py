@@ -24,6 +24,7 @@ juego = clases.Juego()
 juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
 pygame.mixer.music.play(-1)
+pygame.mixer.music.pause()
 reloj = pygame.time.Clock()
 ejecutar = True
 
