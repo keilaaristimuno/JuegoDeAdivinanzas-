@@ -50,6 +50,8 @@ btn_dif_n = clases.BotonTxt(rectangulos.REC_PP_DIF_N, colores.NARANJA_O, fuentes
                                   colores.NEGRO, colores.NARANJA_C)
 btn_dif_d = clases.BotonTxt(rectangulos.REC_PP_DIF_D, colores.ROJO_O, fuentes.FUENTE_25, "Difícil", 
                                   colores.NEGRO, colores.ROJO_C)
+btn_nvl_insuficiente = clases.BotonTxt(rectangulos.REC_NVL_INSUFICIENTE, colores.GRIS_C, fuentes.FUENTE_25, "Desbloquea en nivel: ", colores.GRIS)
+btn_mdas_insuficiente = clases.BotonTxt(rectangulos.REC_MDAS_INSUFICIENTE, colores.GRIS_C, fuentes.FUENTE_25, "Costo de monedas: ", colores.GRIS)
 
 # botones pantalla jugando
 btn_pausa = clases.BotonImg(rectangulos.REC_PJ_PAUSA, colores.NARANJA_C, "imagenes\P_Jugando\pausa.png", (25,25), colores.AMARILLO)

@@ -104,8 +104,10 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     if juego.pausado == True:
         mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego)
 
+monedas_insuficiente = False
+nivel_insuficiente = False  # bandera para nivel insuficiente
 def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
-    
+    global nivel_insuficiente, monedas_insuficiente
     juego.resetear_datos()
     if juego.pausado == False:
         fondo = pygame.image.load("imagenes\Fondos\Fondo_principal.png")
@@ -179,17 +181,44 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         validar_dificultad_seleccionada(juego,  btn_dif_f, btn_dif_n, btn_dif_d)
         validar_categoria_seleccionada(juego, btn_cat_banderas, btn_cat_comidas, btn_cat_equipos)
         
+        # Añadí la renderización del texto directamente sobre los botones de categoría cuando el nivel es insuficiente
+        if nivel_insuficiente:
+            if juego.categoria == "c":
+                txt_nvl_comidas = fuentes.FUENTE_25.render(f"5", True, colores.ROJO_C)
+                ventana.blit(txt_nvl_comidas, (btn_nvl_insuficiente.rect.x + 110, btn_nvl_insuficiente.rect.y - 10))
+            elif juego.categoria == "e":
+                txt_nvl_equipos = fuentes.FUENTE_25.render(f"10", True, colores.ROJO_C)
+                ventana.blit(txt_nvl_equipos, (btn_nvl_insuficiente.rect.x + 110, btn_nvl_insuficiente.rect.y - 10))
+
+        if monedas_insuficiente:
+            if juego.categoria == "c":
+                txt_mdas_comidas = fuentes.FUENTE_25.render(f"50", True, colores.ROJO_C)
+                ventana.blit(txt_mdas_comidas, (btn_mdas_insuficiente.rect.x + 110, btn_mdas_insuficiente.rect.y - 10))
+            elif juego.categoria == "e":
+                txt_mdas_equipos = fuentes.FUENTE_25.render(f"100", True, colores.ROJO_C)
+                ventana.blit(txt_mdas_equipos, (btn_mdas_insuficiente.rect.x + 110, btn_mdas_insuficiente.rect.y - 10))
+            # elif juego.categoria == "b":
+            #     txt_mdas_equipos = fuentes.FUENTE_25.render(f"0", True, colores.ROJO_C)
+            #     ventana.blit(txt_mdas_equipos, (btn_mdas_insuficiente.rect.x + 110, btn_mdas_insuficiente.rect.y - 10))
+
         if btn_cat_banderas.validar_click(lista_eventos) == True:
             juego.categoria = "b"
             btn_jugar.color = colores.OCRE
             btn_jugar.hover = colores.AMARILLO
             btn_categoria.color = colores.VERDE
+            nivel_insuficiente = False  # Reiniciar bandera al seleccionar una categoría desbloqueada
+            monedas_insuficiente = False
+
         if btn_cat_comidas.validar_click(lista_eventos) == True:
             if juego.nivel_jugador >= 5 and juego.monedas >= 50:
                 btn_jugar.color = colores.OCRE
                 btn_jugar.hover = colores.AMARILLO
                 btn_categoria.color = colores.VERDE
+                nivel_insuficiente = False  # reiniciar bandera cuando el nivel es suficiente
+                monedas_insuficiente = False
             else:
+                nivel_insuficiente = True  # bandera true cuando el nivel es insuficiente
+                monedas_insuficiente = True
                 btn_jugar.color = colores.GRIS
                 btn_jugar.hover = colores.GRIS_C
                 btn_categoria.color = colores.GRIS_C
@@ -200,12 +229,49 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
                 btn_jugar.color = colores.OCRE
                 btn_jugar.hover = colores.AMARILLO
                 btn_categoria.color = colores.VERDE
+                nivel_insuficiente = False
+                monedas_insuficiente = False
             else:
+                nivel_insuficiente = True
+                monedas_insuficiente = True
                 btn_jugar.color = colores.GRIS
                 btn_jugar.hover = colores.GRIS_C
                 btn_categoria.color = colores.GRIS_C
             juego.categoria = "e"
+
+        if btn_cat_autos.validar_click(lista_eventos) == True:
+                btn_jugar.color = colores.GRIS
+                btn_jugar.hover = colores.GRIS_C
+                btn_categoria.color = colores.GRIS_C
+                nivel_insuficiente = False
+                monedas_insuficiente = False
+                juego.categoria = "a"
+                
+
+        if btn_cat_tecno.validar_click(lista_eventos) == True:
+            btn_jugar.color = colores.GRIS
+            btn_jugar.hover = colores.GRIS_C
+            btn_categoria.color = colores.GRIS_C
+            nivel_insuficiente = False
+            monedas_insuficiente = False
+            juego.categoria = "t"
         
+        # Renderizar el texto "PROXIMAMENTE" sobre el botón correspondiente
+        if juego.categoria == "a":
+            txt_proximamente_autos = fuentes.FUENTE_25.render(f"PROXIMAMENTE", True, colores.ROJO_C)
+            ventana.blit(txt_proximamente_autos, (btn_cat_autos.rect.x- 150 , btn_cat_autos.rect.y + 70))
+        
+        if juego.categoria == "t":
+            txt_proximamente_tecno = fuentes.FUENTE_25.render(f"PROXIMAMENTE", True, colores.ROJO_C)
+            ventana.blit(txt_proximamente_tecno, (btn_cat_tecno.rect.x -230 , btn_cat_tecno.rect.y +70))
+
+        # mostrar el mensaje de nivel insuficiente si la bandera está activada
+        if nivel_insuficiente:
+            btn_nvl_insuficiente.dibujar_btn(ventana, 0, 0)
+
+        if monedas_insuficiente:
+            btn_mdas_insuficiente.dibujar_btn(ventana,0,0)
+
         if btn_jugar.color != colores.GRIS:
             #Valido si hizo click en jugar
             if btn_jugar.validar_click(lista_eventos) == True:
@@ -214,14 +280,14 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True
-            juego.mostrando_configuracion = True #probando
+            juego.mostrando_configuracion = True 
         else:
             juego.pausado = False
             
     #Valido si hizo click en el boton de como jugar
     if btn_como_jugar.validar_click(lista_eventos) == True:
         juego.pausado = True
-        juego.mostrando_como_jugar = True #probando
+        juego.mostrando_como_jugar = True 
 
     if juego.pausado == True:
         if juego.mostrando_configuracion:
@@ -251,7 +317,7 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
     #Verifico si se hizo click en cerrrar el menu de configuracion
     if btn_cerrar_config.validar_click(lista_eventos) == True:
         juego.pausado = False
-        juego.mostrando_configuracion = False #probando
+        juego.mostrando_configuracion = False 
     #Verifico si se hizo click en el boton de sonido
     if btn_sonido_icono.validar_click(lista_eventos) == True:
         #Valido si el sonido esta encendido o apagado
