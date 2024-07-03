@@ -24,6 +24,8 @@ REC_PP_JUGAR = pygame.Rect(500,350,400,90)
 REC_PP_DIF_F = pygame.Rect(540,320,90,25)
 REC_PP_DIF_N = pygame.Rect(650,320,95,25)
 REC_PP_DIF_D = pygame.Rect(765,320,95,25)
+REC_NVL_INSUFICIENTE = pygame.Rect(610,250,0,0)
+REC_MDAS_INSUFICIENTE = pygame.Rect(605,280,0,0)
 
 #Rectangulos pantalla jugando
 REC_PJ_PAUSA = pygame.Rect(10,5,30,30)
