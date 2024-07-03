@@ -3,3 +3,4 @@
 ANCHO_PANTALLA = 1000
 ALTO_PANTALLA = 500
 txt_ingreso = ""
+pagina_ver_jugadores = 1

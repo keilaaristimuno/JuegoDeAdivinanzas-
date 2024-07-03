@@ -3,6 +3,7 @@ import pygame
 pygame.init()
 #Rectangulos pantalla de inicio
 REC_IN_JUGAR = pygame.Rect(0,0,400,90)
+REC_IN_VER_USUARIOS = pygame.Rect(0,0,300,90)
 REC_IN_ENT_TXT = pygame.Rect(0,0, 300, 65)
 REC_IN_ESCRITURA = pygame.Rect(0,0, 260, 45)
 REC_IN_IMG = pygame.Rect(0,0,400,90)
@@ -26,6 +27,7 @@ REC_PP_DIF_N = pygame.Rect(650,320,95,25)
 REC_PP_DIF_D = pygame.Rect(765,320,95,25)
 REC_NVL_INSUFICIENTE = pygame.Rect(610,250,0,0)
 REC_MDAS_INSUFICIENTE = pygame.Rect(605,280,0,0)
+
 
 #Rectangulos pantalla jugando
 REC_PJ_PAUSA = pygame.Rect(10,5,30,30)
@@ -66,3 +68,9 @@ REC_MENU_TIENDA = pygame.Rect(250,100,0,0)
 REC_TIENDA_CERRAR = pygame.Rect(950,20,40,40)
 REC_TITULO_TIENDA = pygame.Rect(510,350,0,0)
 REC_CANDADO_TIENDA = pygame.Rect(500,270,0,0)
+
+#Rectangulos menu ver jugadores
+REC_VENTANA_JUGADORES = pygame.Rect(250,75,550,450)
+REC_MARCO_VENTANA_JUGADORES = pygame.Rect(250,75,500,400)
+REC_SIG_PAG_JUGADORES = pygame.Rect(150,150,50,50)
+REC_ANT_PAG_JUGADORES = pygame.Rect(150,50,50,50)

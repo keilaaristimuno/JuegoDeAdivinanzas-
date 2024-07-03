@@ -1,5 +1,6 @@
 import pygame
 import constantes.colores as colores
+import fuentes.fuentes as fuentes
 
 pygame.init()
 
@@ -21,6 +22,33 @@ def centrar_rect(centerx, centery, rect):
     
     return(rect)
 
+def ordenar_burbujeo(lista):
+
+    for i in range(len(lista)):
+        for j in range(i, len(lista)-1):
+            # Comparamos el elemento actual con el siguiente
+            if lista[i]["nombre"] > lista[j]["nombre"]:
+                aux = lista[i]
+                lista[i] = lista[j]
+                lista[j] = aux 
+    for jugador in lista:
+        print(jugador["nombre"])
+
+def listar_jugadores(ventana, jugadores: list, pagina: int, jugadores_por_pagina = 10):
+    
+    inicio = (pagina - 1) * jugadores_por_pagina
+    fin = inicio + jugadores_por_pagina
+    if inicio >= len(jugadores):
+        fin = inicio
+    if fin > len(jugadores):
+        fin = len(jugadores)
+    
+    pos_y = ventana.get_rect().centery - 150
+    for i in range(inicio, fin):
+        nombre = fuentes.FUENTE_30.render(jugadores[i]["nombre"], True, colores.NEGRO)
+        ventana.blit(nombre, centrar_txt(ventana.get_rect().centerx, pos_y, nombre))
+        pos_y += 35
+        
 def centrar_txt(centerx, centery, txt):
     
     pos_txt = txt.get_rect()
