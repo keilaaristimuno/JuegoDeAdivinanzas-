@@ -2,12 +2,50 @@ import pygame
 import json
 import constantes.colores as colores
 import constantes.rectangulos as rectangulos
+import constantes.generales as generales
 import fuentes.fuentes as fuentes
 from funciones import *
 from constantes.botones import *
 
+
 pygame.init()
 pygame.mixer.init()
+
+def mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse):
+
+    ordenar_burbujeo(jugadores)
+    fondo_pausa = pygame.image.load("imagenes\Fondos\Fondo_pausa.png")
+    ventana.blit(fondo_pausa, (0,0))
+    ventana_jugadores.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery, 
+                                          ventana_jugadores.rect)
+    marco_ventana_jugadores.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery, 
+                                          marco_ventana_jugadores.rect)
+    ventana_jugadores.dibujar_btn(ventana, 0, 5)
+    marco_ventana_jugadores.dibujar_btn(ventana, 0 , 5)
+    btn_ant_pag_jugadores.rect = centrar_rect(ventana_jugadores.rect.centerx - 200, 
+                                              ventana_jugadores.rect.centery + 150, btn_ant_pag_jugadores.rect)
+    btn_sig_pag_jugadores.rect = centrar_rect(ventana_jugadores.rect.centerx + 200, 
+                                              ventana_jugadores.rect.centery + 150, btn_sig_pag_jugadores.rect)
+    btn_ant_pag_jugadores.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
+    btn_sig_pag_jugadores.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
+    
+    btn_cerrar_ver_jugadores.rect = centrar_rect(ventana_jugadores.rect.centerx + 225, 
+                                                 ventana_jugadores.rect.centery - 175, btn_cerrar_ver_jugadores.rect)
+    
+    listar_jugadores(ventana, jugadores, generales.pagina_ver_jugadores, 10)
+
+    if btn_ant_pag_jugadores.validar_click(lista_eventos) == True:
+        if generales.pagina_ver_jugadores > 1:
+            generales.pagina_ver_jugadores -= 1
+
+    if btn_sig_pag_jugadores.validar_click(lista_eventos) == True:
+        if generales.pagina_ver_jugadores < int((len(jugadores)/10)+1):
+            generales.pagina_ver_jugadores += 1
+
+    btn_cerrar_ver_jugadores.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse) 
+    if btn_cerrar_ver_jugadores.validar_click(lista_eventos) == True:
+        juego.mostrando_jugadores = False
+
 
 def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     fondo = pygame.image.load("imagenes\Fondos\Fondo_inicio.png")
@@ -51,7 +89,12 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
                 juego.logear(jugador)
             else:
                 agregar_jugador = mostrar_jugador_no_encontrado()
-            
+    btn_ver_usuarios.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery + 200, 
+                                         btn_ver_usuarios.rect)
+    btn_ver_usuarios.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
+    if btn_ver_usuarios.validar_click(lista_eventos) or juego.mostrando_jugadores == True:
+        juego.mostrando_jugadores = True
+        mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse)
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True

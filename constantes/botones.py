@@ -15,6 +15,8 @@ btn_ent_txt = clases.BotonEntradaTxt(rectangulos.REC_IN_ENT_TXT, colores.GRIS,co
 btn_contorno_ent_txt = clases.Boton(btn_ent_txt.rect, colores.NEGRO)
 btn_empezar = clases.BotonTxt(rectangulos.REC_IN_JUGAR, colores.OCRE, fuentes.FUENTE_55, "Empezar", colores.NEGRO,
                                 colores.AMARILLO)
+btn_ver_usuarios = clases.BotonTxt(rectangulos.REC_IN_VER_USUARIOS, colores.OCRE, fuentes.FUENTE_45, "Ver Usuarios",
+                                    colores.NEGRO, colores.AMARILLO)
 btn_config = clases.BotonImg(rectangulos.REC_PP_CONFIG, colores.OCRE,"imagenes\General\configuracion.png",(40,40), 
                                  colores.AMARILLO)
 
@@ -63,9 +65,6 @@ btn_cant_tiempo = clases.BotonImg(rectangulos.REC_PJ_TIEMPO, colores.NARANJA_C,"
 
 btn_nivel_banderas = clases.BotonTxt(rectangulos.REC_NIVEL_BANDERAS, colores.BLANCO, fuentes.FUENTE_20, "Banderas: ", colores.NEGRO)
 
-
-
-
 #Botones del menu configuracion
 menu_config = clases.Boton(rectangulos.REC_MC_CONFIG, colores.AMARILLO, False)
 marco_menu_config = clases.Boton(rectangulos.REC_MC_MARCO_CONFIG, colores.OCRE, False)
@@ -83,7 +82,16 @@ btn_musica = clases.BotonTxt(rectangulos.REC_MUSICA, colores.VERDE_C,fuentes.FUE
 btn_musica.rect = centrar_rect(menu_config.rect.centerx, menu_config.rect.centery + 50, btn_musica.rect)
 btn_musica_icono.rect = centrar_rect(btn_musica.rect.centerx + 70, btn_musica.rect.centery, btn_musica_icono.rect)
 
-#Botones del menu de pausa
+#Botones del menu de ver jugadores
+ventana_jugadores = clases.Boton(rectangulos.REC_VENTANA_JUGADORES, colores.AZUL_C, False)
+marco_ventana_jugadores = clases.BotonTxt(rectangulos.REC_MARCO_VENTANA_JUGADORES, colores.CREMA, fuentes.FUENTE_40, "", 
+                                         colores.NEGRO)
+btn_sig_pag_jugadores = clases.BotonTxt(rectangulos.REC_SIG_PAG_JUGADORES, colores.OCRE,fuentes.FUENTE_45, ">", 
+                                       colores.NEGRO, colores.AMARILLO)
+btn_ant_pag_jugadores = clases.BotonTxt(rectangulos.REC_ANT_PAG_JUGADORES, colores.OCRE,fuentes.FUENTE_45, "<", 
+                                       colores.NEGRO, colores.AMARILLO)
+btn_cerrar_ver_jugadores = clases.BotonImg(rectangulos.REC_MC_CERRAR, colores.ROJO_O, "imagenes\General\cruz_cerrar.png", (35,35), 
+                                    colores.ROJO_C)
 #Botones del menu configuracion
 menu_pausa = clases.Boton(rectangulos.REC_MP_PAUSA, colores.AMARILLO, False)
 marco_menu_pausa = clases.Boton(rectangulos.REC_MP_MARCO_PAUSA, colores.OCRE, False)
