@@ -75,7 +75,6 @@ class Juego():
                         btn.color = colores.VERDE_C
                         self.recompensar_rta()
                         self.actualizar_exp_jugador()
-                        self.actualizar_record()
                         self.pregunta_acertada = True
                         self.tiempo_acumulado += int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001) 
                         if self.pregunta_acertada == True:

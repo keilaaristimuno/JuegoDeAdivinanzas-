@@ -112,6 +112,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
     if juego.pausado == False:
         fondo = pygame.image.load("imagenes\Fondos\Fondo_principal.png")
         ventana.blit(fondo, (0,0))
+        
         #Creo los rectangulos necesarios en la pantalla
         #Boton de dificultad
         btn_dificultad.dibujar_btn(ventana,0, 5, pos_txt_y = -15)
@@ -279,7 +280,12 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             if btn_jugar.validar_click(lista_eventos) == True:
                 juego.jugando = True
                 juego.cobrar_entrada()
-    
+
+        if juego.monedas > juego.record_monedas:
+            mostrar_cartel_record(ventana,juego)
+            juego.esperar(4000)
+            juego.actualizar_record()
+
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:
             juego.pausado = True

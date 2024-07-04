@@ -126,4 +126,3 @@ btn_cerrar_tienda = clases.BotonImg(rectangulos.REC_TIENDA_CERRAR, colores.ROJO_
 btn_titulo_tienda = clases.BotonTxt(rectangulos.REC_TITULO_TIENDA, colores.NARANJA_C, fuentes.FUENTE_40, "PROXIMAMENTE ", colores.ROSA_C)
 btn_candado_tienda = clases.BotonImg(rectangulos.REC_CANDADO_TIENDA, colores.NARANJA_C, "imagenes\General\candado_tienda.png", (90,90), 
                                     colores.OCRE)
-

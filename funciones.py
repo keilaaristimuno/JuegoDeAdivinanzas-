@@ -302,3 +302,12 @@ def set_datos_jugador_csv(data, juego):
             jugador["record_monedas"] = juego.record_monedas
             break 
         # Si se encuentra el jugador, se actualizan los datos y se retorna la lista
+
+def mostrar_cartel_record(ventana,juego):
+    titulo_record = fuentes.FUENTE_30.render("NUEVO RECORD DE MONEDAS ", True, colores.VIOLETA_O, colores.CREMA)
+    record_viejo = fuentes.FUENTE_25.render(f" Su record anterior: {juego.record_monedas}", True, colores.VIOLETA, colores.CREMA)
+    record_nuevo = fuentes.FUENTE_25.render(f" Su record nuevo: {juego.record_monedas}", True, colores.VIOLETA, colores.CREMA)
+    ventana.blit(titulo_record,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery - 50 , titulo_record) )
+    ventana.blit(record_viejo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery + 50 , record_viejo) )
+    ventana.blit(record_nuevo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery , record_nuevo) )
+    pygame.display.update()  #actualizar la pantalla para mostrar el cambio
