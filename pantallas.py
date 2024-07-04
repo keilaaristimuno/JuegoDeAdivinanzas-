@@ -86,8 +86,8 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
         for jugador in jugadores:
             if juego.nombre_jugador.lower() == jugador["nombre"].lower():
                 juego.logear(jugador)
-            else:
-                agregar_jugador = mostrar_jugador_no_encontrado()
+        if juego.logeado == False:
+            crear_jugador(jugadores, juego)
     btn_ver_usuarios.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery + 200, 
                                          btn_ver_usuarios.rect)
     btn_ver_usuarios.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
@@ -278,6 +278,7 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             #Valido si hizo click en jugar
             if btn_jugar.validar_click(lista_eventos) == True:
                 juego.jugando = True
+                juego.cobrar_entrada()
     
     if btn_config.validar_click(lista_eventos) == True:
         if juego.pausado == False:

@@ -13,7 +13,7 @@ class Juego():
         self.nombre_jugador = ""
         self.gemas = 0
         self.monedas = 0
-        self.nivel_jugador = 0
+        self.nivel_jugador = 1
         self.exp_jugador = 0
         self.categoria = "b"
         self.dificultad = "f"
@@ -180,6 +180,17 @@ class Juego():
                 self.exp_jugador[0] = self.exp_jugador[0] - self.exp_jugador[1]
             self.exp_jugador[1] = self.nivel_jugador * 10
             
+    def cobrar_entrada(self):
+        match self.categoria:
+            case "c":
+                self.monedas -= 50
+            case "e":
+                self.monedas -= 100
+            case "a":
+                self.monedas -= 150
+            case "t":
+                self.monedas -= 200
+
 class Boton():
     def __init__(self, rect, color, hover = False) -> None:
         self.rect = pygame.Rect(rect)

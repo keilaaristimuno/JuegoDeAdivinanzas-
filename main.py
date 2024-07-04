@@ -51,7 +51,7 @@ jugadores_csv = ""
 jugadores_csv = funciones.set_cabecera_csv(cabecera, jugadores_csv)
 jugadores_csv = funciones.set_data_csv(jugadores, jugadores_csv, juego)
 
-with open("datos_jugador_copia.csv", "w") as file:     
+with open("datos_jugador.csv", "w") as file:     
     file.write(jugadores_csv)
     
 pygame.quit()

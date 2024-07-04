@@ -32,7 +32,7 @@ def ordenar_burbujeo(lista):
                 lista[i] = lista[j]
                 lista[j] = aux 
     for jugador in lista:
-        print(jugador["nombre"])
+        jugador["nombre"]
 
 def listar_jugadores(ventana, jugadores: list, pagina: int, jugadores_por_pagina = 10):
     
@@ -126,8 +126,18 @@ def validar_click_en_boton(lista_eventos, pos_mouse, boton):
         elif evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
             return False
 
-def mostrar_jugador_no_encontrado():
-    print("jugador no encontrado")
+def crear_jugador(jugadores, juego):
+    # Si el jugador no está en la lista, agrégalo
+    nuevo_jugador = {
+        "nombre": juego.nombre_jugador,
+        "monedas": juego.monedas,
+        "gemas": juego.gemas,
+        "nivel_exp": juego.nivel_jugador,
+        "puntaje_exp": [0,10],
+        "record_monedas": juego.record_monedas
+    }
+    jugadores.append(nuevo_jugador)
+    juego.logear(nuevo_jugador)
 
 def obtener_categoria(juego):
     
@@ -283,12 +293,12 @@ def set_data_csv(data: list, csv_txt: str, juego) -> str:
     return csv_txt
 
 def set_datos_jugador_csv(data, juego):
-    
+    # Verifica si el jugador ya está en la lista y actualiza sus datos
     for jugador in data:
         if jugador["nombre"] == juego.nombre_jugador:
             jugador["monedas"] = juego.monedas
             jugador["gemas"] = juego.gemas
             jugador["nivel_exp"] = juego.nivel_jugador
             jugador["record_monedas"] = juego.record_monedas
-            break
-        
+            break 
+        # Si se encuentra el jugador, se actualizan los datos y se retorna la lista
