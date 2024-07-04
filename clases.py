@@ -1,6 +1,7 @@
 import pygame
 import random
 from funciones import *
+import constantes.sonidos as sonidos
 
 pygame.init()
 pygame.mixer.init()
@@ -73,6 +74,8 @@ class Juego():
             for btn in btns:
                 if btn.validar_click(lista_eventos) == True and btn.color != colores.VERDE_C:
                     if btn.txt == self.pregunta_actual["rta_correcta"]:
+                        if self.sonidos == True:
+                            sonidos.rta_correcta.play()
                         btn.color = colores.VERDE_C
                         btn.dibujar_btn(ventana, 0, 5)
                         pygame.display.update()
@@ -84,6 +87,8 @@ class Juego():
                             self.esperar(1000)
                             
                     elif btn.color !=  colores.ROJO_C:
+                        if self.sonidos == True:
+                            sonidos.rta_incorrecta.play()
                         btn.color = colores.ROJO_C
                         btn.hover = False
                         btn.dibujar_btn(ventana, 0, 5)
@@ -93,8 +98,8 @@ class Juego():
                         if self.vidas == 0:
                             self.esperar(2000)
                             self.jugando = False
+                            
     def actualizar_record(self):
-        
         if self.record_monedas < self.monedas:
             self.record_monedas = self.monedas
                             

@@ -1,6 +1,5 @@
 import pygame
 import pantallas
-import herraminetas
 import funciones
 import clases
 
@@ -24,7 +23,6 @@ juego = clases.Juego()
 juego.cancion = "musica\musica_general.mp3"
 pygame.mixer.music.load(juego.cancion)
 pygame.mixer.music.play(-1)
-pygame.mixer.music.pause()
 reloj = pygame.time.Clock()
 ejecutar = True
 
@@ -34,8 +32,6 @@ while ejecutar:
     for evento in lista_eventos:
         if evento.type == pygame.QUIT: #PREGUNTO SI PRESIONO la x de la ventana para salir
             ejecutar = False
-        herraminetas.obtener_pos_click_izq_mouse(evento)
-
     if juego.logeado == False:
         pantallas.mostrar_inicio(ventana,pos_mouse, lista_eventos, juego, jugadores)
     elif juego.jugando == False:

@@ -6,6 +6,7 @@ import constantes.generales as generales
 import fuentes.fuentes as fuentes
 from funciones import *
 from constantes.botones import *
+import constantes.sonidos as sonidos
 
 
 pygame.init()
@@ -37,15 +38,19 @@ def mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse):
     if btn_ant_pag_jugadores.validar_click(lista_eventos) == True:
         if generales.pagina_ver_jugadores > 1:
             generales.pagina_ver_jugadores -= 1
-
+            if juego.sonidos == True:
+                sonidos.click.play()
     if btn_sig_pag_jugadores.validar_click(lista_eventos) == True:
         if generales.pagina_ver_jugadores < int((len(jugadores)/10)+1):
             generales.pagina_ver_jugadores += 1
-
+            if juego.sonidos == True:
+                sonidos.click.play()
     btn_cerrar_ver_jugadores.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse) 
     if btn_cerrar_ver_jugadores.validar_click(lista_eventos) == True:
         juego.mostrando_jugadores = False
-
+        if juego.sonidos == True:
+            sonidos.click.play()
+            
 def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     fondo = pygame.image.load("imagenes\Fondos\Fondo_inicio.png")
     ventana.blit(fondo, (0,0))
@@ -84,17 +89,24 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
     #Valido si hizo click en jugar
     if btn_empezar.validar_click(lista_eventos) == True or (btn_ent_txt.escribiendo == True and validar_enter(lista_eventos)):
         for jugador in jugadores:
-            if juego.nombre_jugador.lower() == jugador["nombre"].lower():
+            if juego.nombre_jugador.lower().strip() == jugador["nombre"].lower():
                 juego.logear(jugador)
-        if juego.logeado == False:
+        if juego.logeado == False and juego.nombre_jugador.strip() != "":
             crear_jugador(jugadores, juego)
+        if juego.sonidos == True:
+            if juego.sonidos == True:
+                sonidos.click.play()
     btn_ver_usuarios.rect = centrar_rect(ventana.get_rect().centerx, ventana.get_rect().centery + 200, 
                                          btn_ver_usuarios.rect)
     btn_ver_usuarios.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
     if btn_ver_usuarios.validar_click(lista_eventos) or juego.mostrando_jugadores == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.mostrando_jugadores = True
         mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse)
     if btn_config.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+                sonidos.click.play()
         if juego.pausado == False:
             juego.pausado = True
         else:
@@ -152,6 +164,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         ventana.blit(txt_num_gemas, (centrar_txt(rectangulos.REC_PP_BARRA_GEMAS.centerx, rectangulos.REC_PP_BARRA_GEMAS.centery + 10, 
                                                 txt_num_gemas)))
         if btn_gemas.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.click.play()
             juego.pausado = True
             juego.mostrando_tienda = True 
         #Boton de Como jugar con hover
@@ -173,10 +187,16 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         btn_dif_d.dibujar_btn(ventana, 0,5,pos_mouse = pos_mouse)
         
         if btn_dif_f.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             juego.dificultad = "f"
         if btn_dif_n.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             juego.dificultad = "n"
         if btn_dif_d.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             juego.dificultad = "d" 
             
         validar_dificultad_seleccionada(juego,  btn_dif_f, btn_dif_n, btn_dif_d)
@@ -204,6 +224,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             #     ventana.blit(txt_mdas_equipos, (btn_mdas_insuficiente.rect.x + 110, btn_mdas_insuficiente.rect.y - 10))
 
         if btn_cat_banderas.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             juego.categoria = "b"
             btn_jugar.color = colores.OCRE
             btn_jugar.hover = colores.AMARILLO
@@ -212,6 +234,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             monedas_insuficiente = False
 
         if btn_cat_comidas.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             if juego.nivel_jugador >= 5 and juego.monedas >= 50:
                 btn_jugar.color = colores.OCRE
                 btn_jugar.hover = colores.AMARILLO
@@ -227,6 +251,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             juego.categoria = "c"
             
         if btn_cat_equipos.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             if juego.nivel_jugador >= 10 and juego.monedas >= 100:
                 btn_jugar.color = colores.OCRE
                 btn_jugar.hover = colores.AMARILLO
@@ -242,15 +268,19 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             juego.categoria = "e"
 
         if btn_cat_autos.validar_click(lista_eventos) == True:
-                btn_jugar.color = colores.GRIS
-                btn_jugar.hover = colores.GRIS_C
-                btn_categoria.color = colores.GRIS_C
-                nivel_insuficiente = False
-                monedas_insuficiente = False
-                juego.categoria = "a"
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
+            btn_jugar.color = colores.GRIS
+            btn_jugar.hover = colores.GRIS_C
+            btn_categoria.color = colores.GRIS_C
+            nivel_insuficiente = False
+            monedas_insuficiente = False
+            juego.categoria = "a"
                 
 
         if btn_cat_tecno.validar_click(lista_eventos) == True:
+            if juego.sonidos == True:
+                sonidos.seleccion.play()
             btn_jugar.color = colores.GRIS
             btn_jugar.hover = colores.GRIS_C
             btn_categoria.color = colores.GRIS_C
@@ -278,15 +308,21 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
         if btn_jugar.color != colores.GRIS:
             #Valido si hizo click en jugar
             if btn_jugar.validar_click(lista_eventos) == True:
+                if juego.sonidos == True:
+                    sonidos.jugar.play()
                 juego.jugando = True
                 juego.cobrar_entrada()
 
         if juego.monedas > juego.record_monedas:
+            if juego.sonidos == True:
+                sonidos.nuevo_record.play()
             mostrar_cartel_record(ventana,juego)
             juego.esperar(4000)
             juego.actualizar_record()
 
     if btn_config.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         if juego.pausado == False:
             juego.pausado = True
             juego.mostrando_configuracion = True 
@@ -295,6 +331,8 @@ def mostrar_principal(ventana, pos_mouse, lista_eventos, juego) -> None:
             
     #Valido si hizo click en el boton de como jugar
     if btn_como_jugar.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.pausado = True
         juego.mostrando_como_jugar = True 
 
@@ -325,10 +363,14 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
 
     #Verifico si se hizo click en cerrrar el menu de configuracion
     if btn_cerrar_config.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.pausado = False
         juego.mostrando_configuracion = False 
     #Verifico si se hizo click en el boton de sonido
     if btn_sonido_icono.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.seleccion.play()
         #Valido si el sonido esta encendido o apagado
         if juego.sonidos == True:
             #Cambio el estado de sonido a apagado
@@ -348,6 +390,8 @@ def mostrar_configuracion(ventana, lista_eventos, pos_mouse, juego):
             juego.sonidos = True
     #Verifico si se hizo click en el boton de musica       
     if btn_musica_icono.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.seleccion.play()
         #Valido si la musica esta encendida o apagada
         if juego.musica == True:
             #Cambio el estado de musica a apagada
@@ -386,12 +430,18 @@ def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
 
     #Verifico si se hizo click en cerrrar el menu de pausa
     if btn_cerrar_pausa.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.pausado = False
     if btn_mp_menu_ppal.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+                sonidos.click.play()
         juego.pausado = False
         juego.jugando = False
     #Verifico si se hizo click en el boton de sonido
     if btn_sonido_icono.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.seleccion.play()
         #Valido si el sonido esta encendido o apagado
         if juego.sonidos == True:
             #Cambio el estado de sonido a apagado
@@ -411,6 +461,8 @@ def mostrar_pausa(ventana, lista_eventos, pos_mouse, juego):
             juego.sonidos = True
     #Verifico si se hizo click en el boton de musica       
     if btn_musica_icono.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.seleccion.play()
         #Valido si la musica esta encendida o apagada
         if juego.musica == True:
             #Cambio el estado de musica a apagada
@@ -451,10 +503,13 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
                 if data[i]["dificultad"] == juego.dificultad:
                     juego.preguntas_posibles.append(data[i])
     elif len(juego.preguntas_posibles) == 4:
-        tiempo_promedio = juego.tiempo_acumulado // 5
+        tiempo_promedio = juego.tiempo_acumulado / 5
+        tiempo_promedio = round(tiempo_promedio, 2)
         tiempo_promedio = fuentes.FUENTE_40.render(f"Su tiempo promedio es: {tiempo_promedio}", True, colores.BLANCO, colores.ROSA_C)
         ventana.blit(tiempo_promedio, centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery - 25 , tiempo_promedio))
         pygame.display.update()
+        if juego.sonidos == True:
+            sonidos.final_partida.play()
         juego.esperar(3000)
         juego.pausado = False
         juego.jugando = False
@@ -528,6 +583,8 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     juego.validar_click_rtas(ventana,[btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4],  lista_eventos)
 # Agrego menu de pausa
     if btn_pausa.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         if juego.pausado == False:
             juego.pausado = True
         else:
@@ -544,6 +601,8 @@ def mostrar_c_jugar(ventana, lista_eventos, pos_mouse, juego):
     btn_cerrar_c_jugar.dibujar_btn(ventana, 0, 5, pos_mouse = pos_mouse)
     #Verifico si hizo click al cerrar el menu de como jugar
     if btn_cerrar_c_jugar.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.pausado = False
         juego.mostrando_como_jugar = False  #prueba
 
@@ -558,6 +617,8 @@ def mostrar_tienda(ventana, lista_eventos, pos_mouse, juego):
     btn_candado_tienda.dibujar_btn(ventana, 0, 5)
     #Verifico si hizo click al cerrar el menu de TIENDA
     if btn_cerrar_tienda.validar_click(lista_eventos) == True:
+        if juego.sonidos == True:
+            sonidos.click.play()
         juego.pausado = False
         juego.mostrando_tienda = False
 

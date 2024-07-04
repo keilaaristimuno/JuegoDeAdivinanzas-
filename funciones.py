@@ -129,7 +129,7 @@ def validar_click_en_boton(lista_eventos, pos_mouse, boton):
 def crear_jugador(jugadores, juego):
     # Si el jugador no está en la lista, agrégalo
     nuevo_jugador = {
-        "nombre": juego.nombre_jugador,
+        "nombre": juego.nombre_jugador.strip(),
         "monedas": juego.monedas,
         "gemas": juego.gemas,
         "nivel_exp": juego.nivel_jugador,
@@ -304,9 +304,10 @@ def set_datos_jugador_csv(data, juego):
         # Si se encuentra el jugador, se actualizan los datos y se retorna la lista
 
 def mostrar_cartel_record(ventana,juego):
+    
     titulo_record = fuentes.FUENTE_30.render("NUEVO RECORD DE MONEDAS ", True, colores.VIOLETA_O, colores.CREMA)
     record_viejo = fuentes.FUENTE_25.render(f" Su record anterior: {juego.record_monedas}", True, colores.VIOLETA, colores.CREMA)
-    record_nuevo = fuentes.FUENTE_25.render(f" Su record nuevo: {juego.record_monedas}", True, colores.VIOLETA, colores.CREMA)
+    record_nuevo = fuentes.FUENTE_25.render(f" Su record nuevo: {juego.monedas}", True, colores.VIOLETA, colores.CREMA)
     ventana.blit(titulo_record,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery - 50 , titulo_record) )
     ventana.blit(record_viejo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery + 50 , record_viejo) )
     ventana.blit(record_nuevo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery , record_nuevo) )
