@@ -451,6 +451,11 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
                 if data[i]["dificultad"] == juego.dificultad:
                     juego.preguntas_posibles.append(data[i])
     elif len(juego.preguntas_posibles) == 4:
+        tiempo_promedio = juego.tiempo_acumulado // 5
+        tiempo_promedio = fuentes.FUENTE_40.render(f"Su tiempo promedio es: {tiempo_promedio}", True, colores.BLANCO, colores.ROSA_C)
+        ventana.blit(tiempo_promedio, centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery - 25 , tiempo_promedio))
+        pygame.display.update()
+        juego.esperar(3000)
         juego.pausado = False
         juego.jugando = False
         

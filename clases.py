@@ -28,6 +28,7 @@ class Juego():
         self.tiempo_in_preg = None
         self.tiempo_act_preg = None
         self.tiempo_rest_preg = 30
+        self.tiempo_acumulado = 0
         self.mostrando_configuracion = False
         self.mostrando_como_jugar = False
         self.mostrando_tienda = False
