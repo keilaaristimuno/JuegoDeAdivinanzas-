@@ -1,5 +1,5 @@
 nombre,monedas,gemas,nivel_exp,puntaje_exp,record_monedas
-carlos,890,25,8,75/80,890
+carlos,970,25,9,15/90,890
 carolina,140,0,3,5/30,140
 diecis,1200,400,25,45/250,1200
 diecis,1200,400,25,45/250,1200
@@ -23,4 +23,5 @@ pepe,20,5,3,5/30,20
 veinteros,1200,400,25,45/250,1200
 veinteros,1200,400,25,45/250,1200
 veinteros,1200,400,25,45/250,1200
-tomas,0,0,1,0/10,0
+tomas,200,0,3,20/30,200
+toams,100,0,2,15/20,100
