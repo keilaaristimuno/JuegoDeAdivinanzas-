@@ -68,12 +68,14 @@ class Juego():
                 indice_btns += 1
                 indices_usados.append(indice_random)
                 
-    def validar_click_rtas(self, btns: list,  lista_eventos):
+    def validar_click_rtas(self,ventana, btns: list,  lista_eventos):
         for evento in lista_eventos:
             for btn in btns:
                 if btn.validar_click(lista_eventos) == True and btn.color != colores.VERDE_C:
                     if btn.txt == self.pregunta_actual["rta_correcta"]:
                         btn.color = colores.VERDE_C
+                        btn.dibujar_btn(ventana, 0, 5)
+                        pygame.display.update()
                         self.recompensar_rta()
                         self.actualizar_exp_jugador()
                         self.pregunta_acertada = True
@@ -84,6 +86,8 @@ class Juego():
                     elif btn.color !=  colores.ROJO_C:
                         btn.color = colores.ROJO_C
                         btn.hover = False
+                        btn.dibujar_btn(ventana, 0, 5)
+                        pygame.display.update()
                         self.penalizar_rta()
                         self.vidas -= 1
                         if self.vidas == 0:

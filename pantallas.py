@@ -525,7 +525,7 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     btn_rta_2.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
     btn_rta_3.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse)
     btn_rta_4.dibujar_btn(ventana, 0, 5, pos_mouse= pos_mouse )
-    juego.validar_click_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4],  lista_eventos)
+    juego.validar_click_rtas(ventana,[btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4],  lista_eventos)
 # Agrego menu de pausa
     if btn_pausa.validar_click(lista_eventos) == True:
         if juego.pausado == False:
