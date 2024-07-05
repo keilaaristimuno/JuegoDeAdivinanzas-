@@ -96,6 +96,10 @@ class Juego():
                         self.penalizar_rta()
                         self.vidas -= 1
                         if self.vidas == 0:
+                            mensaje = fuentes.FUENTE_35.render("VIDAS AGOTADAS", True, colores.ROJO_O, colores.CREMA)
+                            if self.sonidos == True:
+                                sonidos.rta_incorrecta.play()
+                            mostrar_mensaje(ventana, mensaje)
                             self.esperar(2000)
                             self.jugando = False
                             
@@ -163,7 +167,7 @@ class Juego():
         self.tiempo_act_preg = pygame.time.get_ticks()
         tiempo_transcurrido = int((self.tiempo_act_preg - self.tiempo_in_preg) * 0.001)
         if self.tiempo_rest_preg != 0 and self.pregunta_acertada == False:
-            self.tiempo_rest_preg = 30 - tiempo_transcurrido
+            self.tiempo_rest_preg = 5 - tiempo_transcurrido
             
     def resetear_datos(self):
         self.pregunta_actual = None

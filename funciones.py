@@ -312,3 +312,8 @@ def mostrar_cartel_record(ventana,juego):
     ventana.blit(record_viejo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery + 50 , record_viejo) )
     ventana.blit(record_nuevo,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery , record_nuevo) )
     pygame.display.update()  #actualizar la pantalla para mostrar el cambio
+    
+def mostrar_mensaje(ventana, mensaje):
+    
+    ventana.blit(mensaje,centrar_txt(ventana.get_rect().centerx, ventana.get_rect().centery, mensaje) )
+    pygame.display.update()  #actualizar la pantalla para mostrar el cambio

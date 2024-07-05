@@ -100,7 +100,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
                                          btn_ver_usuarios.rect)
     btn_ver_usuarios.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
     if btn_ver_usuarios.validar_click(lista_eventos) or juego.mostrando_jugadores == True:
-        if juego.sonidos == True:
+        if juego.sonidos == True and juego.mostrando_jugadores == False:
             sonidos.click.play()
         juego.mostrando_jugadores = True
         mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse)
@@ -493,6 +493,10 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
     juego.calcular_tiempo_restante()
     
     if juego.vidas == 0:
+        mensaje = fuentes.FUENTE_35.render("VIDAS AGOTADAS", True, colores.ROJO_O, colores.CREMA)
+        mostrar_mensaje(ventana, mensaje)
+        if juego.sonidos == True:
+            sonidos.rta_incorrecta.play()
         juego.esperar(2000)
         juego.jugando = False
         
@@ -518,6 +522,12 @@ def mostrar_jugando(ventana, pos_mouse, lista_eventos, juego) -> None:
         juego.obtener_pregunta()   
         juego.obtener_rtas([btn_rta_1, btn_rta_2, btn_rta_3, btn_rta_4])
         if juego.tiempo_rest_preg == 0 and juego.pregunta_acertada == False:
+            if len(juego.preguntas_posibles) < 9:
+                mensaje = fuentes.FUENTE_35.render("TIEMPO FINALIZADO", True, colores.ROJO_O, colores.CREMA)
+                if juego.sonidos == True:
+                    sonidos.rta_incorrecta.play()
+                mostrar_mensaje(ventana, mensaje)
+            juego.esperar(2000)
             juego.vidas -= 1
         juego.resetear_tiempo()
         juego.pregunta_acertada = False
