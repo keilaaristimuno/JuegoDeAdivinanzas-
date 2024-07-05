@@ -3,7 +3,7 @@ import pantallas
 import funciones
 import clases
 
-pygame.init() 
+pygame.init()
 pygame.mixer.init()
 ventana = pygame.display.set_mode((1000,500))
 #establezco titulo de la venta:
@@ -47,7 +47,7 @@ jugadores_csv = ""
 jugadores_csv = funciones.set_cabecera_csv(cabecera, jugadores_csv)
 jugadores_csv = funciones.set_data_csv(jugadores, jugadores_csv, juego)
 
-with open("datos_jugador.csv", "w") as file:     
+with open("datos_jugador.csv", "w") as file:
     file.write(jugadores_csv)
     
 pygame.quit()
