@@ -100,7 +100,7 @@ def mostrar_inicio(ventana, pos_mouse, lista_eventos, juego, jugadores):
                                          btn_ver_usuarios.rect)
     btn_ver_usuarios.dibujar_btn(ventana, 0, 5, pos_mouse=pos_mouse)
     if btn_ver_usuarios.validar_click(lista_eventos) or juego.mostrando_jugadores == True:
-        if juego.sonidos == True:
+        if juego.sonidos == True and juego.mostrando_jugadores == False:
             sonidos.click.play()
         juego.mostrando_jugadores = True
         mostrar_usuarios(ventana, juego, lista_eventos, jugadores, pos_mouse)
